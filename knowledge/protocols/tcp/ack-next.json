@@ -1,19 +1,19 @@
 {
-  "title": "TCP 确认号指向下一期待序号",
-  "summary": "累计 ACK 为 X 表示 X 之前的序列空间已连续收到，X 自身尚未由该 ACK 确认。",
-  "applies": "抓包重建；TCP 序列空间",
+  "title": "The TCP acknowledgment number is the next expected sequence number",
+  "summary": "A cumulative ACK of X acknowledges all sequence numbers before X as received in order. It does not acknowledge X itself.",
+  "applies": "Packet capture and reconstruction; TCP sequence space",
   "aliases": [
     "cumulative ACK",
-    "下一期待",
-    "接收边界"
+    "What to look forward to next",
+    "receive boundary"
   ],
-  "detail": "单看两个方向的绝对序号不能判断顺序；各方向各有自己的序列空间。",
-  "boundary": "延迟 ACK 和重传都会使报文条数与 ACK 数量不一一对应。",
+  "detail": "Do not compare absolute sequence numbers across directions to infer order. Each direction has its own sequence space.",
+  "boundary": "Delayed ACKs and retransmissions mean segments and ACKs need not correspond one to one.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc9293.html#section-3.4",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解释抓包时间线中相同 ACK 重复出现或 ACK 一次跨越多个段的情况。",
+  "relevance": "Explain situations where the same ACK appears repeatedly in the packet capture timeline or when an ACK spans multiple segments at a time.",
   "tags": [
     "misc"
   ]

@@ -1,17 +1,17 @@
 {
-  "title": "System V AMD64 分开分配整数类和 SSE 类参数",
-  "summary": "对于寄存器充足的普通标量调用，整数类参数和 SSE 类参数独立使用各自的寄存器序列。",
-  "applies": "64 位原生 ABI；根据构建目标解释类型和调用",
-  "detail": "例如 void f(int,double,int) 的参数依次在 EDI、XMM0、ESI。浮点参数不会消耗一个整数参数槽。",
-  "boundary": "聚合体须先分类；寄存器不足时要遵循回退和栈传递规则。",
+  "title": "System V AMD64 allocates integer class and SSE class parameters separately",
+  "summary": "For ordinary scalar calls with sufficient registers, integer class parameters and SSE class parameters use their own register sequences independently.",
+  "applies": "64-bit native ABI; interprets types and calls based on build target",
+  "detail": "For example, the parameters of void f(int,double,int) are in EDI, XMM0, and ESI in sequence. Floating point parameters do not consume an integer parameter slot.",
+  "boundary": "Aggregates must be sorted first; fallback and stack transfer rules must be followed when there are insufficient registers.",
   "aliases": [
     "SysV AMD64",
     "System V ABI",
     "EDI",
     "XMM0",
-    "参数寄存器"
+    "parameter register"
   ],
-  "relevance": "解释同一原型的 Linux 与 Windows 调试快照为什么不能用同一套槽位读取。",
+  "relevance": "Explain why Linux and Windows debug snapshots of the same prototype cannot be read from the same set of slots.",
   "sources": {
     "reference": "https://gitlab.com/x86-psABIs/x86-64-ABI/-/jobs/artifacts/master/raw/x86-64-ABI/abi.pdf?job=build",
     "context": "https://primer.picoctf.org/"

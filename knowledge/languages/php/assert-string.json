@@ -1,21 +1,21 @@
 {
-  "title": "assert() 字符串断言的版本边界",
-  "summary": "PHP 7.2 弃用字符串断言，8.0 起字符串按普通值判断真假。",
-  "applies": "PHP 7.x 与 PHP 8.x；断言已启用",
+  "title": "Version differences for string assertions in assert()",
+  "summary": "PHP 7.2 deprecated string assertions. From PHP 8.0, assert() checks the string value for truthiness.",
+  "applies": "PHP 7.x and 8.x with assertions enabled",
   "aliases": [
     "assert",
     "assert()",
     "zend.assertions",
     "string assertion",
-    "断言"
+    "assert"
   ],
-  "detail": "PHP 7.x 在断言实际执行时对字符串内容求值。7.2 起此行为被弃用，8.0 移除字符串内容求值。",
-  "boundary": "7.2 的弃用仍保留旧语义。断言可由配置关闭或跳过，版本号本身无法证明某次调用发生了求值。",
+  "detail": "When an assertion runs in PHP 7.x, assert() evaluates the contents of a string argument. PHP 7.2 deprecated that behavior and PHP 8.0 removed it.",
+  "boundary": "PHP 7.2 retained the old behavior after deprecation. Configuration can disable or skip assertions, so the version alone does not show that a particular call evaluated the string.",
   "sources": {
     "reference": "https://www.php.net/manual/en/function.assert.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "阅读旧题附带的 PHP 源码时，同一个字符串参数在不同版本可能代表不同的判断。",
+  "relevance": "When reading the PHP source code attached to the old question, the same string parameter may represent different judgments in different versions.",
   "tags": [
     "web"
   ]

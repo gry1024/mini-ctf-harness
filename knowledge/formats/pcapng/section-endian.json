@@ -1,20 +1,20 @@
 {
-  "title": "pcapng 每个 Section 可采用独立字节序",
-  "summary": "Section Header Block 的块类型 0a0d0d0a 在两种端序下相同，应使用 Byte-Order Magic 判断本节的字段端序。",
-  "applies": "pcapng v1；Section Header、Interface Description 与 Enhanced Packet Block",
+  "title": "pcapng Each Section can use independent endianness",
+  "summary": "The block type 0a0d0d0a of Section Header Block is the same under both endiannesses. Byte-Order Magic should be used to determine the field endianness of this section.",
+  "applies": "pcapng v1; Section Header, Interface Description and Enhanced Packet Block",
   "aliases": [
     "pcapng section",
     "byte-order magic",
     "SHB",
-    "大小端切换"
+    "Big endian switch"
   ],
-  "detail": "同一文件可连续包含采用不同端序的多个节；下一个节出现时要重新解释长度字段。",
-  "boundary": "该标记只确定容器块字段的端序，包内容继续遵循各自协议的字节序。",
+  "detail": "The same file can contain consecutive sections in different endianness; the length field is reinterpreted when the next section appears.",
+  "boundary": "This tag only determines the endianness of the container block fields, and the packet contents continue to follow the endianness of the respective protocol.",
   "sources": {
     "reference": "https://www.ietf.org/archive/id/draft-ietf-opsawg-pcapng-04.html",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解释抓包前半段可解析、在新的 Section 之后块长突然异常。",
+  "relevance": "Explains why block lengths can look invalid after a new section even if the earlier part of a capture parsed correctly.",
   "tags": [
     "misc"
   ]

@@ -1,17 +1,17 @@
 {
-  "title": "ext4 主超级块的偏移相对文件系统起点",
-  "summary": "主超级块从文件系统内偏移 1024 字节开始。若镜像含分区表，应先确定文件系统所在分区的起始字节。",
-  "applies": "ext4 文件系统镜像；Linux 内核格式文档",
-  "detail": "魔数字段位于超级块内部偏移 0x38，整数 0xef53 以小端字节 53 ef 存储。",
-  "boundary": "备用超级块另有布局。不能仅凭任一处碰巧匹配的两字节就断言存在有效文件系统。",
+  "title": "The primary ext4 superblock is relative to the filesystem start",
+  "summary": "The primary superblock is 1,024 bytes from the start of the filesystem. In a partitioned image, add the starting byte offset of the partition.",
+  "applies": "ext4 filesystem images and the Linux kernel format documentation",
+  "detail": "The magic number field is located inside the superblock at offset 0x38, and the integer 0xef53 is stored in little-endian byte 53 ef.",
+  "boundary": "Backup superblocks follow a separate layout. An arbitrary two-byte match is insufficient evidence of a valid filesystem.",
   "aliases": [
     "ext4",
     "superblock",
     "0xef53",
-    "分区起点",
-    "超级块"
+    "Partition starting point",
+    "super block"
   ],
-  "relevance": "解释分区镜像正常、整盘镜像按同一固定偏移读取却找不到头。",
+  "relevance": "Explains why the header is visible at a fixed offset in a partition image but absent at that same offset in the full disk image.",
   "sources": {
     "reference": "https://www.kernel.org/doc/html/latest/filesystems/ext4/super.html",
     "context": "https://primer.picoctf.org/"

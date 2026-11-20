@@ -1,19 +1,19 @@
 {
-  "title": "索引色的像素值是调色板序号",
-  "summary": "颜色类型 3 的样本索引到 PLTE，每个表项是三个 8 位 RGB 分量。",
-  "applies": "PNG 规范；独立 PNG 图像",
+  "title": "The pixel value of the index color is the palette number",
+  "summary": "Color type 3 samples are indexed into the PLTE, and each entry is three 8-bit RGB components.",
+  "applies": "PNG specification; stand-alone PNG image",
   "aliases": [
     "PLTE",
     "indexed color",
-    "调色板索引"
+    "palette index"
   ],
-  "detail": "低位深图像会在单个字节中打包多个索引，先解包再查颜色。",
-  "boundary": "表项颜色不必唯一。相同的显示色不能唯一反推出原始索引。",
+  "detail": "Low bit depth images will pack multiple indices into a single byte, unpacking first and then looking up the color.",
+  "boundary": "Table item colors do not have to be unique. The same display color cannot uniquely deduce the original index.",
   "sources": {
     "reference": "https://www.w3.org/TR/png-3/#11PLTE",
     "context": "https://ctf-wiki.org/misc/picture/png/"
   },
-  "relevance": "分析两张外观相同的图时，能够区分索引数据变化与调色板变化。",
+  "relevance": "When analyzing two identical looking images, be able to differentiate between index data changes and palette changes.",
   "tags": [
     "misc"
   ]

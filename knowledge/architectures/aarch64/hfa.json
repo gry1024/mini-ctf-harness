@@ -1,16 +1,16 @@
 {
-  "title": "AAPCS64 同质浮点聚合可通过向量寄存器传递",
-  "summary": "符合 HFA 定义且最多四个元素的聚合体，在寄存器足够时可用多个浮点寄存器传参。",
-  "applies": "AArch64；AAPCS64 的通用调用与寄存器表示",
-  "detail": "由三个 float 组成的结构体可对应三个连续的 S 寄存器，不能只看一个 X 寄存器来判断结构内容。",
-  "boundary": "混入整数成员通常不再满足 HFA；参数寄存器不足会改变传递位置。",
+  "title": "AAPCS64 homogeneous floating point aggregates passable via vector registers",
+  "summary": "An HFA has at most four elements and can be passed in multiple floating-point registers when enough are available.",
+  "applies": "AArch64; general call and register representation of AAPCS64",
+  "detail": "A structure composed of three floats can correspond to three consecutive S registers. You cannot judge the structure content by just looking at one X register.",
+  "boundary": "Mixing in integer members generally no longer satisfies the HFA; insufficient parameter registers change the pass location.",
   "aliases": [
     "HFA",
     "homogeneous floating",
-    "浮点聚合",
-    "S寄存器"
+    "floating point aggregation",
+    "S register"
   ],
-  "relevance": "识别反汇编里的多个浮点输入是否来自一个源级结构体参数。",
+  "relevance": "Identify whether multiple floating point inputs in disassembly come from a source-level structure parameter.",
   "sources": {
     "reference": "https://github.com/ARM-software/abi-aa/blob/main/aapcs64/aapcs64.rst",
     "context": "https://primer.picoctf.org/"

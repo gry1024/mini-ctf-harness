@@ -1,17 +1,17 @@
 {
-  "title": "故障访问地址和发生故障的指令地址是两个字段",
-  "summary": "对提供 si_addr 的同步故障，si_addr 表示相关的故障地址；程序计数器标记当时正在执行的指令。",
-  "applies": "原生程序崩溃报告与 DWARF 调试元数据",
-  "detail": "例如分析数据访问故障时，报告中的访问地址可与代码地址相差很远，应据字段语义对应内存映射与符号。",
-  "boundary": "并非所有信号和来源都提供有意义的 si_addr。应同时检查信号种类与 si_code。",
+  "title": "The failed access address and the failed instruction address are two fields",
+  "summary": "For synchronous faults that provide si_addr, it identifies the fault address. The program counter identifies the instruction being executed.",
+  "applies": "Native program crash reporting and DWARF debugging metadata",
+  "detail": "For example, when analyzing data access failures, the access address in the report can be far different from the code address, and the memory mapping and symbols should be corresponding to the field semantics.",
+  "boundary": "Not all signals and sources provide meaningful si_addr. Both signal type and si_code should be checked.",
   "aliases": [
     "si_addr",
     "si_code",
     "program counter",
-    "故障地址",
-    "指令地址"
+    "Fault address",
+    "Instruction address"
   ],
-  "relevance": "解读已有崩溃转储时，将源码位置与被访问数据的位置分别定位。",
+  "relevance": "When interpreting an existing crash dump, locate the source code location and the location of the accessed data separately.",
   "sources": {
     "reference": "https://man7.org/linux/man-pages/man2/sigaction.2.html",
     "context": "https://primer.picoctf.org/"

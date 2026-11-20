@@ -1,20 +1,20 @@
 {
-  "title": "Quoted-Printable 行尾等号表示软换行",
-  "summary": "等号紧跟 CRLF 表示为传输而折行，解码时等号与换行一起去掉。",
-  "applies": "二进制编码；文件与数值转储",
+  "title": "Quoted-Printable The equal sign at the end of the line indicates a soft line break",
+  "summary": "The equal sign followed by CRLF indicates line breaks for transmission. The equal sign and line breaks are removed together during decoding.",
+  "applies": "Binary encoding; file and value dumps",
   "aliases": [
     "quoted printable",
     "soft line break",
-    "软换行",
+    "soft line break",
     "=3D"
   ],
-  "detail": "=3D 才表示一个字面等号。普通硬换行与软换行还原后的结果不同。",
-  "boundary": "MIME 头部 encoded-word 的 Q 编码有额外规则，不能把正文中的下划线一律换成空格。",
+  "detail": "=3D represents a literal equal sign. The results after restoration of ordinary hard line breaks and soft line breaks are different.",
+  "boundary": "The Q encoding of the MIME header encoded-word has additional rules, and underscores in the text cannot be replaced with spaces.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc2045.html#section-6.7",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "从邮件正文恢复长文本时，避免引入额外换行或丢掉真正的等号。",
+  "relevance": "Avoid introducing extra line breaks or losing real equal signs when recovering long text from the message body.",
   "tags": [
     "reverse",
     "misc"

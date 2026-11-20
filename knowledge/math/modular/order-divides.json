@@ -1,20 +1,20 @@
 {
-  "title": "乘法阶决定幂序列的周期",
-  "summary": "当 gcd(a,m)=1 时，a 的乘法阶是使 a^k≡1 (mod m) 的最小正整数 k。",
-  "applies": "整数模运算；模数大于 1",
+  "title": "The multiplicative order determines the period of the power sequence",
+  "summary": "When gcd(a,m)=1, the multiplicative order of a is the smallest positive integer k such that a^k≡1 (mod m).",
+  "applies": "Integer modulo arithmetic; modulus greater than 1",
   "aliases": [
     "n_order",
     "multiplicative order",
-    "乘法阶",
-    "幂周期"
+    "multiplicative order",
+    "Power period"
   ],
-  "detail": "模 7 时 2 的阶为 3，因此指数相差 3 的两项有同一余数。",
-  "boundary": "不能仅从两个相等余数就断言它们的指数差是最小周期；更小的周期也可能整除该差。",
+  "detail": "Modulo 7, 2 has order 3, so two terms with exponents different by 3 have the same remainder.",
+  "boundary": "You cannot conclude from two equal remainders alone that the difference in their exponents is the minimum period; smaller periods may also divide the difference.",
   "sources": {
     "reference": "https://docs.sympy.org/latest/modules/ntheory.html#sympy.ntheory.residue_ntheory.n_order",
     "context": "https://cryptohack.org/courses/modular/"
   },
-  "relevance": "解释重复的模幂观测为何不足以唯一确定原始指数。",
+  "relevance": "Explain why repeated modular exponentiation observations are insufficient to uniquely determine the original exponent.",
   "tags": [
     "crypto"
   ]

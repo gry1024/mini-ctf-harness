@@ -1,20 +1,20 @@
 {
-  "title": "SQLite 记录中的 0 与 1 可由类型码直接表示",
-  "summary": "序列类型 8 和 9 分别表示整数常量 0 和 1，各占零个有效载荷字节。",
-  "applies": "SQLite 3 主数据库与 WAL 文件",
+  "title": "0 and 1 in SQLite records can be directly represented by type codes",
+  "summary": "Serial types 8 and 9 represent the integer constants 0 and 1, respectively. Both take zero payload bytes.",
+  "applies": "SQLite 3 master database and WAL files",
   "aliases": [
     "serial type",
     "record header",
     "zero byte",
-    "零字节整数"
+    "zero byte integer"
   ],
-  "detail": "值由记录头的类型码确定。后续列的数据紧接在前一个实际占用空间的值后。",
-  "boundary": "序列类型 0 也消耗零字节，但表示 NULL。8 与 9 适用于数据库 schema format 4。",
+  "detail": "The value is determined by the type code of the record header. The data for subsequent columns follows the previous value that actually occupies space.",
+  "boundary": "Sequence type 0 also consumes zero bytes but represents NULL. 8 and 9 are suitable for database schema format 4.",
   "sources": {
     "reference": "https://www.sqlite.org/fileformat.html#record_format",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "核对一条记录各列偏移时，避免为空间占用为零的常量预留字节。",
+  "relevance": "When checking the offset of each column of a record, avoid reserving bytes for constants that occupy zero space.",
   "tags": [
     "misc"
   ]

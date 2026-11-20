@@ -1,16 +1,16 @@
 {
-  "title": "DEX insns_size 以 16 位代码单元计数",
-  "summary": "code_item 中 insns_size 的单位是 16 位 code unit；10 表示指令数组覆盖 20 个字节。",
-  "applies": "Android DEX 文件与 Dalvik 指令",
-  "detail": "指令可以占多个代码单元。读取原始指令数组和计算程序计数器时要先统一单位。",
-  "boundary": "存在异常处理表且单元数为奇数时，指令数组之后还有对齐填充；该填充不计入 insns_size。",
+  "title": "DEX insns_size is counted in 16-bit code units",
+  "summary": "The unit of insns_size in code_item is a 16-bit code unit; 10 means that the instruction array covers 20 bytes.",
+  "applies": "Android DEX files and Dalvik instructions",
+  "detail": "Instructions can occupy multiple code units. Units must be unified first when reading the raw instruction array and calculating the program counter.",
+  "boundary": "When an exception table is present and the number of cells is odd, there is alignment padding after the instruction array; this padding does not count toward insns_size.",
   "aliases": [
     "insns_size",
     "code_item",
     "code unit",
-    "指令字"
+    "command word"
   ],
-  "relevance": "从 DEX 记录恢复方法体边界时避免把长度缩小一半。",
+  "relevance": "Avoid halving the length when restoring method body bounds from DEX records.",
   "sources": {
     "reference": "https://source.android.com/docs/core/runtime/dex-format",
     "context": "https://primer.picoctf.org/"

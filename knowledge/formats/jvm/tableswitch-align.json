@@ -1,16 +1,16 @@
 {
-  "title": "JVM tableswitch 的填充相对方法代码开始对齐",
-  "summary": "在 tableswitch 操作码后插入 0 至 3 字节，令随后的 default 偏移位于相对方法代码开始的四字节边界。",
-  "applies": "JVM class 文件及标准字节码",
-  "detail": "各分支位移以 tableswitch 操作码地址为原点，按有符号 32 位解释。",
-  "boundary": "文件整体的起始偏移与方法代码起点未必同余；按文件绝对位置对齐会读错。",
+  "title": "The padding relative method code of JVM tableswitch starts to align",
+  "summary": "Insert zero to three padding bytes after tableswitch so the following default offset is aligned to four bytes relative to the start of the method code.",
+  "applies": "JVM class files and standard bytecode",
+  "detail": "The displacement of each branch takes the tableswitch opcode address as the origin and is interpreted as signed 32 bits.",
+  "boundary": "The starting offset of the entire file may not be congruent with the starting point of the method code; alignment based on the absolute position of the file will result in misreading.",
   "aliases": [
     "tableswitch",
     "default offset",
     "JVM switch",
-    "跳转表对齐"
+    "Jump table alignment"
   ],
-  "relevance": "解释 switch 表中所有目标似乎都以同一偏差错位。",
+  "relevance": "Explanation All targets in the switch table appear to be misaligned by the same bias.",
   "sources": {
     "reference": "https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-6.html#jvms-6.5.tableswitch",
     "context": "https://primer.picoctf.org/"

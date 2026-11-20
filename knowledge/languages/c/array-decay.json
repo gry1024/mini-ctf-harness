@@ -1,16 +1,16 @@
 {
-  "title": "函数数组形参中的 sizeof 观察到指针大小",
-  "summary": "函数形参声明为 T a[N] 时，参数类型调整为指向 T 的指针；函数内 sizeof a 取指针大小。",
-  "applies": "C11；离线内存诊断与对象表示",
-  "detail": "同一数组在声明它的作用域中用 sizeof 可得完整对象的字节数。见 C11 §6.7.6.3。",
-  "boundary": "传入指向整个数组的指针 T (*)[N] 是另一种声明，sizeof *p 可以保留数组宽度。",
+  "title": "sizeof in function array parameter observes pointer size",
+  "summary": "When the function parameter is declared as T a[N], the parameter type is adjusted to a pointer to T; sizeof a in the function takes the size of the pointer.",
+  "applies": "C11; Offline memory diagnostics and object representation",
+  "detail": "For the same array, use sizeof in the scope where it is declared to get the number of bytes of the complete object. See C11 §6.7.6.3.",
+  "boundary": "Passing in a pointer to the entire array T (*)[N] is another declaration, sizeof *p preserves the array width.",
   "aliases": [
     "array parameter",
-    "数组退化",
+    "Array degeneration",
     "sizeof pointer",
-    "数组形参"
+    "Array parameters"
   ],
-  "relevance": "解释日志中的长度为何在跨函数边界后从几十字节变成一个指针宽度。",
+  "relevance": "Explain why the length in the log changes from tens of bytes to a pointer width after crossing a function boundary.",
   "sources": {
     "reference": "https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf",
     "context": "https://primer.picoctf.org/"

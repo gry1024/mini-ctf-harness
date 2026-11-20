@@ -1,22 +1,22 @@
 {
-  "title": "SHT_NOBITS 节的文件占用",
-  "summary": "SHT_NOBITS 节可以有非零 sh_size，但其内容不占用 ELF 文件字节。",
-  "applies": "ELF 节头；sh_type 为 SHT_NOBITS",
+  "title": "File occupation of SHT_NOBITS section",
+  "summary": "A SHT_NOBITS section can have non-zero sh_size, but its contents occupy no ELF file bytes.",
+  "applies": "ELF section header; sh_type is SHT_NOBITS",
   "aliases": [
     "SHT_NOBITS",
     "sh_size",
     "sh_offset",
     ".bss",
-    "内存大小",
-    "文件大小"
+    "Memory size",
+    "file size"
   ],
-  "detail": "sh_size 可以描述非零大小，但文件里没有与之对应的节内容。从 sh_offset 起读取 sh_size 个字节无法还原这个节。",
-  "boundary": "其他节类型可能有实际文件内容。应检查 sh_type，单看节名不足以确定文件占用。",
+  "detail": "sh_size can describe a non-zero size, but there is no corresponding section content in the file. This section cannot be restored by reading sh_size bytes starting from sh_offset.",
+  "boundary": "Other section types may have actual file content. sh_type should be checked, the section name alone is not sufficient to determine file occupancy.",
   "sources": {
     "reference": "https://gabi.xinuos.com/elf/03-sheader.html",
     "context": "https://ctf-wiki.org/executable/elf/structure/basic-info/"
   },
-  "relevance": "查看 ELF 附件的节表时，这解释了为何声明的节大小可能大于可从文件读取的字节数。",
+  "relevance": "When looking at the section table of an ELF attachment, this explains why the declared section size may be larger than the number of bytes that can be read from the file.",
   "tags": [
     "reverse",
     "misc"

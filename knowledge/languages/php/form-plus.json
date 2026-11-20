@@ -1,20 +1,20 @@
 {
-  "title": "urldecode 与 rawurldecode 对加号的处理",
-  "summary": "urldecode 把字面加号转换成空格，rawurldecode 保留它。",
-  "applies": "PHP 7.4 和 8.x 的数据处理",
+  "title": "How urldecode and rawurldecode handle the plus sign",
+  "summary": "urldecode converts the literal plus sign to a space, rawurldecode preserves it.",
+  "applies": "Data handling for PHP 7.4 and 8.x",
   "aliases": [
     "urldecode",
     "rawurldecode",
-    "表单加号",
+    "form plus sign",
     "percent decoding"
   ],
-  "detail": "输入 A+B%2BC 时，两者分别得到 A B+C 和 A+B+C。前者中的百分号编码加号仍解成加号。",
-  "boundary": "已经由表单层解析过的字段可能已丢失原始加号，重复解码无法确定原始字节。",
+  "detail": "When you enter A+B%2BC, you get A B+C and A+B+C respectively. The percent-encoded plus sign in the former still resolves to a plus sign.",
+  "boundary": "Fields that have already been parsed by the form layer may have lost the original plus sign, and repeated decoding cannot determine the original bytes.",
   "sources": {
     "reference": "https://www.php.net/manual/en/function.urldecode.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "解释请求记录中加号和空格为何会在重建文本时互换。",
+  "relevance": "Explain why plus signs and spaces in request records are interchanged when reconstructing the text.",
   "tags": [
     "web",
     "reverse"

@@ -1,17 +1,17 @@
 {
-  "title": "Windows x64 按参数位置选择整数或浮点寄存器",
-  "summary": "普通有原型调用的前四个参数按位置映射到寄存器槽；浮点和整数各取对应位置的寄存器。",
-  "applies": "64 位原生 ABI；根据构建目标解释类型和调用",
-  "detail": "例如 void f(int,double,int) 的三个参数通常在 ECX、XMM1、R8D。第二个参数占位置 2，因此不是 XMM0。",
-  "boundary": "大聚合体、无原型和可变参数有额外规则；Linux 的 System V ABI 使用不同分类。",
+  "title": "Windows x64 select integer or floating point register by argument position",
+  "summary": "The first four arguments to a prototyped function use positional register slots, with separate integer and floating-point registers for each slot.",
+  "applies": "64-bit native ABI; interprets types and calls based on build target",
+  "detail": "For example, the three parameters of void f(int,double,int) are usually in ECX, XMM1, R8D. The second parameter occupies position 2 and is therefore not XMM0.",
+  "boundary": "There are additional rules for large aggregates, no prototypes, and variadic arguments; Linux's System V ABI uses different classifications.",
   "aliases": [
     "Windows x64",
     "XMM1",
     "argument slots",
-    "调用约定",
-    "混合形参"
+    "calling convention",
+    "Mixed parameters"
   ],
-  "relevance": "在正常函数入口的快照中将数值与源级参数一一对应。",
+  "relevance": "Correspond one-to-one values with source-level parameters in the snapshot of the normal function entry.",
   "sources": {
     "reference": "https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention",
     "context": "https://primer.picoctf.org/"

@@ -1,19 +1,19 @@
 {
-  "title": "Base64url 改动字母表末两位",
-  "summary": "标准 Base64 的 + 和 / 在 Base64url 中分别写成 - 和 _，对应数值仍为 62 和 63。",
-  "applies": "RFC 4648；Base64 族编码",
+  "title": "Base64url changes the last two digits of the alphabet",
+  "summary": "The + and / of standard Base64 are written as - and _ respectively in Base64url, and the corresponding values are still 62 and 63.",
+  "applies": "RFC 4648; Base64 family encoding",
   "aliases": [
     "base64url",
     "URL-safe",
-    "字母表变体"
+    "Alphabet variants"
   ],
-  "detail": "两种编码的前 62 个字符完全相同，只含这些字符的样本通常无法区分变体。",
-  "boundary": "等号填充是否省略由外围协议决定，不能靠有没有等号识别字母表。",
+  "detail": "The first 62 characters are identical in both encodings, and samples containing only these characters often make it impossible to distinguish the variants.",
+  "boundary": "Whether the equal sign padding is omitted is determined by the peripheral protocol, and the alphabet cannot be identified by the presence or absence of the equal sign.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc4648.html#section-5",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "比较两个编码串时，定位差异来自字母表还是原始数据。",
+  "relevance": "When comparing two encoding strings, locate whether the difference comes from the alphabet or the original data.",
   "tags": [
     "misc",
     "crypto"

@@ -1,23 +1,23 @@
 {
-  "title": "gzip 文件可连续包含多个成员",
-  "summary": "每个成员有独立的头、压缩数据和尾部；第一条流结束处仍可能跟有合法成员。",
-  "applies": "gzip 成员；RFC 1952",
+  "title": "A gzip file can contain concatenated members",
+  "summary": "Each member has its own header, compressed data, and trailer. More valid members can follow the first stream.",
+  "applies": "gzip member; RFC 1952",
   "aliases": [
     "concatenated gzip",
     "unused_data",
     "multi member",
-    "多成员",
-    "只解出第一段",
-    "顺次连接",
-    "拼接成员"
+    "multiple members",
+    "Only solve the first paragraph",
+    "Connect in sequence",
+    "Splice members"
   ],
-  "detail": "两个独立 gzip 成员顺序连接，完整解码结果应是两段明文顺序连接。",
-  "boundary": "某些只处理单流的 API 会把后续成员作为未消费数据返回。",
+  "detail": "When two independent gzip members are concatenated, decoding the complete file yields the two uncompressed byte strings in the same order.",
+  "boundary": "Some single-stream APIs return subsequent members as unconsumed data.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc1952.html#section-2",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解释不同解码器对同一 gzip 附件给出不同明文长度。",
+  "relevance": "Explains why decoders can report different uncompressed lengths for the same gzip attachment.",
   "tags": [
     "misc"
   ]

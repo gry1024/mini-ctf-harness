@@ -1,20 +1,20 @@
 {
-  "title": "PDF 流的 Length 指编码后数据的字节数",
-  "summary": "Length 字段界定文件中承载的流数据，应用 Filter 解码后长度可能变化。",
-  "applies": "PDF 1.7；ISO 32000-1 第 7 章",
+  "title": "The Length of the PDF stream refers to the number of bytes of the encoded data",
+  "summary": "The Length field defines the stream data carried in the file, and the length may change after applying Filter decoding.",
+  "applies": "PDF 1.7; ISO 32000-1 Chapter 7",
   "aliases": [
     "endstream",
     "FlateDecode",
     "stream length",
-    "间接长度"
+    "indirect length"
   ],
-  "detail": "长度可以通过间接对象给出；换行和 stream/endstream 关键字也不应全部算进数据。",
-  "boundary": "压缩数据内可能碰巧出现 endstream 字节串，单纯搜关键字不是可靠的二进制边界。",
+  "detail": "Lengths may be given via indirect objects; newlines and stream/endstream keywords should not be fully included in the data.",
+  "boundary": "Endstream byte strings may happen to appear in compressed data, and simply searching for keywords is not a reliable binary boundary.",
   "sources": {
     "reference": "https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/PDF32000_2008.pdf",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "从文档提取图像或文字流时区分压缩长度与解码长度。",
+  "relevance": "Distinguish between compressed length and decoded length when extracting images or text streams from documents.",
   "tags": [
     "misc"
   ]

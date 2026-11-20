@@ -1,16 +1,16 @@
 {
-  "title": "省略 Domain 的 Cookie 仅属于设置它的主机",
-  "summary": "host-only Cookie 只匹配原主机；合法的 Domain 属性可以使其匹配该域及子域。",
-  "applies": "浏览器对 URL、Cookie 和源的解释",
-  "detail": "例如由 app.example.test 设置且省略 Domain 的 Cookie 不随对 api.example.test 的请求发送。",
-  "boundary": "Cookie 的发送还受 Path、Secure、SameSite 等条件影响；同一主机也不能据此保证发送。",
+  "title": "A cookie that omits Domain belongs only to the host that set it",
+  "summary": "The host-only cookie only matches the original host; the legal Domain attribute allows it to match the domain and subdomains.",
+  "applies": "Browser interpretation of URLs, cookies, and origins",
+  "detail": "For example, a cookie set by app.example.test with Domain omitted is not sent with a request to api.example.test.",
+  "boundary": "The sending of cookies is also affected by conditions such as Path, Secure, SameSite, etc.; the same host cannot guarantee sending based on this.",
   "aliases": [
     "host-only",
     "Set-Cookie",
     "Domain",
-    "子域Cookie"
+    "Subdomain Cookie"
   ],
-  "relevance": "从静态请求记录解释为何浏览器保存了 Cookie 却在另一个子域没有发出。",
+  "relevance": "Explain from the static request log why the browser saved the cookie but not sent it on another subdomain.",
   "sources": {
     "reference": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie",
     "context": "https://primer.picoctf.org/"

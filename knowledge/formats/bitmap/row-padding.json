@@ -1,20 +1,20 @@
 {
-  "title": "BMP 未压缩像素行按四字节边界填充",
-  "summary": "每行字节数可由宽度×每像素位数向上补到 32 的倍数再除以 8 得到。",
-  "applies": "Windows BMP；BITMAPINFOHEADER 与未压缩 RGB",
+  "title": "BMP uncompressed pixel rows are padded on four-byte boundaries",
+  "summary": "Round width × bits per pixel up to a multiple of 32, then divide by 8 to get the row size in bytes.",
+  "applies": "Windows BMP; BITMAPINFOHEADER vs. uncompressed RGB",
   "aliases": [
     "BMP stride",
     "DWORD alignment",
-    "行填充",
-    "24位位图"
+    "row padding",
+    "24-bit bitmap"
   ],
-  "detail": "3 像素宽的 24 位行有 9 个颜色字节，步长为 12。填充字节不属于下一行的像素。",
-  "boundary": "压缩 BMP 或其他像素格式另有规定；只用宽度乘以字节数不能覆盖行填充。",
+  "detail": "A 3-pixel wide 24-bit row has 9 color bytes with a step of 12. Pad bytes for pixels that do not belong to the next row.",
+  "boundary": "Compressed BMP or other pixel formats specify otherwise; simply multiplying the width by the number of bytes cannot override line padding.",
   "sources": {
     "reference": "https://learn.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解析图像时第一行正确、其后逐渐斜移，常由行步长少算导致。",
+  "relevance": "When parsing the image, the first line is correct and then gradually shifts, which is often caused by undercounting the line step size.",
   "tags": [
     "misc"
   ]

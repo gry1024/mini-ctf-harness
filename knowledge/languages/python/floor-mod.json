@@ -1,23 +1,23 @@
 {
-  "title": "Python 负数的整除和余数",
-  "summary": "整数 // 向负无穷取整，非零余数与除数同号。",
-  "applies": "Python 3；标准库或内置整数",
+  "title": "Python integer division and remainder of negative numbers",
+  "summary": "Integer // Round to negative infinity, non-zero remainder has the same sign as the divisor.",
+  "applies": "Python 3; standard library or built-in integers",
   "aliases": [
     "floordiv",
     "modulo",
-    "负余数",
-    "整除",
-    "取余",
-    "余数符号",
+    "negative remainder",
+    "Divisible",
+    "Take remainder",
+    "remainder sign",
     "floor division"
   ],
-  "detail": "-7 // 3 为 -3，-7 % 3 为 2；二者保持 a == (a // b) * b + a % b。",
-  "boundary": "移植使用向零截断除法的程序时，负数输入的商和余数可能都变。",
+  "detail": "-7 // 3 is -3, -7 % 3 is 2; both maintain a == (a // b) * b + a % b.",
+  "boundary": "When porting a program that uses zero-truncated division, both the quotient and remainder of negative inputs may change.",
   "sources": {
     "reference": "https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "还原周期索引时，跨语言的负数取模差异会改变表项。",
+  "relevance": "Negative modulo differences across languages change table entries when restoring periodic indexes.",
   "tags": [
     "reverse",
     "misc"

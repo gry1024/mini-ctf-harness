@@ -1,16 +1,16 @@
 {
-  "title": "GF(2^8) 中字节加法是按位异或",
-  "summary": "把字节作为二元多项式系数表示时，加法与减法都是 XOR，没有整数进位。",
-  "applies": "有限域多项式与带错取样",
-  "detail": "例如 0x80+0x80 得到域元素 0。乘法则还需要约定的不可约多项式。",
-  "boundary": "这与整数环 Z/256Z 不同；后者的加法按整数进位，并含非零零因子。",
+  "title": "Byte addition in GF(2^8) is bitwise XOR",
+  "summary": "When representing bytes as binary polynomial coefficients, addition and subtraction are both XORs, with no integer carry.",
+  "applies": "Finite field polynomials and sampling with errors",
+  "detail": "For example, 0x80+0x80 gets field element 0. The multiplication method also requires agreed irreducible polynomials.",
+  "boundary": "This is different from the integer ring Z/256Z, where addition carries as an integer and has non-zero zero factors.",
   "aliases": [
     "GF256",
     "characteristic two",
-    "二元域",
-    "域加法"
+    "Binary field",
+    "field addition"
   ],
-  "relevance": "分辨题面“字节作为域元素”和“整数运算后保留低八位”两种语义。",
+  "relevance": "Distinguish between the two semantics of the question: \"Bytes are used as field elements\" and \"The lower eight bits are retained after integer operations\".",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc5510.html#section-8.1",
     "context": "https://cryptohack.org/courses/modular/"

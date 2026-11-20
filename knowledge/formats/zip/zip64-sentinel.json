@@ -1,20 +1,20 @@
 {
-  "title": "ZIP64 用额外字段承载溢出的大小或偏移",
-  "summary": "传统字段取 0xffffffff 等上限标记时，要从对应的 ZIP64 扩展结构解释大值。",
-  "applies": "单卷 ZIP；PKWARE APPNOTE",
+  "title": "ZIP64 uses extra fields to carry overflow size or offset",
+  "summary": "When a traditional field takes an upper limit mark such as 0xffffffff, the large value must be interpreted from the corresponding ZIP64 extended structure.",
+  "applies": "Single volume ZIP; PKWARE APPNOTE",
   "aliases": [
     "ZIP64",
     "0x0001",
     "ffffffff",
-    "四字节上限"
+    "Four-byte upper limit"
   ],
-  "detail": "0x0001 额外字段按规定次序给出原记录里需要扩展的值；并非每个文件都列出全部可能的字段。",
-  "boundary": "读取 ZIP64 的成员大小和读取整个归档的成员总数涉及不同记录。",
+  "detail": "0x0001 Extra fields give the values in the original record that need to be extended in the specified order; not every file lists all possible fields.",
+  "boundary": "Reading the member size of ZIP64 and reading the total number of members for the entire archive involve different records.",
   "sources": {
     "reference": "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "避免把扩展字段的占位值当成实际的四 GiB 成员。",
+  "relevance": "Avoid interpreting extension field placeholder values as actual four-GiB members.",
   "tags": [
     "misc"
   ]

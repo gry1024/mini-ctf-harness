@@ -1,20 +1,20 @@
 {
-  "title": "多种 Content-Encoding 按编码施加次序列出",
-  "summary": "Content-Encoding 为 gzip, br 时，原表示先 gzip 再 Brotli，读取时要先解除 Brotli。",
-  "applies": "HTTP 表示与离线消息解析",
+  "title": "Multiple Content-Encodings listed in order of encoding application",
+  "summary": "Content-Encoding: gzip, br means gzip was applied first and Brotli second. Decode Brotli before gzip.",
+  "applies": "HTTP representation and offline message parsing",
   "aliases": [
     "Content-Encoding",
     "Brotli",
-    "多重压缩",
-    "解码顺序"
+    "Multiple compression",
+    "decoding order"
   ],
-  "detail": "Transfer-Encoding 描述消息传输，Content-Encoding 描述表示本身，离线还原时属于不同层。",
-  "boundary": "抓包查看器可能已经解除了其中一层；再次解码会报头部无效。",
+  "detail": "Transfer-Encoding describes message transmission, and Content-Encoding describes the representation itself, which belongs to different layers when restored offline.",
+  "boundary": "The packet capture viewer may have removed one of the layers; decoding it again will report that the header is invalid.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc9110.html#section-8.4",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解释响应头看似声明 gzip、原始载荷却没有 gzip 开头。",
+  "relevance": "Explains why a response can declare gzip even when the raw payload does not start with a gzip header.",
   "tags": [
     "web",
     "misc"

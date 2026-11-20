@@ -1,16 +1,16 @@
 {
-  "title": "点加和倍点的斜率公式不同",
-  "summary": "对 y²=x³+ax+b，倍点在 2y 可逆时使用斜率 (3x²+a)/(2y)，其中除法是域内求逆。",
-  "applies": "素数域上的非奇异短 Weierstrass 曲线；特征大于 3",
-  "detail": "两个不同且横坐标不同的点相加则用纵坐标差除以横坐标差；不能机械地把同一点代进差商。",
-  "boundary": "分母为零时需要按群律区分负点、倍点或无穷远点，不能以普通浮点除法替代。",
+  "title": "The slope formulas for point addition and point doubling are different.",
+  "summary": "For y² = x³ + ax + b, point doubling uses slope (3x² + a)/(2y) when 2y is invertible. Division is by a field inverse.",
+  "applies": "Nonsingular short Weierstrass curves over primes; characteristic > 3",
+  "detail": "To add two different points with different abscissas, divide the difference in ordinates by the difference in abscissas; the same point cannot be mechanically substituted into the difference quotient.",
+  "boundary": "When the denominator is zero, it is necessary to distinguish the negative point, the multiple point or the infinite point according to the group law, and it cannot be replaced by ordinary floating point division.",
   "aliases": [
     "point doubling",
-    "倍点",
-    "斜率",
-    "有限域除法"
+    "Double point",
+    "slope",
+    "Finite field division"
   ],
-  "relevance": "解释两个公式为何在自加时一个出现 0/0、另一个有定义。",
+  "relevance": "Explain why one of the two formulas appears 0/0 and the other is defined when self-adding.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc6090.html#appendix-F.1",
     "context": "https://cryptohack.org/courses/elliptic/"

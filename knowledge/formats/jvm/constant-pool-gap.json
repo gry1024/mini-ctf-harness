@@ -1,15 +1,15 @@
 {
-  "title": "JVM 常量池的 long 和 double 保留两个索引位",
-  "summary": "CONSTANT_Long 与 CONSTANT_Double 在常量池表占用两个编号；下一编号不可用。",
-  "applies": "JVM class 文件及标准字节码",
-  "detail": "一个条目从 #7 开始，则 #8 不能引用，下一个可用编号为 #9。常量池编号从 1 开始。",
-  "boundary": "class 文件里只有一个该常量的结构；无须为被保留的编号再从文件读一个标签。",
+  "title": "The JVM constant pool's long and double reserve two index bits",
+  "summary": "CONSTANT_Long and CONSTANT_Double occupy two numbers in the constant pool table; the next number is not available.",
+  "applies": "JVM class files and standard bytecode",
+  "detail": "An entry starts at #7, then #8 cannot be referenced, and the next available number is #9. Constant pool numbers start from 1.",
+  "boundary": "There is only one structure for this constant in the class file; there is no need to read a label from the file for the reserved number.",
   "aliases": [
     "CONSTANT_Long",
     "constant_pool_count",
-    "常量池跳号"
+    "Constant pool jump number"
   ],
-  "relevance": "定位后一项字符串或方法引用时，解释索引数和解析条目数为何不同。",
+  "relevance": "Explain why the number of indexes and the number of parsed entries differ when locating the latter string or method reference.",
   "sources": {
     "reference": "https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html#jvms-4.4.5",
     "context": "https://primer.picoctf.org/"

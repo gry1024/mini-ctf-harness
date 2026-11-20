@@ -1,16 +1,16 @@
 {
-  "title": "PE 的 RVA 需要按节映射到文件偏移",
-  "summary": "RVA 相对映像基址。对有原始数据的节，文件偏移为 PointerToRawData + (RVA − 节 VirtualAddress)。",
-  "applies": "PE32/PE32+；Windows 映像文件",
-  "detail": "确认节内差值落入 SizeOfRawData，才能读取原文件。虚拟大小超过原始大小的尾部在映像中可由零填充。",
-  "boundary": "某些头部区域不按一般节处理；这个换算也不能应用于所有数据目录。",
+  "title": "PE's RVA needs to be mapped to file offsets by section",
+  "summary": "RVA relative image base address. For sections with raw data, the file offset is PointerToRawData + (RVA − Section VirtualAddress).",
+  "applies": "PE32/PE32+; Windows image file",
+  "detail": "Make sure that the difference within the section falls within SizeOfRawData before the original file can be read. Trailers whose virtual size exceeds the original size can be zero-filled in the image.",
+  "boundary": "Certain header areas are not treated as normal sections; this conversion does not apply to all data directories.",
   "aliases": [
     "RVA",
     "PointerToRawData",
     "VirtualSize",
-    "地址换算"
+    "Address conversion"
   ],
-  "relevance": "把反汇编列出的相对地址对应到附件里的真实字节。",
+  "relevance": "Map the relative addresses listed in the disassembly to the actual bytes in the attachment.",
   "sources": {
     "reference": "https://learn.microsoft.com/en-us/windows/win32/debug/pe-format",
     "context": "https://primer.picoctf.org/"

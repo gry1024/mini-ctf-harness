@@ -1,16 +1,16 @@
 {
-  "title": "DEX 字符串的长度前缀按 UTF-16 代码单元计",
-  "summary": "DEX string_data_item 的 utf16_size 为 ULEB128 编码的 UTF-16 长度；随后的字符串采用 Modified UTF-8。",
-  "applies": "Android DEX 文件与 Dalvik 指令",
-  "detail": "补充平面字符需要两个 UTF-16 单元。U+0000 可以用修改编码表示，字节零用于结束整个字符串。",
-  "boundary": "长度值不能直接作为后随编码字节数；普通 UTF-8 解码器也不一定能接受 DEX 的修改编码。",
+  "title": "DEX string length prefix in UTF-16 code units",
+  "summary": "The utf16_size of the DEX string_data_item is the ULEB128-encoded UTF-16 length; subsequent strings are in Modified UTF-8.",
+  "applies": "Android DEX files and Dalvik instructions",
+  "detail": "Supplementary-plane characters require two UTF-16 code units. U+0000 has a distinct modified encoding, and a zero byte terminates the string.",
+  "boundary": "The length value cannot be directly used as the number of subsequent encoding bytes; ordinary UTF-8 decoders may not be able to accept the modified encoding of DEX.",
   "aliases": [
     "utf16_size",
     "MUTF-8",
     "string_data_item",
-    "修改UTF8"
+    "Modify UTF8"
   ],
-  "relevance": "解释读完 emoji 后下一条 DEX 字符串为什么对不齐。",
+  "relevance": "Explain why the next DEX string is not aligned after reading the emoji.",
   "sources": {
     "reference": "https://source.android.com/docs/core/runtime/dex-format",
     "context": "https://primer.picoctf.org/"

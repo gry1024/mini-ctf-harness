@@ -1,20 +1,20 @@
 {
-  "title": "PCM 的 nBlockAlign 是一帧全部声道的字节数",
-  "summary": "常规整字节 PCM 的 nBlockAlign = 声道数 × 每样本容器字节数。",
-  "applies": "RIFF/WAVE 中的 PCM 音频",
+  "title": "PCM's nBlockAlign is the number of bytes of all channels in a frame",
+  "summary": "nBlockAlign for regular integer PCM = number of channels × bytes per sample container.",
+  "applies": "PCM audio in RIFF/WAVE",
   "aliases": [
     "nBlockAlign",
     "interleaved",
-    "立体声",
-    "音频帧大小"
+    "Stereo",
+    "audio frame size"
   ],
-  "detail": "16 位双声道一帧占 4 字节；每声道采样率乘以帧大小得到每秒字节数。",
-  "boundary": "有压缩编码时 block align 的解释依编解码格式而异；有效位数也可能小于容器位数。",
+  "detail": "A 16-bit two-channel frame occupies 4 bytes; multiply the per-channel sample rate by the frame size to get bytes per second.",
+  "boundary": "When there is compression encoding, the interpretation of block align varies depending on the encoding and decoding format; the effective number of bits may also be smaller than the number of container bits.",
   "sources": {
     "reference": "https://learn.microsoft.com/en-us/windows/win32/api/mmreg/ns-mmreg-waveformatex",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "把立体声样本拆成左右声道时，避免把连续两个样本误认成同一声道的相邻时刻。",
+  "relevance": "When splitting stereo samples into left and right channels, avoid mistaking two consecutive samples as adjacent moments of the same channel.",
   "tags": [
     "misc"
   ]

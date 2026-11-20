@@ -1,15 +1,15 @@
 {
-  "title": "同时设置时 Max-Age 优先于 Expires",
-  "summary": "浏览器支持这两个属性时，相对寿命 Max-Age 的优先级高于绝对时间 Expires。",
-  "applies": "浏览器对 URL、Cookie 和源的解释",
-  "detail": "Max-Age=0 且 Expires 在未来时，不能据后者判断 Cookie 一定保留。",
-  "boundary": "是否替换已有记录还取决于名称、域和路径等匹配条件。",
+  "title": "When set simultaneously, Max-Age takes precedence over Expires.",
+  "summary": "When the browser supports these two properties, the relative lifetime Max-Age takes precedence over the absolute time Expires.",
+  "applies": "Browser interpretation of URLs, cookies, and origins",
+  "detail": "Max-Age=0 and Expires is in the future tense. It cannot be judged based on the latter that the cookie must be retained.",
+  "boundary": "Whether to replace existing records also depends on matching criteria such as name, domain, and path.",
   "aliases": [
     "Max-Age",
     "Expires",
-    "Cookie 过期"
+    "Cookie expiration"
   ],
-  "relevance": "重建会话时间线时判断互相矛盾的过期提示应如何解释。",
+  "relevance": "How to interpret conflicting expiration prompts when rebuilding session timelines.",
   "sources": {
     "reference": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie",
     "context": "https://primer.picoctf.org/"

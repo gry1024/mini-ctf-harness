@@ -1,20 +1,20 @@
 {
-  "title": "Windows FILETIME 的纪元和计数单位",
-  "summary": "FILETIME 是从 UTC 1601-01-01 起的 100 纳秒间隔数，由高、低两个 32 位字组成。",
-  "applies": "常见时间戳字段的单位与纪元",
+  "title": "Epoch and counting units for Windows FILETIME",
+  "summary": "FILETIME is the number of 100 nanosecond intervals since UTC 1601-01-01, consisting of two 32-bit words, high and low.",
+  "applies": "Units and epochs of common timestamp fields",
   "aliases": [
     "FILETIME",
     "1601",
     "100ns",
-    "Windows时间戳"
+    "Windows timestamp"
   ],
-  "detail": "Unix 纪元对应 FILETIME 116444736000000000。换算时先减纪元差再除以 10000000，可避免误把字段当毫秒。",
-  "boundary": "字段单位不等于文件系统实际记录精度；高低两个 DWORD 的拼接也要遵守结构布局。",
+  "detail": "The Unix epoch corresponds to FILETIME 116444736000000000. When converting, first subtract the epoch difference and then divide by 10000000 to avoid mistaking the field for milliseconds.",
+  "boundary": "The field unit is not equal to the actual record accuracy of the file system; the splicing of the upper and lower DWORDs must also comply with the structural layout.",
   "sources": {
     "reference": "https://learn.microsoft.com/en-us/windows/win32/api/minwinbase/ns-minwinbase-filetime",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "将 Windows 文件元数据与 Unix 日志放到同一时间线。",
+  "relevance": "Put Windows file metadata on the same timeline as Unix logs.",
   "tags": [
     "misc"
   ]

@@ -1,20 +1,20 @@
 {
-  "title": "Wasm 代码体大小包含局部变量声明",
-  "summary": "每个代码体先给出按字节计的大小；其内部先是局部变量声明向量，之后才是指令表达式。",
-  "applies": "WebAssembly 核心二进制格式",
+  "title": "Wasm code body size includes local variable declarations",
+  "summary": "Each code body first gives the size in bytes; inside it is the local variable declaration vector first, followed by the instruction expression.",
+  "applies": "WebAssembly core binary format",
   "aliases": [
     "code section",
     "function body",
     "locals",
-    "局部变量表"
+    "local variable table"
   ],
-  "detail": "声明向量按重复计数和类型压缩。相邻两个局部变量的类型相同，不一定对应两个声明条目。",
-  "boundary": "函数参数来自函数类型，不在该局部声明向量中重复列出，但会占据局部索引。",
+  "detail": "Declare vectors to be compressed by repeat count and type. Two adjacent local variables have the same type and do not necessarily correspond to two declaration entries.",
+  "boundary": "Function parameters come from the function type and are not listed repeatedly in this local declaration vector, but will occupy the local index.",
   "sources": {
     "reference": "https://webassembly.github.io/spec/core/binary/modules.html",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "从偏移进入函数字节码时，避免把声明字节解成操作码或把首个局部变量编号算错。",
+  "relevance": "When entering function bytecode from an offset, avoid decoding declaration bytes into opcodes or miscalculating the first local variable number.",
   "tags": [
     "reverse",
     "misc"

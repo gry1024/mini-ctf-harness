@@ -1,12 +1,12 @@
 [
-  ["misc", "图像元数据有个 zTXt 段，哪些字节可直接交给 zlib？", "formats/png/compressed-text"],
-  ["web", "HAR 里交错的 Location 响应，要用哪个请求地址还原相对地址？", "protocols/http/redirect-location"],
-  ["reverse", "已给周期异或的校验输入，取片段后密钥从哪一位算？", "encodings/binary/xor-period"],
-  ["crypto", "模二十六的仿射代换里怎样确定映射是一一对应的？", "math/modular/affine-unit"],
-  ["misc", "电话录音中每个时刻有两个稳定峰，怎么对应一个键？", "formats/audio/dtmf-grid"],
-  ["web", "先后两份缓存的 206 片段，靠什么判断它们能否合并？", "protocols/http/partial-validator"],
-  ["pwn", "内存审计的左闭右开分配区里，要如何判断一次多字节读全部在界内？", "languages/c/half-open"],
-  ["crypto", "次数已知且部分分片的 y 值坏了，如何判断还有没有唯一解？", "math/finite-fields/rs-distance"],
-  ["reverse", "字节校验器把高位卷回低位，与按位左移的区别是什么？", "architectures/x86-64/rotate-count"],
-  ["pwn", "释放又重新分配了同地址区间，旧视图与新对象的归属怎么区分？", "languages/c/lifetime"]
+  ["misc", "Image metadata has a zTXt section, which bytes can be given directly to zlib?", "formats/png/compressed-text"],
+  ["web", "For interleaved Location responses in HAR, which request address should be used to restore the relative address?", "protocols/http/redirect-location"],
+  ["reverse", "The check input of periodic XOR has been given. Which bit should the key be calculated from after taking the fragment?", "encodings/binary/xor-period"],
+  ["crypto", "How to determine the one-to-one mapping in the affine substitution of module twenty-six?", "math/modular/affine-unit"],
+  ["misc", "There are two stable peaks at each moment in the phone recording. How do they correspond to one key?", "formats/audio/dtmf-grid"],
+  ["web", "There are two cached 206 fragments. How to judge whether they can be merged?", "protocols/http/partial-validator"],
+  ["pwn", "In the memory audit's left-closed and right-open allocation area, how to determine that a multi-byte read is all within bounds?", "languages/c/half-open"],
+  ["crypto", "The number of times is known and the y values ​​of some slices are broken. How to determine whether there is a unique solution?", "math/finite-fields/rs-distance"],
+  ["reverse", "What is the difference between the byte checker rolling the high bits back to the low bits and the bitwise left shift?", "architectures/x86-64/rotate-count"],
+  ["pwn", "The same address range is released and reallocated. How to distinguish the ownership of the old view and the new object?", "languages/c/lifetime"]
 ]

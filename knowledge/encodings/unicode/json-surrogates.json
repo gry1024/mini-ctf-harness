@@ -1,20 +1,20 @@
 {
-  "title": "JSON 可用一对转义代理项表示一个补充平面字符",
-  "summary": "JSON 中的反斜杠 u 转义每次只写四位十六进制数；补充平面字符可以写成一对 UTF-16 代理项。",
-  "applies": "Unicode 文本与 JSON 字节记录",
+  "title": "JSON can encode a supplementary-plane character as a surrogate pair",
+  "summary": "A JSON \\u escape takes four hexadecimal digits. A supplementary-plane character can be written as a UTF-16 surrogate pair.",
+  "applies": "Unicode text and JSON byte records",
   "aliases": [
     "surrogate",
     "JSON escape",
-    "代理对",
-    "反斜杠u"
+    "agent pair",
+    "backslashu"
   ],
-  "detail": "例如 U+1D11E 可表示为高代理 D834 和低代理 DD1E 两个连续转义。解析后的码点数与转义段数不同。",
-  "boundary": "单独的代理项不能组成合法 Unicode 标量，不同实现对这类输入的处理可能不同。",
+  "detail": "For example, U+1D11E can be expressed as two consecutive escapes, high surrogate D834 and low surrogate DD1E. The number of parsed code points is different from the number of escape segments.",
+  "boundary": "The surrogates alone do not form a legal Unicode scalar, and implementations may handle such input differently.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc8259.html#section-7",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "对比原始 JSON 文件长度与解码后的可见字符串长度。",
+  "relevance": "Compare the original JSON file length to the decoded visible string length.",
   "tags": [
     "misc",
     "web"

@@ -1,16 +1,16 @@
 {
-  "title": "LLL 输出规约基，首向量不保证全局最短",
-  "summary": "LLL 给出满足规约条件的一组格基。结果可能依实现和参数而变，多组规约基可以生成同一格。",
-  "applies": "整数格；行向量作为基的约定",
-  "detail": "检查一个候选短向量时，还应核对其整系数组合关系、范数及原问题条件。",
-  "boundary": "看到较短的首行不能单凭 LLL 的名称断言已精确解出最短向量问题。",
+  "title": "LLL outputs the reduction base, and the first vector is not guaranteed to be the global shortest",
+  "summary": "LLL returns a basis that satisfies the reduction conditions. Different implementations or parameters can yield different reduced bases of the same lattice.",
+  "applies": "Integer lattice; convention for row vectors as bases",
+  "detail": "When checking a candidate short vector, you should also check its integer coefficient combination relationship, norm and original problem conditions.",
+  "boundary": "Seeing that the shorter first line does not assert that the shortest vector problem has been solved exactly by the name of LLL alone.",
   "aliases": [
     "LLL",
     "reduced basis",
-    "短向量",
+    "short vector",
     "SVP"
   ],
-  "relevance": "避免把规约程序返回的第一行直接当作题目唯一答案。",
+  "relevance": "Avoid taking the first line returned by the reducer as the only answer to the question.",
   "sources": {
     "reference": "https://doc.sagemath.org/html/en/reference/matrices/sage/matrix/matrix_integer_dense.html#sage.matrix.matrix_integer_dense.Matrix_integer_dense.LLL",
     "context": "https://cryptohack.org/challenges/maths/"

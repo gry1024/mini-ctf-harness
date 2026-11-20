@@ -1,21 +1,21 @@
 {
-  "title": "is_numeric() 与末尾 ASCII 空格",
-  "summary": "从 PHP 8.0 起，is_numeric(\"42 \") 返回 true，PHP 7.x 返回 false。",
-  "applies": "PHP 7.x 与 PHP 8.x；参数为字符串",
+  "title": "is_numeric() with trailing ASCII space",
+  "summary": "As of PHP 8.0, is_numeric(\"42 \") returns true, PHP 7.x returns false.",
+  "applies": "PHP 7.x and PHP 8.x; parameter is a string",
   "aliases": [
     "is_numeric",
     "trailing whitespace",
     "numeric string",
-    "尾随空白",
-    "数字字符串"
+    "trailing whitespace",
+    "numeric string"
   ],
-  "detail": "同样是 ASCII 空格，\" 42\" 在两个版本系列中都被判为数字字符串，而 \"42 \" 的结果跨版本改变。",
-  "boundary": "这里的空白范围不等于所有 Unicode 空白。手册示例中的不换行空格 U+00A0 不适用。",
+  "detail": "Also an ASCII space, \" 42 \" is evaluated as a numeric string in both version series, and the result of \" 42 \" changes across versions.",
+  "boundary": "The range of whitespace here is not equal to all Unicode whitespace. The non-breaking space U+00A0 in the manual example does not apply.",
   "sources": {
     "reference": "https://www.php.net/manual/en/function.is-numeric.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "还原题中读入文本的分类结果时，即使打印出来看似相同，保留的空白字符也会影响结论。",
+  "relevance": "When restoring the classification results of the text read in the question, even if they appear to be the same when printed, the remaining blank characters will affect the conclusion.",
   "tags": [
     "web"
   ]

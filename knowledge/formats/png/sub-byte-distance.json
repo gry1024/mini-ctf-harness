@@ -1,20 +1,20 @@
 {
-  "title": "Sub 滤波按每像素字节距取左值",
-  "summary": "重建 Sub 行时，当前滤波字节加上同一行已重建的左侧对应字节，结果模 256。",
-  "applies": "PNG 规范；独立 PNG 图像",
+  "title": "Sub filtering takes the left value according to the byte pitch per pixel",
+  "summary": "When rebuilding a Sub row, the current filtered byte is added to the corresponding byte on the left that has been reconstructed in the same row, and the result is modulo 256.",
+  "applies": "PNG specification; stand-alone PNG image",
   "aliases": [
     "Sub filter",
-    "逆滤波",
+    "Inverse filtering",
     "bytes per pixel",
-    "左侧字节"
+    "left byte"
   ],
-  "detail": "左侧距离取一个完整像素的字节数并向上取整。8 位 RGB 的距离为 3，1 位灰度的距离为 1。",
-  "boundary": "行首缺少的左侧字节按零。左值来自重建后的数据。",
+  "detail": "The left distance is taken as the number of bytes of a full pixel and rounded up. The distance is 3 for 8-bit RGB and 1 for 1-bit grayscale.",
+  "boundary": "Missing left-hand bytes at the beginning of the line are zeroed. The left value comes from the reconstructed data.",
   "sources": {
     "reference": "https://www.w3.org/TR/png-3/#9Filters",
     "context": "https://ctf-wiki.org/misc/picture/png/"
   },
-  "relevance": "如果颜色通道周期性串位，检查滤波器引用了哪个已重建字节。",
+  "relevance": "If the color channels are cyclically bit stringed, check which reconstructed byte the filter refers to.",
   "tags": [
     "misc"
   ]

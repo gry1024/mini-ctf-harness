@@ -1,20 +1,20 @@
 {
-  "title": "HTTP/1.1 分块长度是十六进制字节数",
-  "summary": "chunk-size 行的数字按十六进制解释，不计入该行、扩展和数据后的 CRLF。",
-  "applies": "HTTP 表示与离线消息解析",
+  "title": "HTTP/1.1 chunk length is a number of hexadecimal bytes",
+  "summary": "Numbers in chunk-size lines are interpreted in hexadecimal and do not include CRLF after the line, extensions, and data.",
+  "applies": "HTTP representation and offline message parsing",
   "aliases": [
     "chunked",
     "chunk-size",
     "transfer-encoding",
-    "十六进制长度"
+    "Hexadecimal length"
   ],
-  "detail": "长度行 a 表示 10 个数据字节。零长度块标记数据块结束，其后仍可能有 trailer 字段。",
-  "boundary": "这种边界属于传输编码，不能从 HTTP/2 的 DATA 帧中套用相同文本语法。",
+  "detail": "The length line a represents 10 data bytes. A zero-length block marks the end of a data block, which may still be followed by a trailer field.",
+  "boundary": "This boundary is a transfer encoding and does not apply the same text syntax from HTTP/2's DATA frame.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc9112.html#section-7.1",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "重建离线响应正文时，区分实际载荷与分块标记。",
+  "relevance": "Distinguish between actual payload and chunked markers when reconstructing offline response body.",
   "tags": [
     "web",
     "misc"

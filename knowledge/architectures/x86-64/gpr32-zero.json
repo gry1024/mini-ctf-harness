@@ -1,20 +1,20 @@
 {
-  "title": "通用寄存器的 32 位写入会清空高半部",
-  "summary": "写 EAX 会把 RAX 的高 32 位清零，写 AX 或 AL 则保留未覆盖的高位。",
-  "applies": "x86-64 的 64 位模式；Intel SDM 卷 1 和卷 2",
+  "title": "A 32-bit write to a general-purpose register clears the upper half",
+  "summary": "Writing EAX clears the upper 32 bits of RAX. Writing AX or AL leaves higher bits unchanged.",
+  "applies": "64-bit mode for x86-64; Intel SDM Volume 1 and Volume 2",
   "aliases": [
     "EAX",
     "RAX",
     "partial register",
-    "高位清零"
+    "Clear high bit"
   ],
-  "detail": "若 RAX 原为全 1，执行 mov eax,1 后 RAX 为 1；同一初值执行 mov ax,1 后为 ffffffffffff0001。",
-  "boundary": "该规则说明整数通用寄存器目的操作数；不能类推到所有向量寄存器写操作。",
+  "detail": "If RAX is originally all 1, RAX will be 1 after executing mov eax,1; after executing mov ax,1 with the same initial value, RAX will be ffffffffffff0001.",
+  "boundary": "This rule specifies integer general-purpose register destination operands; the analogy does not apply to all vector register writes.",
   "sources": {
     "reference": "https://cdrdv2-public.intel.com/843827/253665-sdm-vol-1-dec-24.pdf",
     "context": "https://ctf-wiki.org/executable/elf/structure/basic-info/"
   },
-  "relevance": "重建寄存器快照时，区分窄写入后的零扩展和局部覆盖。",
+  "relevance": "When reconstructing a register snapshot, distinguish between zero extension and partial coverage after narrow writes.",
   "tags": [
     "reverse"
   ]

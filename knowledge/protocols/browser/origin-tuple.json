@@ -1,16 +1,16 @@
 {
-  "title": "浏览器源由协议、主机和端口决定",
-  "summary": "常见 HTTP(S) 源按 scheme、host、port 判断。路径不同仍可同源，端口不同则不同源。",
-  "applies": "浏览器对 URL、Cookie 和源的解释",
-  "detail": "https://example.test:443/a 与 https://example.test/b 对应同一默认端口。相同主机从 http 改为 https 则改变源。",
-  "boundary": "同站与同源是不同判定；某些 URL 如 data: 对应不透明源。",
+  "title": "Browser origin is determined by protocol, host and port",
+  "summary": "Common HTTP(S) sources are judged by scheme, host, and port. Different paths can still have the same origin, but different ports can have different origins.",
+  "applies": "Browser interpretation of URLs, cookies, and origins",
+  "detail": "https://example.test:443/a and https://example.test/b correspond to the same default port. Changing the same host from http to https changes the source.",
+  "boundary": "Same site and same origin are different judgments; some URLs such as data: correspond to opaque sources.",
   "aliases": [
     "same origin",
     "origin tuple",
-    "同源",
-    "默认端口"
+    "Homology",
+    "Default port"
   ],
-  "relevance": "阅读浏览器记录时区分仅切换路径与真正跨源请求。",
+  "relevance": "Distinguish between merely switching paths and true cross-origin requests when reading browser logs.",
   "sources": {
     "reference": "https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy",
     "context": "https://primer.picoctf.org/"

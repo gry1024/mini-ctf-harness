@@ -1,20 +1,20 @@
 {
-  "title": "Number 的连续安全整数范围",
-  "summary": "2^53−1 是最大安全整数，2^53 和 2^53+1 按 Number 表示时可相等。",
-  "applies": "ECMAScript；Number、BigInt 与字符串",
+  "title": "The contiguous safe integer range of Number",
+  "summary": "2^53−1 is the largest safe integer, and 2^53 and 2^53+1 are equal when expressed as Numbers.",
+  "applies": "ECMAScript; Number, BigInt, and Strings",
   "aliases": [
     "MAX_SAFE_INTEGER",
     "BigInt",
-    "浮点精度",
-    "大整数"
+    "floating point precision",
+    "large integer"
   ],
-  "detail": "需要保留十进制大整数原文时，可从字符串直接构造 BigInt；先转换成 Number 会丢失信息。",
-  "boundary": "超过安全范围仍有部分整数可精确表示，问题在于已不能区分所有相邻整数。",
+  "detail": "When you need to retain the original text of a decimal big integer, you can directly construct a BigInt from a string; converting it to Number first will lose information.",
+  "boundary": "There are still some integers that can be accurately represented beyond the safe range. The problem is that all adjacent integers cannot be distinguished.",
   "sources": {
     "reference": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "比对脚本日志中的长 ID 时，能区分数据碰撞和显示舍入。",
+  "relevance": "Ability to distinguish between data collisions and display rounding when comparing long IDs in script logs.",
   "tags": [
     "reverse",
     "web"

@@ -1,17 +1,17 @@
 {
-  "title": "Location 可为相对引用，应相对于当前请求 URI 解析",
-  "summary": "重建跳转链时，每一步使用产生该响应的请求 URI 作为基准，再解析 Location。",
-  "applies": "离线 HTTP 事务与部分响应记录",
-  "detail": "同一个 ../done 由 /a/b/start 与 /x/start 返回时会解析到不同位置。其他请求的成功响应不自动属于这条链。",
-  "boundary": "Location 描述建议跳转位置；是否实际跟随还需下一笔请求记录证明。",
+  "title": "Location can be a relative reference and should be resolved relative to the current request URI",
+  "summary": "When reconstructing a redirect chain, resolve each Location against the request URI that produced that response.",
+  "applies": "Offline HTTP transactions and partial response logging",
+  "detail": "The same ../done will be resolved to different locations when returned by /a/b/start and /x/start. Successful responses to other requests do not automatically belong to this chain.",
+  "boundary": "Location describes the suggested jump location; whether it actually follows needs to be proven by the next request record.",
   "aliases": [
     "Location",
     "302",
     "redirect",
-    "跳转链",
-    "相对重定向"
+    "jump chain",
+    "relative redirect"
   ],
-  "relevance": "将 HAR 中交错的多条跳转及其回执分别归属到正确请求。",
+  "relevance": "Attribute multiple interleaved jumps and their receipts in HAR to the correct requests respectively.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.2",
     "context": "https://primer.picoctf.org/"

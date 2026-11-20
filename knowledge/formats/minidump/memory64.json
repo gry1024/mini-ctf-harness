@@ -1,16 +1,16 @@
 {
-  "title": "MINIDUMP 的 Memory64 数据按描述符顺序连续存放",
-  "summary": "MINIDUMP_MEMORY64_LIST 的 BaseRva 指向首段原始字节。后续段的位置由前面各段 DataSize 累加。",
-  "applies": "Windows MINIDUMP；已采集转储的静态解释",
-  "detail": "每个描述符同时记录运行时起始地址；要定位该范围内的字节，还需加上其相对段起点的偏移。",
-  "boundary": "虚拟地址范围彼此可不连续。不要把相邻虚拟地址差直接当作文件中两段的间隔。",
+  "title": "MINIDUMP's Memory64 data is stored continuously in descriptor order.",
+  "summary": "BaseRva of MINIDUMP_MEMORY64_LIST points to the first raw bytes. The positions of subsequent segments are accumulated from the DataSize of previous segments.",
+  "applies": "Windows MINIDUMP; static interpretation of acquired dump",
+  "detail": "Each descriptor also records the runtime starting address; to locate a byte in this range, its offset relative to the beginning of the segment is also added.",
+  "boundary": "Virtual address ranges may not be contiguous with each other. Do not regard the difference between adjacent virtual addresses directly as the interval between two segments in the file.",
   "aliases": [
     "Memory64List",
     "BaseRva",
     "DataSize",
-    "内存转储"
+    "memory dump"
   ],
-  "relevance": "把转储中的一个内存范围对应到真实文件字节。",
+  "relevance": "Map a memory range in the dump to real file bytes.",
   "sources": {
     "reference": "https://learn.microsoft.com/en-us/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_memory64_list",
     "context": "https://primer.picoctf.org/"

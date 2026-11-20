@@ -1,20 +1,20 @@
 {
-  "title": "GUID 字节数组与规范 UUID 文本的字段顺序",
-  "summary": "传统 Windows COM GUID 的前 4、2、2 字节字段可按小端存放，后 8 个字节顺序保留。",
-  "applies": "二进制编码；文件与数值转储",
+  "title": "Field order of GUID byte arrays and canonical UUID text",
+  "summary": "The first 4, 2, and 2-byte fields of a traditional Windows COM GUID can be stored in little-endian order, and the last 8 bytes are retained in order.",
+  "applies": "Binary encoding; file and value dumps",
   "aliases": [
     "UUID",
     "GUID",
     "bytes_le",
-    "混合端序"
+    "Mixed endianness"
   ],
-  "detail": "文本 00112233-4455-6677-8899-aabbccddeeff 的 bytes_le 前八字节为 33 22 11 00 55 44 77 66。",
-  "boundary": "RFC UUID 的网络字节序是另一种约定；把全串倒序也得不到上述 GUID 布局。",
+  "detail": "The first eight bytes of bytes_le of text 00112233-4455-6677-8899-aabbccddeeff are 33 22 11 00 55 44 77 66.",
+  "boundary": "The network byte order of RFC UUID is another convention; reversing the entire string will not get the above GUID layout.",
   "sources": {
     "reference": "https://docs.python.org/3/library/uuid.html#uuid.UUID.bytes_le",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "将二进制元数据中的标识与日志中的 UUID 字符串对应。",
+  "relevance": "Corresponds the identifier in the binary metadata to the UUID string in the log.",
   "tags": [
     "reverse",
     "misc"

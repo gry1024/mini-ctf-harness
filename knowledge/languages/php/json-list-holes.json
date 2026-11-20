@@ -1,20 +1,20 @@
 {
-  "title": "PHP 数组下标缺口与 JSON 形状",
-  "summary": "json_encode 只把从 0 开始、依次连续编号的 PHP 数组编码为 JSON 数组。",
-  "applies": "PHP 7.4 和 8.x 的数据处理",
+  "title": "PHP array subscript gap and JSON shape",
+  "summary": "json_encode only encodes PHP arrays starting from 0 and numbered consecutively into JSON arrays.",
+  "applies": "Data handling for PHP 7.4 and 8.x",
   "aliases": [
     "json_encode",
     "array_values",
     "unset",
-    "列表变对象"
+    "list to object"
   ],
-  "detail": "从 [10,20,30] 中 unset 下标 1 后，剩余键为 0、2，编码结果是带这两个属性名的对象。",
-  "boundary": "array_values 会重新连续编号；重新编号后的 JSON 不能还原此前存在的缺口。",
+  "detail": "After unsetting subscript 1 from [10,20,30], the remaining keys are 0 and 2, and the encoding result is an object with these two attribute names.",
+  "boundary": "array_values are renumbered consecutively; the renumbered JSON cannot restore previously existing gaps.",
   "sources": {
     "reference": "https://www.php.net/manual/en/function.json-encode.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "解释两个内容相似的附件为什么分别以中括号和大括号保存。",
+  "relevance": "Explain why two attachments with similar content are saved in square brackets and curly brackets respectively.",
   "tags": [
     "web",
     "reverse"

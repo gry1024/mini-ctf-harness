@@ -1,19 +1,19 @@
 {
-  "title": "array_search 返回键的类型",
-  "summary": "array_search 返回首个匹配键，整数键 0 和查找失败的 false 需用 === 区分。",
-  "applies": "PHP 7.4 和 8.x 的数据处理",
+  "title": "array_search returns the type of key",
+  "summary": "array_search returns the first matching key. The integer key 0 and false if the search fails need to be distinguished by ===.",
+  "applies": "Data handling for PHP 7.4 and 8.x",
   "aliases": [
     "array_search",
     "first matching key",
-    "查找返回键"
+    "Find return key"
   ],
-  "detail": "第三个参数 true 要求值和类型都匹配。查找字符串 \"7\" 与查找整数 7 可能命中不同的槽位。",
-  "boundary": "相同值出现多次时单次查找只给出首个匹配。",
+  "detail": "The third parameter true requires both value and type to match. Searching for the string \"7\" may hit different slots than searching for the integer 7.",
+  "boundary": "When the same value appears multiple times, a single search will only give the first match.",
   "sources": {
     "reference": "https://www.php.net/manual/en/function.array-search.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "还原映射表选择结果时，命中的第零项很容易被当成缺失。",
+  "relevance": "When restoring the mapping table selection results, the zeroth hit item can easily be regarded as missing.",
   "tags": [
     "web",
     "reverse"

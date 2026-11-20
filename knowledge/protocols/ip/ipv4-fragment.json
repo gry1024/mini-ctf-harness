@@ -1,20 +1,20 @@
 {
-  "title": "IPv4 分片偏移以八字节为单位",
-  "summary": "Fragment Offset 是相对原始数据区的偏移，字段值 3 表示数据区偏移 24 字节。",
-  "applies": "离线 IPv4、IPv6 报文解析",
+  "title": "IPv4 fragmentation offset in eight bytes",
+  "summary": "Fragment Offset is the offset relative to the original data area. The field value 3 indicates that the data area is offset by 24 bytes.",
+  "applies": "Offline IPv4 and IPv6 packet analysis",
   "aliases": [
     "Fragment Offset",
     "MF",
-    "IPv4 分片",
-    "八字节"
+    "IPv4 fragmentation",
+    "eight bytes"
   ],
-  "detail": "偏移不含原始 IP 头。判断末片结合 MF；一个偏移为零的片也可能只是首片。",
-  "boundary": "不同数据报之间不能仅凭偏移或到达顺序拼接。",
+  "detail": "The offset does not contain the original IP header. Determine the last piece combined with MF; a piece with an offset of zero may just be the first piece.",
+  "boundary": "Different datagrams cannot be spliced based on offset or arrival order alone.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc791.html#section-3.1",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "按字节范围重建离线抓包中的分片数据时，避免把偏移缩小八倍。",
+  "relevance": "When reconstructing fragmented data in offline captures by byte range, avoid reducing the offset by eight times.",
   "tags": [
     "misc"
   ]

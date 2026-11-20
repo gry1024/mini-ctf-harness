@@ -1,20 +1,20 @@
 {
-  "title": "SQLite WAL 提交标记与数据库快照",
-  "summary": "WAL 帧头的数据库页数非零时标记提交；提交记录之前的帧可共同构成一次事务。",
-  "applies": "SQLite 3 主数据库与 WAL 文件",
+  "title": "SQLite WAL commit tags and database snapshots",
+  "summary": "Commit is marked when the number of database pages in the WAL frame header is non-zero; frames before the commit record can together constitute a transaction.",
+  "applies": "SQLite 3 master database and WAL files",
   "aliases": [
     "WAL",
     "checkpoint",
     "commit frame",
-    "数据库日志"
+    "Database log"
   ],
-  "detail": "只看主数据库文件可能缺少尚未 checkpoint 的已提交变化。要解释一份快照，应确认 WAL 与主库属于同一组文件。",
-  "boundary": "文件末尾的有效帧也可能属于未提交事务；不能把所有帧一律当作最终状态。",
+  "detail": "Looking only at the master database file may be missing committed changes that have not yet been checkpointed. To interpret a snapshot, confirm that the WAL belongs to the same set of files as the main library.",
+  "boundary": "Valid frames at the end of the file may also belong to uncommitted transactions; all frames cannot be considered final.",
   "sources": {
     "reference": "https://www.sqlite.org/fileformat.html#wal_file_format",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解释从同一目录读取主库文件和打开数据库看到的记录不一致。",
+  "relevance": "Explains why reading the main file directly can show different records from opening the database with its WAL present.",
   "tags": [
     "misc"
   ]

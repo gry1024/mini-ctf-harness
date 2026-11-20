@@ -1,20 +1,20 @@
 {
-  "title": "base64_decode 的 strict 参数",
-  "summary": "关闭 strict 时，无效字母可能被丢弃；打开后含字母表外字符的输入可返回 false。",
-  "applies": "PHP 7.4 和 8.x 的数据处理",
+  "title": "strict parameter of base64_decode",
+  "summary": "When strict is turned off, invalid letters may be discarded; when turned on, input containing characters outside the alphabet may return false.",
+  "applies": "Data handling for PHP 7.4 and 8.x",
   "aliases": [
     "base64_decode",
     "strict",
-    "无效字符",
-    "宽松解码"
+    "Invalid character",
+    "Relaxed decoding"
   ],
-  "detail": "以 SGV!sbG8= 为例，宽松模式仍解出 Hello，严格模式报告失败。",
-  "boundary": "strict 的返回值也可能是合法的空字符串，检查失败应区分空串与 false。",
+  "detail": "Taking SGV!sbG8= as an example, the relaxed mode still solves Hello, but the strict mode reports failure.",
+  "boundary": "The return value of strict may also be a legal empty string. If the check fails, the empty string should be distinguished from false.",
   "sources": {
     "reference": "https://www.php.net/manual/en/function.base64-decode.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "区分附件真的包含感叹号和解码器静默忽略了感叹号。",
+  "relevance": "Distinguish between attachments that really contain exclamation marks and decoders that silently ignore exclamation marks.",
   "tags": [
     "web",
     "reverse"

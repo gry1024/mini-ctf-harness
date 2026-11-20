@@ -1,20 +1,20 @@
 {
-  "title": "JSON 数字的语法排除前导零与非有限值",
-  "summary": "0 合法，01、NaN 和 Infinity 不是 RFC 8259 的数字。",
-  "applies": "RFC 8259；JSON 文本",
+  "title": "Syntax for JSON numbers excludes leading zeros and non-finite values",
+  "summary": "0 is legal, 01, NaN, and Infinity are not RFC 8259 numbers.",
+  "applies": "RFC 8259; JSON text",
   "aliases": [
     "NaN",
     "Infinity",
     "leading zero",
-    "JSON 数值"
+    "JSON value"
   ],
-  "detail": "科学计数法可写成 1e3；许多宿主语言本身认可的数字字面量并不都能写进 JSON。",
-  "boundary": "某些解析器提供宽松扩展；它接受输入不能证明该输入符合交换格式。",
+  "detail": "Scientific notation can be written as 1e3; many numeric literals recognized by the host language cannot be written into JSON.",
+  "boundary": "Some parsers provide relaxed extensions; it accepts input without proof that the input conforms to an interchange format.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc8259.html#section-6",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "判断附件究竟是标准 JSON、宽松解析的日志还是另一种序列化文本。",
+  "relevance": "Determine whether the attachment is standard JSON, a loosely parsed log, or another type of serialized text.",
   "tags": [
     "web",
     "misc"

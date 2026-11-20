@@ -1,20 +1,20 @@
 {
-  "title": "不互素模数的 CRT 相容条件",
-  "summary": "两个同余约束 x≡a (mod m)、x≡b (mod n) 同时有解，当且仅当两余数之差能被 gcd(m,n) 整除。",
-  "applies": "整数模运算；模数大于 1",
+  "title": "CRT compatibility conditions for non-prime modules",
+  "summary": "Two congruence constraints x≡a (mod m) and x≡b (mod n) have solutions at the same time if and only if the difference between the two remainders is divisible by gcd(m,n).",
+  "applies": "Integer modulo arithmetic; modulus greater than 1",
   "aliases": [
     "solve_congruence",
     "generalized CRT",
-    "中国剩余",
-    "模数不互素"
+    "China surplus",
+    "Modules are not mutually prime"
   ],
-  "detail": "x≡1 (mod 4)、x≡3 (mod 6) 给出 x≡9 (mod 12)。解的周期是最小公倍数。",
-  "boundary": "不互素时不能总把周期写成 m×n；若条件不相容则无解。",
+  "detail": "x≡1 (mod 4), x≡3 (mod 6) gives x≡9 (mod 12). The period of the solution is the least common multiple.",
+  "boundary": "When they are not mutually prime, the period cannot always be written as m×n; if the conditions are incompatible, there will be no solution.",
   "sources": {
     "reference": "https://docs.sympy.org/latest/modules/ntheory.html#sympy.ntheory.modular.solve_congruence",
     "context": "https://cryptohack.org/courses/modular/"
   },
-  "relevance": "合并周期线索时，区分矛盾观测与周期重复。",
+  "relevance": "Distinguish contradictory observations from periodic repetitions when incorporating periodic cues.",
   "tags": [
     "crypto"
   ]

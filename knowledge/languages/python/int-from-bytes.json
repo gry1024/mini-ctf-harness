@@ -1,20 +1,20 @@
 {
-  "title": "int.from_bytes 的符号位与字节序",
-  "summary": "字节串 80 00 按大端无符号解释为 32768，按大端有符号解释为 -32768。",
-  "applies": "Python 3；标准库或内置整数",
+  "title": "Sign bit and byte order of int.from_bytes",
+  "summary": "The byte string 80 00 is interpreted as 32768 in big-endian unsigned format, and -32768 in big-endian signed format.",
+  "applies": "Python 3; standard library or built-in integers",
   "aliases": [
     "int.from_bytes",
     "signed",
-    "二进制补码",
-    "符号位"
+    "Two's complement",
+    "sign bit"
   ],
-  "detail": "signed=True 用二进制补码；同一串按小端解释时最高有效字节变成 00，结果为正数 128。",
-  "boundary": "signed 与 byteorder 是两个独立参数；反转字节不会等价于改变符号。",
+  "detail": "signed=True uses two's complement; when the same string is interpreted according to little endian, the most significant byte becomes 00, and the result is a positive number 128.",
+  "boundary": "signed and byteorder are two independent parameters; reversing bytes is not equivalent to changing the sign.",
   "sources": {
     "reference": "https://docs.python.org/3/library/stdtypes.html#int.from_bytes",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "读取负位移或传感器数据时避免把字节序错误误认为溢出。",
+  "relevance": "Avoid mistaking endianness errors for overflows when reading negative displacement or sensor data.",
   "tags": [
     "reverse",
     "misc"

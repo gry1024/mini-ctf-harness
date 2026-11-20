@@ -1,17 +1,17 @@
 {
-  "title": "合并部分响应前要确认它们属于同一表示",
-  "summary": "能拼在一起的字节范围须属于同一表示。强校验标识可用于判断多次取得的部分是否来自同一版本。",
-  "applies": "离线 HTTP 事务与部分响应记录",
-  "detail": "同一 URL 的两条 206 即使区间恰好首尾相接，若强 ETag 不同，不能当作同一份对象。",
-  "boundary": "弱 ETag 只表达弱等价，不能据此证明分段字节完全相同。",
+  "title": "Before merging partial responses, make sure they belong to the same representation",
+  "summary": "Byte ranges can be combined only if they belong to the same representation. A strong validator can help determine whether separately obtained parts do.",
+  "applies": "Offline HTTP transactions and partial response logging",
+  "detail": "Even if two 206s of the same URL happen to be connected end to end, they cannot be regarded as the same object if their strong ETags are different.",
+  "boundary": "A weak ETag only expresses weak equivalence and cannot be used to prove that the segmented bytes are identical.",
   "aliases": [
     "ETag",
     "206",
     "partial response",
-    "强校验",
-    "缓存重组"
+    "Strong validation",
+    "Cache reorganization"
   ],
-  "relevance": "从多次请求重建附件时，避免把不同版本的片段拼在一起。",
+  "relevance": "When rebuilding attachments from multiple requests, avoid piecing together different versions of the pieces.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.3.7.3",
     "context": "https://primer.picoctf.org/"

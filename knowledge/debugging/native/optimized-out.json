@@ -1,16 +1,16 @@
 {
-  "title": "优化后的局部变量在某些指令位置不可恢复",
-  "summary": "变量可存在于寄存器、常量或某段位置范围内，也可能被消除；调试器会报告 optimized out。",
-  "applies": "原生程序的离线栈回溯、符号匹配与调试信息",
-  "detail": "即使有调试信息，同一个局部量也可在前一段可显示、后一段不可显示。",
-  "boundary": "报告不可恢复不能证明变量运行时为零；重编译得到的变量位置也不能替代旧转储。",
+  "title": "Optimized local variables are not recoverable at certain instruction locations",
+  "summary": "Variables can exist in registers, constants, or within a range of locations, or they can be eliminated; the debugger will report optimized out.",
+  "applies": "Offline stack traceback, symbol matching and debugging information for native programs",
+  "detail": "Even if there is debugging information, the same local quantity can be displayed in the previous section but not in the next section.",
+  "boundary": "Reporting unrecoverability does not prove that variables were zero at runtime; nor does recompiling variable locations replace old dumps.",
   "aliases": [
     "optimized out",
     "variable location",
-    "局部变量",
-    "变量被优化"
+    "local variables",
+    "Variables are optimized"
   ],
-  "relevance": "区分源级变量缺失与实际程序值异常。",
+  "relevance": "Distinguish between missing source-level variables and anomalies in actual program values.",
   "sources": {
     "reference": "https://sourceware.org/gdb/current/onlinedocs/gdb/Optimized-Code.html",
     "context": "https://primer.picoctf.org/"

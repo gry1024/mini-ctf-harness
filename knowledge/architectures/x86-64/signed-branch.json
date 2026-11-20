@@ -1,22 +1,22 @@
 {
-  "title": "CMP 的有符号和无符号结果取决于后续 Jcc",
-  "summary": "同一条 CMP 设置一组标志。有符号小于用 JL，判断 SF≠OF；无符号低于用 JB，判断 CF=1。",
-  "applies": "x86-64 的 64 位模式；Intel SDM 卷 1 和卷 2",
+  "title": "The signed and unsigned results of CMP depend on the subsequent Jcc",
+  "summary": "After the same CMP, JL tests signed less-than using SF ≠ OF, while JB tests unsigned below using CF = 1.",
+  "applies": "64-bit mode for x86-64; Intel SDM Volume 1 and Volume 2",
   "aliases": [
     "CMP",
     "JL",
     "JB",
     "Jcc",
-    "有符号跳转",
+    "Signed jump",
     "unsigned compare"
   ],
-  "detail": "八位 0xff 与 1 比较时，按有符号是 −1<1，按无符号则是 255>1。",
-  "boundary": "需确认比较左右操作数的次序和宽度；Intel 与 AT&T 语法中的书写顺序不同。",
+  "detail": "When the eight-bit 0xff is compared with 1, it is −1<1 if signed and 255>1 if it is unsigned.",
+  "boundary": "It is necessary to confirm the order and width of the left and right operands; the writing order in Intel and AT&T syntax is different.",
   "sources": {
     "reference": "https://cdrdv2-public.intel.com/671110/325383-sdm-vol-2abcd.pdf",
     "context": "https://ctf-wiki.org/executable/elf/structure/basic-info/"
   },
-  "relevance": "反编译丢失类型时，从条件跳转恢复比较采用的数值解释。",
+  "relevance": "When decompiling missing types, restore the numerical interpretation used by comparisons from conditional jumps.",
   "tags": [
     "reverse"
   ]

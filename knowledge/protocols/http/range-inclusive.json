@@ -1,20 +1,20 @@
 {
-  "title": "HTTP 字节区间的结束位置包含在结果中",
-  "summary": "bytes=0-499 指定前 500 个字节；bytes=-500 表示末尾最多 500 字节。",
-  "applies": "HTTP 表示与离线消息解析",
+  "title": "The end of the HTTP byte range is included in the result",
+  "summary": "bytes=0-499 specifies the first 500 bytes; bytes=-500 indicates up to 500 bytes at the end.",
+  "applies": "HTTP representation and offline message parsing",
   "aliases": [
     "Content-Range",
     "206",
     "inclusive",
-    "断点续传"
+    "Resume upload from breakpoint"
   ],
-  "detail": "计算部分响应长度时，用已返回的 last−first+1；未知总长度和该段长度是两个量。",
-  "boundary": "服务器可以忽略 Range 返回完整的 200 响应，重组前应核对状态和实际 Content-Range。",
+  "detail": "When calculating the length of the partial response, use the returned last-first+1; the unknown total length and the length of the segment are two quantities.",
+  "boundary": "The server MAY ignore the Range and return a full 200 response, and should check the status and actual Content-Range before reassembly.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc9110.html#section-14.1.2",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "把多段下载记录复原为单一文件时，避免在连接处丢一个字节。",
+  "relevance": "When restoring multiple download records to a single file, avoid losing a single byte at the join.",
   "tags": [
     "web",
     "misc"

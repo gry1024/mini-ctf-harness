@@ -1,16 +1,16 @@
 {
-  "title": "memcpy 和 memmove 对重叠区的契约不同",
-  "summary": "memmove 的结果按先复制到临时区域再写回定义；memcpy 的源目标范围若重叠则行为未定义。",
-  "applies": "C11；离线内存诊断与对象表示",
-  "detail": "对 ABCDE 向右移动前三个字节一格，规范的 memmove 结果为 AABCE。C11 §7.24.2。",
-  "boundary": "未定义行为没有可靠的固定输出。单次运行出现合理字符串不足以建立跨版本预期。",
+  "title": "memcpy and memmove have different contracts for overlapping areas",
+  "summary": "memmove behaves as if it copies via a temporary buffer. Overlapping source and destination ranges make memcpy undefined.",
+  "applies": "C11; Offline memory diagnostics and object representation",
+  "detail": "For ABCDE, move the first three bytes to the right by one space, and the canonical memmove result is AABCE. C11 §7.24.2.",
+  "boundary": "Undefined behavior has no reliable fixed output. The presence of a reasonable string in a single run is not enough to establish cross-version expectations.",
   "aliases": [
     "memmove",
     "memcpy",
     "overlap",
-    "重叠区"
+    "overlap area"
   ],
-  "relevance": "判断内存日志里一次原地移动应有的确定结果。",
+  "relevance": "Determine the definite result of an in-situ move in the memory log.",
   "sources": {
     "reference": "https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf",
     "context": "https://primer.picoctf.org/"

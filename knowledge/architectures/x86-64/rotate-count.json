@@ -1,23 +1,23 @@
 {
-  "title": "位旋转的宽度决定哪些位回卷",
-  "summary": "按八位宽度把 0x81 循环左移一位得到 0x03；普通左移截断后只得 0x02。",
-  "applies": "x86-64 的 64 位模式；Intel SDM 卷 1 和卷 2",
+  "title": "The width of the bit rotation determines which bits are wrapped",
+  "summary": "Circularly shift 0x81 to the left by one bit according to the eight-bit width to get 0x03; after ordinary left shift truncation, only 0x02 is obtained.",
+  "applies": "64-bit mode for x86-64; Intel SDM Volume 1 and Volume 2",
   "aliases": [
     "ROL",
     "ROR",
     "rotate left",
-    "循环移位",
-    "回卷",
-    "高位卷回低位",
-    "按位左移"
+    "circular shift",
+    "Rewind",
+    "High level rolls back to low level",
+    "Shift left bitwise"
   ],
-  "detail": "ROL/ROR 把移出的位移回另一端。若把同一初值按 32 位循环左移则得到 0x00000102。",
-  "boundary": "RCL/RCR 还把进位标志纳入旋转，不能直接用 ROL/ROR 的结果替代。",
+  "detail": "ROL/ROR moves the moved bits back to the other end. If the same initial value is circularly shifted to the left by 32 bits, 0x00000102 is obtained.",
+  "boundary": "RCL/RCR also incorporates the carry flag into the rotation and cannot be directly replaced by the result of ROL/ROR.",
   "sources": {
     "reference": "https://cdrdv2-public.intel.com/671110/325383-sdm-vol-2abcd.pdf",
     "context": "https://ctf-wiki.org/executable/elf/structure/basic-info/"
   },
-  "relevance": "复算按字节的编码变换时，避免用本机整数宽度旋转。",
+  "relevance": "Avoid using native integer width rotations when recalculating byte-wise encoding transformations.",
   "tags": [
     "reverse"
   ]

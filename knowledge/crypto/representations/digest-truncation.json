@@ -1,20 +1,20 @@
 {
-  "title": "SHA-224 使用独立初值",
-  "summary": "SHA-224 使用与 SHA-256 相同家族的压缩运算和不同的初始哈希值。",
-  "applies": "密码学题的字节表示和参数解释",
+  "title": "SHA-224 uses independent initialization",
+  "summary": "SHA-224 uses the same family of compression operations as SHA-256 and a different initial hash value.",
+  "applies": "Byte representation and parameter explanation of cryptography questions",
   "aliases": [
     "SHA-224",
     "SHA224",
     "truncated digest",
-    "摘要截断"
+    "Summary truncation"
   ],
-  "detail": "把 SHA-256 的十六进制输出裁到 56 字符，通常不会得到 SHA-224。应核对算法标识和截断约定。",
-  "boundary": "28 字节的输出长度也可能来自其他摘要或显式截断，单凭长度无法确定算法。",
+  "detail": "Trimming the hex output of SHA-256 to 56 characters usually does not result in SHA-224. Algorithm identification and truncation conventions should be checked.",
+  "boundary": "The 28-byte output length may also result from other digests or explicit truncation, and the algorithm cannot be determined from the length alone.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc3874.html#section-2",
     "context": "https://cryptohack.org/courses/symmetric/"
   },
-  "relevance": "解释记录标为 224 位、按 SHA-256 截断后仍无法匹配的情况。",
+  "relevance": "Explains cases where records marked 224-bit and truncated by SHA-256 still fail to match.",
   "tags": [
     "crypto",
     "misc"

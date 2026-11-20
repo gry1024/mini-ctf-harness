@@ -1,16 +1,16 @@
 {
-  "title": "DWARF 的 CFA 是随指令位置定义的展开基准",
-  "summary": "Canonical Frame Address 是展开器恢复调用者状态所用的逻辑参考地址，可按当前寄存器与偏移计算。",
-  "applies": "原生程序崩溃报告与 DWARF 调试元数据",
-  "detail": "同一函数的序言、主体和尾声可适用不同的 CFA 规则。读取某一指令的栈快照需要找到覆盖该位置的规则。",
-  "boundary": "CFA 不是 RBP 寄存器的另一个名字，也不要求当前栈指针在函数全程保持不变。见 DWARF 5 §6.4。",
+  "title": "DWARF's CFA is an unwind basis defined with instruction position",
+  "summary": "The Canonical Frame Address is the logical reference address used by the unwinder to restore the caller's state, calculated from the current register and offset.",
+  "applies": "Native program crash reporting and DWARF debugging metadata",
+  "detail": "Different CFA rules can apply to the prologue, body, and epilogue of the same function. Reading the stack snapshot for an instruction requires finding the rule covering that location.",
+  "boundary": "CFA is not another name for the RBP register, nor does it require that the current stack pointer remains unchanged throughout the function. See DWARF 5 §6.4.",
   "aliases": [
     "CFA",
     "DW_CFA_def_cfa",
     "canonical frame address",
-    "展开规则"
+    "Expand rules"
   ],
-  "relevance": "解释未保留固定帧指针的构建为什么仍能给出可信调用链。",
+  "relevance": "Explain why a build that does not preserve a fixed frame pointer still gives a trusted call chain.",
   "sources": {
     "reference": "https://dwarfstd.org/doc/DWARF5.pdf",
     "context": "https://primer.picoctf.org/"

@@ -1,16 +1,16 @@
 {
-  "title": "ext4 inode 编号从 1 起，组内位置从 0 起",
-  "summary": "若每组有 N 个 inode，则编号 ino 属于组 (ino−1)//N，组内索引为 (ino−1)%N。",
-  "applies": "ext4 文件系统镜像；Linux 内核格式文档",
-  "detail": "索引乘以 s_inode_size 才是相应 inode table 内的字节偏移；inode 表位置从组描述符取得。",
-  "boundary": "inode 表布局受文件系统特性影响，不能直接假定每组都在相同相对块号放置自己的表。",
+  "title": "The ext4 inode number starts from 1 and the position within the group starts from 0",
+  "summary": "If there are N inodes in each group, the number ino belongs to group (ino−1)//N, and the index within the group is (ino−1)%N.",
+  "applies": "ext4 file system image; Linux kernel format document",
+  "detail": "The index multiplied by s_inode_size is the byte offset within the corresponding inode table; the inode table location is obtained from the group descriptor.",
+  "boundary": "Inode table layout is affected by file system characteristics, and it cannot be directly assumed that each group places its own table at the same relative block number.",
   "aliases": [
     "inode table",
     "block group",
-    "inode编号",
-    "组内索引"
+    "inode number",
+    "Index within group"
   ],
-  "relevance": "定位刚好位于组边界的 inode 时避免整组错位。",
+  "relevance": "Avoid misalignment of the entire group when locating inodes just on group boundaries.",
   "sources": {
     "reference": "https://www.kernel.org/doc/html/latest/filesystems/ext4/inodes.html",
     "context": "https://primer.picoctf.org/"

@@ -1,20 +1,20 @@
 {
-  "title": "zlib 尾部是解压数据的 Adler-32",
-  "summary": "zlib 最后四字节按大端存放未压缩数据的 Adler-32。",
-  "applies": "zlib 包装的 DEFLATE 数据",
+  "title": "The tail of zlib is Adler-32 for decompressing data",
+  "summary": "The last four bytes of a zlib stream store the Adler-32 of the uncompressed data in big-endian order.",
+  "applies": "zlib-wrapped DEFLATE data",
   "aliases": [
     "Adler-32",
     "raw deflate",
     "wrapper",
-    "大端校验"
+    "big endian check"
   ],
-  "detail": "同样使用 DEFLATE，gzip 外层使用 CRC32 与 ISIZE，裸 DEFLATE 则没有 zlib 的该尾部。",
-  "boundary": "只有先确定外层封装才能解释最后四字节；出现常见头字节也不能单独证明文件完整。",
+  "detail": "Also using DEFLATE, gzip outer layer uses CRC32 and ISIZE, bare DEFLATE does not have the tail of zlib.",
+  "boundary": "Only by first determining the outer package can the last four bytes be interpreted; the presence of common header bytes alone cannot prove that the file is complete.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc1950.html#section-2",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解释压缩内容能解开但用 CRC32 核对尾部持续失败的现象。",
+  "relevance": "Explain the phenomenon that the compressed content can be decrypted but checking the tail using CRC32 continues to fail.",
   "tags": [
     "misc"
   ]

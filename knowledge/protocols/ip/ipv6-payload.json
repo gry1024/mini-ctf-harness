@@ -1,20 +1,20 @@
 {
-  "title": "IPv6 Payload Length 包含扩展头",
-  "summary": "常规 IPv6 的 Payload Length 从固定 40 字节基本头之后开始计数，扩展头也在范围内。",
-  "applies": "离线 IPv4、IPv6 报文解析",
+  "title": "IPv6 Payload Length includes extension header",
+  "summary": "The Payload Length for regular IPv6 starts counting after the fixed 40-byte base header, and extension headers are also in range.",
+  "applies": "Offline IPv4 and IPv6 packet analysis",
   "aliases": [
     "IPv6",
     "Next Header",
     "Payload Length",
-    "扩展头"
+    "extension header"
   ],
-  "detail": "要定位上层数据，需逐个解释 Next Header 链，不能把固定头后的首字节直接当作 TCP 或 UDP 起点。",
-  "boundary": "超大载荷的特殊情形使用额外选项，不能无条件把零值解释为普通空载荷。",
+  "detail": "To locate the upper layer data, the Next Header chain needs to be interpreted one by one. The first byte after the fixed header cannot be directly regarded as the starting point of TCP or UDP.",
+  "boundary": "Extra options are used for the special case of oversized loads, and zero values cannot be unconditionally interpreted as ordinary empty loads.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc8200.html#section-3",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "核对 IPv6 抓包中应用层的起始位置和长度。",
+  "relevance": "Check the starting position and length of the application layer in the IPv6 packet capture.",
   "tags": [
     "misc"
   ]

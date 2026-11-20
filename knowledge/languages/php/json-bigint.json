@@ -1,20 +1,20 @@
 {
-  "title": "json_decode 解码超出整数范围的数字",
-  "summary": "超出平台整数范围的 JSON 整数默认可能解码成浮点数，JSON_BIGINT_AS_STRING 可保留其十进制文本。",
-  "applies": "PHP 7.4 和 8.x 的数据处理",
+  "title": "json_decode decodes numbers outside the integer range",
+  "summary": "JSON integers outside the platform's integer range may be decoded to floating point by default, and JSON_BIGINT_AS_STRING may preserve their decimal text.",
+  "applies": "Data handling for PHP 7.4 and 8.x",
   "aliases": [
     "JSON_BIGINT_AS_STRING",
     "json_decode",
-    "大整数精度",
-    "丢位"
+    "large integer precision",
+    "lose position"
   ],
-  "detail": "在 64 位 PHP 上，9223372036854775808 已超过 PHP_INT_MAX。需要保持每一位的记录 ID 时，浮点输出不足以证明原文。",
-  "boundary": "该选项针对大整数；指数和小数仍遵循浮点解析。",
+  "detail": "On 64-bit PHP, 9223372036854775808 exceeds PHP_INT_MAX. Floating point output is insufficient to prove the original text when it is necessary to preserve each bit of the record ID.",
+  "boundary": "This option targets large integers; exponents and decimals still follow floating point parsing.",
   "sources": {
     "reference": "https://www.php.net/manual/en/function.json-decode.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "判断两条长数字记录的差异来自原文件还是解码器。",
+  "relevance": "Determine whether the difference between two long digital records comes from the original file or the decoder.",
   "tags": [
     "web",
     "reverse"

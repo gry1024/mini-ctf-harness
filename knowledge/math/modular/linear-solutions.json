@@ -1,20 +1,20 @@
 {
-  "title": "线性同余 ax ≡ b 的可解条件",
-  "summary": "令 d=gcd(a,m)。当且仅当 d 整除 b 时，方程在模 m 下有解；有解时恰有 d 个不同余数。",
-  "applies": "整数模运算；模数大于 1",
+  "title": "Solvable conditions for linear congruence ax ≡ b",
+  "summary": "Let d=gcd(a,m). An equation has a solution modulo m if and only if d divides b; there are exactly d distinct remainders.",
+  "applies": "Integer modulo arithmetic; modulus greater than 1",
   "aliases": [
     "linear congruence",
     "gcd",
-    "线性同余",
-    "多个余数"
+    "linear congruence",
+    "multiple remainders"
   ],
-  "detail": "6x ≡ 4 (mod 8) 约为 3x ≡ 2 (mod 4)，于是 x 在模 8 下为 2 或 6。",
-  "boundary": "约去公因子时要同时约去模数，保留原模数会遗漏解。",
+  "detail": "6x ≡ 4 (mod 8) is approximately 3x ≡ 2 (mod 4), so x is 2 or 6 mod 8.",
+  "boundary": "When removing the common factors, the module must be removed at the same time. Keeping the original module will miss the solution.",
   "sources": {
     "reference": "https://cp-algorithms.com/algebra/linear_congruence_equation.html",
     "context": "https://cryptohack.org/courses/modular/"
   },
-  "relevance": "还原仿射整数变换时，避免把多解方程误当成可直接求逆的置换。",
+  "relevance": "When restoring affine integer transformations, avoid mistaking multi-solution equations for permutations that can be directly inverted.",
   "tags": [
     "crypto"
   ]

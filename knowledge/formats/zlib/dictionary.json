@@ -1,20 +1,20 @@
 {
-  "title": "zlib FDICT 与预置字典标识",
-  "summary": "FLG 的 FDICT 位置位时，头后跟四字节 DICTID，解码需要与标识匹配的预置字典。",
-  "applies": "zlib 包装的 DEFLATE 数据",
+  "title": "zlib FDICT and preset dictionary identifiers",
+  "summary": "When the FDICT bit of FLG is set, the header is followed by a four-byte DICTID, and decoding requires a preset dictionary matching the identifier.",
+  "applies": "zlib-wrapped DEFLATE data",
   "aliases": [
     "FDICT",
     "DICTID",
     "preset dictionary",
-    "需要字典"
+    "Need dictionary"
   ],
-  "detail": "DICTID 是字典字节的 Adler-32 校验值。仅跳过这四字节无法恢复缺少的字典。",
-  "boundary": "普通未设 FDICT 的 zlib 流没有 DICTID 字段。",
+  "detail": "DICTID is the Adler-32 checksum of the dictionary bytes. Simply skipping these four bytes does not restore the missing dictionary.",
+  "boundary": "Ordinary zlib streams without FDICT have no DICTID field.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc1950.html#section-2",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "区分“需要字典”的解码错误与压缩数据截断。",
+  "relevance": "Distinguish between \"dictionary required\" decoding errors and compressed data truncation.",
   "tags": [
     "misc"
   ]

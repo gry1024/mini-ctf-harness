@@ -1,16 +1,16 @@
 {
-  "title": "SQLite 列亲和性可改变等号两侧的转换",
-  "summary": "比较前的类型转换受列的亲和性影响。独立字面量之间的比较与同值写在列里后比较，可能返回不同结果。",
-  "applies": "SQLite 查询结果与跨方言边界",
-  "detail": "在普通表 t(x TEXT) 写入 42 后，x=42 可为真；独立表达式 '42'=42 则为假。",
-  "boundary": "应区分存储类别、列亲和性和表达式亲和性，严格表也不能消除所有表达式差异。",
+  "title": "SQLite column affinity changes conversion on both sides of equal sign",
+  "summary": "Column affinity affects conversion before comparison. Comparing two literals can give a different result from comparing the same values in a column.",
+  "applies": "SQLite query results and crossing dialect boundaries",
+  "detail": "After writing 42 to the ordinary table t(x TEXT), x=42 can be true; the independent expression '42'=42 can be false.",
+  "boundary": "Storage classes, column affinities, and expression affinities should be distinguished, and strict tables cannot eliminate all expression differences.",
   "aliases": [
     "affinity",
     "typeof",
-    "SQLite 类型亲和性",
-    "文本比较"
+    "SQLite type affinity",
+    "text comparison"
   ],
-  "relevance": "解释相同显示值在不同查询表达式中出现不一致结果。",
+  "relevance": "Explains why the same displayed value can produce different results in different query expressions.",
   "sources": {
     "reference": "https://www.sqlite.org/datatype3.html#type_conversions_prior_to_comparison",
     "context": "https://primer.picoctf.org/"

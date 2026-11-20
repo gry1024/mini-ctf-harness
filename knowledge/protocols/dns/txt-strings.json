@@ -1,20 +1,20 @@
 {
-  "title": "一条 DNS TXT 记录可含多个计数字符串",
-  "summary": "TXT 的 RDATA 可由多个 character-string 组成，每段的首字节给出本段长度。",
-  "applies": "离线 DNS 报文字节解析",
+  "title": "A DNS TXT record can contain multiple count strings",
+  "summary": "The RDATA of TXT can be composed of multiple character-strings, and the first byte of each segment gives the length of this segment.",
+  "applies": "Offline DNS message byte parsing",
   "aliases": [
     "TXT RDATA",
     "character-string",
-    "分段文本",
-    "长度前缀"
+    "segmented text",
+    "length prefix"
   ],
-  "detail": "一条记录里的两段文本不等于两条独立回答；逐段跳过长度字节才能还原原数据。",
-  "boundary": "段之间在应用层如何拼接由上层约定，协议不自动插入空格或换行。",
+  "detail": "Two paragraphs of text in one record are not equal to two independent responses; the original data can be restored by skipping the length bytes one by one.",
+  "boundary": "How to splice segments between segments is agreed upon by the upper layer at the application layer, and the protocol does not automatically insert spaces or newlines.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc1035.html#section-3.3.14",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "从离线 DNS 记录恢复文本时，避免把长度字节或显示用空格混进内容。",
+  "relevance": "When restoring text from offline DNS records, avoid mixing length bytes or display spaces into the content.",
   "tags": [
     "misc"
   ]

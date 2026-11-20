@@ -1,17 +1,17 @@
 {
-  "title": "半开区间内一次读取要容纳全部字节",
-  "summary": "分配区 [a,b) 内，从 p 读取 n 个字节，非空读取须满足 a≤p<b 且 n≤b−p。",
-  "applies": "C11；离线内存诊断与对象表示",
-  "detail": "例如 [100,108) 中，从 106 读 2 字节刚好到末端，从 107 读 2 字节则越过末端。C11 §6.5.6 允许形成数组末端后一位指针，但不允许通过它读取。",
-  "boundary": "这是以日志地址整数核对单一分配区的判据。相邻对象的空间不能拼作一次合法的对象内读取。",
+  "title": "A read in the half-open range must accommodate all bytes",
+  "summary": "In the allocation area [a,b), read n bytes from p. Non-empty reading must satisfy a≤p<b and n≤b−p.",
+  "applies": "C11; Offline memory diagnostics and object representation",
+  "detail": "In [100,108), a two-byte read starting at 106 ends at the boundary. A two-byte read starting at 107 crosses it. C11 §6.5.6 permits forming a one-past-the-end pointer but not dereferencing it.",
+  "boundary": "This is the criterion for checking a single allocation area based on the log address integer. The spaces of adjacent objects cannot be combined into a legal intra-object read.",
   "aliases": [
     "half-open",
     "one-past",
-    "半开区间",
-    "越界读",
-    "读取宽度"
+    "half-open interval",
+    "Reading out of bounds",
+    "read width"
   ],
-  "relevance": "审阅访问日志时，起点落入区域只证明第一个字节在内。",
+  "relevance": "When reviewing the access logs, the starting point falling into the region only proves that the first byte is included.",
   "sources": {
     "reference": "https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf",
     "context": "https://primer.picoctf.org/"
