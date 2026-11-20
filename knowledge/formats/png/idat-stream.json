@@ -1,19 +1,19 @@
 {
-  "title": "多个 IDAT 共用一个压缩流",
-  "summary": "一幅 PNG 的各 IDAT 数据字段按顺序拼接，形成一个 zlib 数据流。",
-  "applies": "PNG 规范；独立 PNG 图像",
+  "title": "Multiple IDAT chunks share one compressed stream",
+  "summary": "Concatenate the data fields of all IDAT chunks in order to form a single zlib stream.",
+  "applies": "PNG specification and standalone PNG images",
   "aliases": [
     "IDAT",
     "multiple chunks",
-    "压缩流拼接"
+    "Compressed stream splicing"
   ],
-  "detail": "块分界可落在 DEFLATE 数据内部；从第二个 IDAT 的开头单独解压可能报错。",
-  "boundary": "拼接时只取各块的 Data；长度、类型和 CRC 均属于外层。此规则讨论静态图像的 IDAT。",
+  "detail": "A chunk boundary can fall inside DEFLATE data. Starting decompression at the second IDAT can fail.",
+  "boundary": "Concatenate only the Data fields. Length, type, and CRC are part of the enclosing chunks. This rule describes IDAT in static images.",
   "sources": {
     "reference": "https://www.w3.org/TR/png-3/#11IDAT",
     "context": "https://ctf-wiki.org/misc/picture/png/"
   },
-  "relevance": "解释图像有多个数据块、单块均不能独立解压的现象。",
+  "relevance": "Explain the phenomenon that an image has multiple data blocks and a single block cannot be decompressed independently.",
   "tags": [
     "misc"
   ]

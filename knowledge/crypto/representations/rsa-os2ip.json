@@ -1,20 +1,20 @@
 {
-  "title": "RSA 整数与定长八位组串的映射",
-  "summary": "OS2IP 按大端把八位组串解释为非负整数，I2OSP 按指定长度输出，高位可补零。",
-  "applies": "密码学题的字节表示和参数解释",
+  "title": "RSA mapping of integers to fixed-length octet strings",
+  "summary": "OS2IP reads a big-endian octet string as a nonnegative integer. I2OSP emits the requested number of octets, with leading zero bytes as needed.",
+  "applies": "Byte representation and parameter explanation of cryptography questions",
   "aliases": [
     "OS2IP",
     "I2OSP",
     "RSA leading zero",
-    "大端补零"
+    "Big endian zero padding"
   ],
-  "detail": "00 01 和 01 经 OS2IP 都是整数 1；I2OSP(1,2) 才会恢复 00 01。",
-  "boundary": "转换为整数会丢失原始长度；若整数放不进给定宽度，I2OSP 报错。",
+  "detail": "00 01 and 01 are both integers 1 via OS2IP; only I2OSP(1,2) will restore 00 01.",
+  "boundary": "Converting to an integer will lose the original length; if the integer does not fit into the given width, I2OSP will report an error.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc8017.html#section-4",
     "context": "https://cryptohack.org/courses/symmetric/"
   },
-  "relevance": "比较整数形式和十六进制形式的同一记录时，保留模数对应的字节宽度。",
+  "relevance": "When comparing the same record in integer form and hexadecimal form, the byte width corresponding to the modulus is preserved.",
   "tags": [
     "crypto",
     "misc"

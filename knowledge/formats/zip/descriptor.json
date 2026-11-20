@@ -1,20 +1,20 @@
 {
-  "title": "ZIP 的数据描述符与本地头零长度",
-  "summary": "通用标志位 bit 3 表明 CRC 与大小可在文件数据之后的数据描述符中给出。",
-  "applies": "单卷 ZIP；PKWARE APPNOTE",
+  "title": "ZIP data descriptor with local header zero length",
+  "summary": "General flag bit 3 indicates that the CRC and size can be given in the data descriptor after the file data.",
+  "applies": "Single volume ZIP; PKWARE APPNOTE",
   "aliases": [
     "data descriptor",
     "bit 3",
-    "本地头",
-    "零长度"
+    "local head",
+    "zero length"
   ],
-  "detail": "本地头出现零长度时，结合中央目录的对应成员和 bit 3 判断，才能确定成员记录。",
-  "boundary": "描述符签名 0x08074b50 是可选的，不能只按该字节串确定分界。",
+  "detail": "When the local header has zero length, the member record can be determined based on the judgment of the corresponding member in the central directory and bit 3.",
+  "boundary": "The descriptor signature 0x08074b50 is optional and the delimitation cannot be determined by this byte string alone.",
   "sources": {
     "reference": "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "区分真正的空文件与采用流式写入的非空成员。",
+  "relevance": "Distinguish between a truly empty file and a non-null member that is streamed.",
   "tags": [
     "misc"
   ]

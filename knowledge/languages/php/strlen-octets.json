@@ -1,20 +1,20 @@
 {
-  "title": "strlen 计算字节数",
-  "summary": "UTF-8 编码的单个“中”占 3 字节，因此 strlen 返回 3。",
-  "applies": "PHP 7.4 和 8.x 的数据处理",
+  "title": "strlen counts the number of bytes",
+  "summary": "The character U+4E2D occupies three bytes in UTF-8, so strlen returns 3.",
+  "applies": "Data handling for PHP 7.4 and 8.x",
   "aliases": [
     "strlen",
     "NUL",
-    "多字节长度",
+    "multibyte length",
     "byte length"
   ],
-  "detail": "PHP 字符串可含 NUL；strlen(\"A\\0B\") 在双引号转义产生 NUL 时为 3。",
-  "boundary": "字节数、Unicode 码点数和终端显示宽度是不同的量。",
+  "detail": "PHP strings can contain NUL. strlen(\"A\\0B\") returns 3 because the escape in the double-quoted literal produces a NUL byte.",
+  "boundary": "The number of bytes, the number of Unicode code points, and the terminal display width are different quantities.",
   "sources": {
     "reference": "https://www.php.net/manual/en/function.strlen.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "根据记录长度字段切片时，避免按显示字符数截断多字节数据。",
+  "relevance": "Avoid truncating multibyte data by the number of characters displayed when slicing based on the record length field.",
   "tags": [
     "web",
     "reverse"

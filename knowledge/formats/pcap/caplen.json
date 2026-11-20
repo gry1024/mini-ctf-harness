@@ -1,21 +1,21 @@
 {
-  "title": "pcap 的捕获长度和原始包长可不同",
-  "summary": "每包记录的 caplen 指实际跟随的字节数，原始长度还可包含因抓包限制而未保存的字节。",
-  "applies": "传统 libpcap 格式；单接口捕获",
+  "title": "The capture length of pcap and the original packet length can be different",
+  "summary": "The caplen field gives the number of captured bytes that follow. The original length can include bytes omitted due to capture limits.",
+  "applies": "Legacy libpcap format; single interface capture",
   "aliases": [
     "incl_len",
     "orig_len",
     "snaplen",
-    "截包",
+    "intercept packet",
     "captured length"
   ],
-  "detail": "当 incl_len 为 64、orig_len 为 1514 时，从本条数据区起只跨过 64 字节才能到下一条记录。",
-  "boundary": "无法仅凭缺少的尾部判断线上数据损坏，也不能从长度字段恢复未捕获的字节。",
+  "detail": "When incl_len is 64 and orig_len is 1514, only 64 bytes must be spanned from this data area to the next record.",
+  "boundary": "There is no way to tell about data corruption on the line just from the missing trailer, nor can you recover the uncaught bytes from the length field.",
   "sources": {
     "reference": "https://man7.org/linux/man-pages/man5/pcap-savefile.5.html",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "排查载荷末尾缺失和下一个包头读错的问题。",
+  "relevance": "Troubleshoot the problem of missing end of the payload and misreading of the next header.",
   "tags": [
     "misc"
   ]

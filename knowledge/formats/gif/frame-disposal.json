@@ -1,20 +1,20 @@
 {
-  "title": "GIF 后一帧可能只更新局部矩形",
-  "summary": "图像描述符给出该帧相对于逻辑屏幕的原点和尺寸，合成时还需考虑前一帧的 disposal method。",
-  "applies": "GIF89a 图像数据与图形控制扩展",
+  "title": "The next frame of the GIF may only update the local rectangle",
+  "summary": "The image descriptor gives the frame origin and size within the logical screen. Compositing also depends on how the preceding frame is disposed of.",
+  "applies": "GIF89a image data and graphics control extension",
   "aliases": [
     "disposal method",
     "GIF frame",
-    "恢复背景",
-    "局部帧"
+    "restore background",
+    "partial frame"
   ],
-  "detail": "处置方式 2 把相应区域恢复为背景色，3 恢复到显示该图形前的状态。",
-  "boundary": "透明索引表示该像素不修改已有画布；不能简单用透明黑覆盖之前的颜色。",
+  "detail": "Solution 2: Restore the corresponding area to the background color, 3: Restore it to the state before displaying the graphic.",
+  "boundary": "The transparent index means that the pixel does not modify the existing canvas; it cannot simply cover the previous color with transparent black.",
   "sources": {
     "reference": "https://www.w3.org/Graphics/GIF/spec-gif89a.txt",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解释只读单帧得到残缺图案、播放时却显示完整文字的情况。",
+  "relevance": "Explain the situation where incomplete images are obtained when reading only a single frame, but complete text is displayed when playing.",
   "tags": [
     "misc"
   ]

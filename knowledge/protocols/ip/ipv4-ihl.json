@@ -1,20 +1,20 @@
 {
-  "title": "IPv4 IHL 的单位是 32 位字",
-  "summary": "IHL 为 5 表示 20 字节头，为 6 表示 24 字节；Total Length 计入头和数据。",
-  "applies": "离线 IPv4、IPv6 报文解析",
+  "title": "The unit of IPv4 IHL is a 32-bit word",
+  "summary": "An IHL of 5 represents a 20-byte header, and an IHL of 6 represents 24 bytes; Total Length counts header and data.",
+  "applies": "Offline IPv4 and IPv6 packet analysis",
   "aliases": [
     "IHL",
     "IP options",
-    "头长度",
+    "head length",
     "total length"
   ],
-  "detail": "IHL 的低四位是单位数，前四位是版本。遇到 IP 选项时仍固定跳过 20 字节会读错上层端口。",
-  "boundary": "实际捕获字节数可能因抓包截断小于 Total Length。",
+  "detail": "The lower four digits of IHL are the unit number and the first four digits are the version. When encountering IP options, it is still fixed to skip 20 bytes and read the wrong upper port.",
+  "boundary": "The actual number of captured bytes may be less than Total Length due to packet capture truncation.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc791.html#section-3.1",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "在含选项或被截断的离线报文中正确定位负载。",
+  "relevance": "Correctly locate payloads in offline messages that contain options or are truncated.",
   "tags": [
     "misc"
   ]

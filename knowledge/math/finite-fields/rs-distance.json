@@ -1,16 +1,16 @@
 {
-  "title": "多项式评价码的距离决定唯一纠错上限",
-  "summary": "在 n 个不同域点记录次数小于 k 的多项式，最小距离为 n−k+1，可唯一纠正至多 floor((n−k)/2) 个未知位置错误。",
-  "applies": "有限域多项式与带错取样",
-  "detail": "两个不同候选最多在 k−1 个横坐标上一致。检查候选要统计整组观测上的一致数。",
-  "boundary": "已知错误位置的擦除与未知位置的错误成本不同。一般需满足 2e+s≤n−k，其中 e 为错误数、s 为擦除数。",
+  "title": "The distance of the polynomial evaluation code determines the unique error correction upper limit",
+  "summary": "Evaluating degree < k polynomials at n distinct field elements gives minimum distance n−k+1 and uniquely corrects up to floor((n−k)/2) errors.",
+  "applies": "Finite field polynomials and sampling with errors",
+  "detail": "Two different candidates agree on at most k−1 abscissas. Checking candidates counts the number of points of agreement over the entire set of observations.",
+  "boundary": "Erasure in known error locations has different costs than errors in unknown locations. Generally, 2e+s≤n−k needs to be satisfied, where e is the number of errors and s is the number of erasures.",
   "aliases": [
     "Reed-Solomon",
     "minimum distance",
-    "损坏分片",
-    "纠错半径"
+    "Corrupted shard",
+    "error correction radius"
   ],
-  "relevance": "判断现有分片是否足以唯一恢复原多项式，以及怎样判定候选一致性。",
+  "relevance": "Determine whether the existing shards are sufficient to uniquely recover the original polynomial, and how to determine candidate consistency.",
   "sources": {
     "reference": "https://errorcorrectionzoo.org/c/reed_solomon",
     "context": "https://cryptohack.org/courses/modular/"

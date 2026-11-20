@@ -1,20 +1,20 @@
 {
-  "title": "数组的十进制字符串键",
-  "summary": "合法十进制整数字符串键可转成整数键，前导加号或非规范前导零会改变结果。",
-  "applies": "PHP 7.4 和 8.x 的数据处理",
+  "title": "decimal string key for array",
+  "summary": "Legal decimal integer string keys can be converted to integer keys, leading plus signs or non-canonical leading zeros will change the result.",
+  "applies": "Data handling for PHP 7.4 and 8.x",
   "aliases": [
     "array key",
     "leading zero",
-    "数组键",
-    "前导零"
+    "array key",
+    "Leading zeros"
   ],
-  "detail": "字符串键 \"8\" 和整数键 8 共用槽位，后赋的值覆盖先前值；\"08\" 和 \"+8\" 各自保留为字符串键。",
-  "boundary": "超出本机整数范围的十进制串不能按同一规则当作可表示的整数键。",
+  "detail": "The string key \"8\" and the integer key 8 share the slot, and the value assigned later overwrites the previous value; \"08\" and \"+8\" are each retained as a string key.",
+  "boundary": "Decimal strings outside the native integer range are not treated as representable integer keys according to the same rules.",
   "sources": {
     "reference": "https://www.php.net/manual/en/language.types.array.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "解释从文本生成的映射为什么会少一项，或保留两个看似相同的编号。",
+  "relevance": "Explain why the map generated from the text is missing one item, or retains two seemingly identical numbers.",
   "tags": [
     "web",
     "reverse"

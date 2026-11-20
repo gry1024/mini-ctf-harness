@@ -1,16 +1,16 @@
 {
-  "title": "HTTP 请求目标不包含 URL 的 fragment",
-  "summary": "浏览器解析 URL 后，# 开始的片段由客户端处理，不随请求目标发送给服务器。",
-  "applies": "浏览器对 URL、Cookie 和源的解释",
-  "detail": "两个历史记录 URL 仅片段不同时，服务端访问日志中可能看到完全相同的路径和查询。",
-  "boundary": "百分号编码的 %23 在相应 URL 组件内是数据；应在正确的解析阶段判断。",
+  "title": "The HTTP request target does not contain a fragment of the URL",
+  "summary": "After the browser parses the URL, the fragment starting with # is processed by the client and is not sent to the server along with the request target.",
+  "applies": "Browser interpretation of URLs, cookies, and origins",
+  "detail": "When two history URLs differ only in fragments, it is possible to see the exact same path and query in the server access log.",
+  "boundary": "The percent-encoded %23 is data within the corresponding URL component; it should be determined during the correct parsing phase.",
   "aliases": [
     "fragment",
     "hash",
-    "锚点",
-    "井号"
+    "anchor point",
+    "pound sign"
   ],
-  "relevance": "对照地址栏与 HAR、访问日志时判断哪一段信息只在客户端可见。",
+  "relevance": "Compare the address bar, HAR, and access logs to determine which piece of information is only visible on the client.",
   "sources": {
     "reference": "https://developer.mozilla.org/en-US/docs/Web/URI/Reference/Fragment",
     "context": "https://primer.picoctf.org/"

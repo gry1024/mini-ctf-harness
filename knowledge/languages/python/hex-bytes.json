@@ -1,20 +1,20 @@
 {
-  "title": "bytes.fromhex 的空白与半字节",
-  "summary": "每个输出字节需要一对十六进制数位；Python 3.7 起可在字节间跳过所有 ASCII 空白。",
-  "applies": "Python 3；标准库或内置整数",
+  "title": "White space and nibbles in bytes.fromhex",
+  "summary": "Each output byte requires a pair of hexadecimal digits; starting with Python 3.7, all ASCII whitespace is skipped between bytes.",
+  "applies": "Python 3; standard library or built-in integers",
   "aliases": [
     "bytes.fromhex",
     "non-hexadecimal",
-    "十六进制空白",
-    "半字节"
+    "hexadecimal blank",
+    "nibble"
   ],
-  "detail": "41 后跟换行再跟 42 可解出 AB；只有一个数位的末尾不能组成新字节。",
-  "boundary": "分隔符冒号、0x 前缀和半字节之间的空白均不能当作字节间空白。",
+  "detail": "41 followed by a newline and then 42 solves AB; only the end of a digit cannot form a new byte.",
+  "boundary": "Delimiter colons, 0x prefixes, and spaces between nibbles are not considered interbyte spaces.",
   "sources": {
     "reference": "https://docs.python.org/3/library/stdtypes.html#bytes.fromhex",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "辨别十六进制导出文本的分隔符和真实数据。",
+  "relevance": "Distinguish between delimiters and real data in hex export text.",
   "tags": [
     "reverse",
     "misc"

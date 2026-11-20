@@ -1,15 +1,15 @@
 {
-  "title": "Flask 默认会话 Cookie 对内容签名但不提供保密性",
-  "summary": "Flask 默认把会话值序列化到客户端 Cookie 并用签名验证其完整性；能读出内容不等于改动后的内容会被接受。",
-  "applies": "Flask 默认配置；请求与会话数据解释",
-  "detail": "只看到一串被编码的 Cookie 不能据此判定服务端保存了独立的同值会话记录。",
-  "boundary": "自定义 SessionInterface 或服务端会话扩展可能只在 Cookie 中放标识符。",
+  "title": "Flask default session cookie signs content but does not provide confidentiality",
+  "summary": "Flask stores the default session in a client cookie and signs it for integrity. A readable cookie can still reject modifications.",
+  "applies": "Flask default configuration; request and session data explanation",
+  "detail": "Just seeing a string of encoded cookies cannot determine that the server has saved independent session records of the same value.",
+  "boundary": "A custom SessionInterface or server-side session extension might just put the identifier in the cookie.",
   "aliases": [
     "Flask session",
     "SecureCookieSessionInterface",
-    "会话签名"
+    "session signature"
   ],
-  "relevance": "识别样例应用中浏览器和服务端各持有什么数据。",
+  "relevance": "Identify what data the browser and server each hold in the sample application.",
   "sources": {
     "reference": "https://flask.palletsprojects.com/en/stable/quickstart/#sessions",
     "context": "https://primer.picoctf.org/"

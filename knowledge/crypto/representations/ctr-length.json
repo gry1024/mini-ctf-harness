@@ -1,20 +1,20 @@
 {
-  "title": "CTR 最后一个分段可以短于块长",
-  "summary": "CTR 把计数器块变换为密钥流，再与数据异或；最后不足一块的数据只使用对应数量的密钥流位。",
-  "applies": "密码学题的字节表示和参数解释",
+  "title": "CTR last segment can be shorter than block length",
+  "summary": "CTR encrypts counter blocks to produce a keystream and XORs it with the data. A partial final block uses only the corresponding keystream bits.",
+  "applies": "Byte representation and parameter explanation of cryptography questions",
   "aliases": [
     "CTR",
     "partial block",
-    "计数器模式",
-    "末块长度"
+    "Counter mode",
+    "Last block length"
   ],
-  "detail": "只计算模式本身的密文负载时，字节长度与原文相同。",
-  "boundary": "外层可能另外存储 nonce、计数器或标签；存储文件的总长不必等于负载长度。",
+  "detail": "When calculating only the ciphertext payload of the pattern itself, the byte length is the same as the original text.",
+  "boundary": "The outer layer may additionally store nonces, counters, or tags; the total length of the stored files does not need to equal the payload length.",
   "sources": {
     "reference": "https://csrc.nist.gov/pubs/sp/800/38/a/final",
     "context": "https://cryptohack.org/courses/symmetric/"
   },
-  "relevance": "区分按 16 字节对齐的块格式和自然保留长度的数据段。",
+  "relevance": "Distinguish between 16-byte aligned block formats and naturally reserved length data segments.",
   "tags": [
     "crypto",
     "misc"

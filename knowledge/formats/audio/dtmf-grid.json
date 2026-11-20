@@ -1,17 +1,17 @@
 {
-  "title": "DTMF 的一个键同时对应一个低组和一个高组频率",
-  "summary": "标准行频为 697、770、852、941 Hz，列频为 1209、1336、1477、1633 Hz。按行排列键分别为 123A、456B、789C、*0#D。",
-  "applies": "DTMF 电话双音；频率单位 Hz",
-  "detail": "例如一段信号中同时出现 770 与 1336 Hz，对应第二行第二列，即 5。",
-  "boundary": "按键之间的静音不代表数字 0。用单一最强频率不能在同一行或列内唯一定位按键。",
+  "title": "A DTMF key corresponds to both a low group and a high group frequency.",
+  "summary": "Standard row frequencies are 697, 770, 852, 941 Hz, and column frequencies are 1209, 1336, 1477, 1633 Hz. The keys arranged by row are 123A, 456B, 789C, *0#D.",
+  "applies": "DTMF Telephone dual tone; frequency unit Hz",
+  "detail": "For example, 770 and 1336 Hz appear simultaneously in a signal, corresponding to the second row and second column, that is, 5.",
+  "boundary": "The silence between keys does not represent the number 0. Keys cannot be uniquely located within the same row or column using a single strongest frequency.",
   "aliases": [
     "DTMF",
     "dual tone",
-    "电话按键",
-    "双音频",
-    "拨号音"
+    "phone buttons",
+    "dual audio",
+    "dial tone"
   ],
-  "relevance": "由 WAV 频谱中的成对峰值解释按键序列，而非将各峰各读成一个数字。",
+  "relevance": "Keystroke sequences are interpreted from pairs of peaks in the WAV spectrum, rather than reading each peak as a number.",
   "sources": {
     "reference": "https://www.ti.com/lit/an/spra082/spra082.pdf",
     "context": "https://primer.picoctf.org/"

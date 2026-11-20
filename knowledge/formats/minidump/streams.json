@@ -1,16 +1,16 @@
 {
-  "title": "MINIDUMP 的 StreamDirectoryRva 指向流目录",
-  "summary": "NumberOfStreams 决定目录条目数；每个目录条目通过类型与位置描述符定位对应流。",
-  "applies": "Windows MINIDUMP；已采集转储的静态解释",
-  "detail": "线程列表、模块列表和内存流是不同的信息来源。已有模块列表不保证每一页模块内容都被采集。",
-  "boundary": "精简转储缺少一段内存时，只能说没有对应采集数据，不能还原该页原本的字节。",
+  "title": "MINIDUMP's StreamDirectoryRva points to the stream directory",
+  "summary": "NumberOfStreams determines the number of directory entries; each directory entry locates the corresponding stream via a type and position descriptor.",
+  "applies": "Windows MINIDUMP; static interpretation of acquired dump",
+  "detail": "Thread lists, module lists, and memory streams are different sources of information. The existing module list does not guarantee that the module content of every page has been collected.",
+  "boundary": "When a thin dump lacks a section of memory, it can only be said that there is no corresponding collection data, and the original bytes of the page cannot be restored.",
   "aliases": [
     "StreamDirectoryRva",
     "NumberOfStreams",
     "minidump",
-    "转储缺页"
+    "Dump fault pages"
   ],
-  "relevance": "区分报告中的地址存在、流目录中有元数据与实际有内存字节。",
+  "relevance": "Distinguish between reports that addresses exist, metadata in the stream directory, and actual memory bytes.",
   "sources": {
     "reference": "https://learn.microsoft.com/en-us/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_header",
     "context": "https://primer.picoctf.org/"

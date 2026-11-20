@@ -1,23 +1,23 @@
 {
-  "title": "JavaScript 的字符串长度按 UTF-16 单元",
-  "summary": "补充平面字符通常占两个 UTF-16 代码单元，\"😀\".length 为 2。",
-  "applies": "ECMAScript；Number、BigInt 与字符串",
+  "title": "JavaScript string length in UTF-16 units",
+  "summary": "Supplementary-plane characters typically take two UTF-16 code units. For example, \"😀\".length is 2.",
+  "applies": "ECMAScript; Number, BigInt, and Strings",
   "aliases": [
     "charCodeAt",
     "codePointAt",
-    "代理项",
+    "surrogate",
     "surrogate pair",
     "emoji",
     "UTF-16",
     "String.length"
   ],
-  "detail": "charCodeAt(0) 只给出高代理项；codePointAt(0) 返回该字符的完整码点。",
-  "boundary": "字素簇可以由多个码点组成；按码点遍历也不能保证等于屏幕上的字符个数。",
+  "detail": "charCodeAt(0) gives only the high surrogate; codePointAt(0) returns the full code point for the character.",
+  "boundary": "A grapheme cluster can be composed of multiple code points; traversing by code point is not guaranteed to equal the number of characters on the screen.",
   "sources": {
     "reference": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "从浏览器导出的索引位置回到原文时，处理补充平面字符造成的偏移。",
+  "relevance": "When mapping indices exported by the browser back into the original text, account for the extra code unit used by supplementary-plane characters.",
   "tags": [
     "reverse",
     "web"

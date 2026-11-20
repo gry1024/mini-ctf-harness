@@ -1,16 +1,16 @@
 {
-  "title": "ext4 目录项应按 rec_len 跨到下一项",
-  "summary": "目录项的 name_len 只计名称字节，rec_len 描述该记录占据的范围，可能含对齐和剩余空间。",
-  "applies": "ext4 文件系统镜像；Linux 内核格式文档",
-  "detail": "即使当前名字很短，下一项也可能不紧跟在名字末尾；解析时要在相应目录块内检查记录范围。",
-  "boundary": "带索引目录、校验尾和其他目录特性会引入额外结构，不能把每段剩余空间都解释成普通文件名。",
+  "title": "ext4 directory entries should be skipped to the next entry by rec_len",
+  "summary": "The name_len of a directory entry only counts name bytes, and rec_len describes the range occupied by the record, which may include alignment and remaining space.",
+  "applies": "ext4 file system image; Linux kernel format document",
+  "detail": "Even if the current name is short, the next item may not immediately follow the end of the name; during parsing, the record range is checked within the corresponding directory block.",
+  "boundary": "Indexed directories, check tails, and other directory features introduce additional structure, and each segment of remaining space cannot be interpreted as a normal file name.",
   "aliases": [
     "rec_len",
     "name_len",
-    "目录项",
+    "directory entry",
     "dirent"
   ],
-  "relevance": "核对原始目录块中下一条文件名的真实起点。",
+  "relevance": "Check the true starting point of the next file name in the original directory block.",
   "sources": {
     "reference": "https://www.kernel.org/doc/html/latest/filesystems/ext4/directory.html",
     "context": "https://primer.picoctf.org/"

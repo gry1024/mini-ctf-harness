@@ -1,16 +1,16 @@
 {
-  "title": "PE 的证书表目录用文件偏移",
-  "summary": "属性证书表不作为常规映像节载入，Security Directory 的地址字段表示文件位置。",
-  "applies": "PE32/PE32+；Windows 映像文件",
-  "detail": "解析证书表时可直接在原始文件范围核对该偏移和大小；将它按 RVA 再映射一次会偏离目标。",
-  "boundary": "这是特定目录的例外，不能据此把导入表或导出表的地址也解释成文件偏移。",
+  "title": "PE’s certificate table directory uses file offset",
+  "summary": "The attribute certificate table is not loaded as a regular image section, and the address field of the Security Directory represents the file location.",
+  "applies": "PE32/PE32+; Windows image file",
+  "detail": "This offset and size can be checked directly in the original file range when parsing the certificate table; mapping it again by RVA would be off target.",
+  "boundary": "This is a directory-specific exception, and the address of an import table or export table cannot be interpreted as a file offset accordingly.",
   "aliases": [
     "IMAGE_DIRECTORY_ENTRY_SECURITY",
     "certificate table",
-    "证书表",
-    "文件位置"
+    "Certificate form",
+    "file location"
   ],
-  "relevance": "判断签名数据位于最后一个节之后时是否仍属于合法文件内容。",
+  "relevance": "Determine whether the signature data still belongs to the legal file content when it is located after the last section.",
   "sources": {
     "reference": "https://learn.microsoft.com/en-us/windows/win32/debug/pe-format",
     "context": "https://primer.picoctf.org/"

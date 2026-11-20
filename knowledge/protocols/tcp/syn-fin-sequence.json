@@ -1,20 +1,20 @@
 {
-  "title": "TCP SYN 和 FIN 各占一个序列号",
-  "summary": "序列号按数据字节推进，SYN 在数据前、FIN 在数据后各占用一个位置。",
-  "applies": "抓包重建；TCP 序列空间",
+  "title": "TCP SYN and FIN each occupy a sequence number",
+  "summary": "The sequence number is advanced by data bytes, with SYN occupying a position before the data and FIN after the data.",
+  "applies": "Packet capture and reconstruction; TCP sequence space",
   "aliases": [
     "SYN",
     "FIN",
     "sequence space",
-    "确认号差一"
+    "Confirmation number is off by one"
   ],
-  "detail": "SYN 序号为 100 且无数据时，对端收到它后确认号可为 101。单纯 ACK 不额外占号。",
-  "boundary": "SYN 或 FIN 也可能携带数据，计算下一序号时仍要计入实际数据长度。",
+  "detail": "When the SYN sequence number is 100 and there is no data, the acknowledgment number after the peer receives it can be 101. Simple ACK does not occupy an additional number.",
+  "boundary": "SYN or FIN may also carry data, and the actual data length must still be taken into account when calculating the next sequence number.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc9293.html#section-3.4.1",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "核对离线 TCP 流时，解释没有一个字节应用数据却仍出现的序号增量。",
+  "relevance": "When checking offline TCP streams, explain sequence number increments that occur even though not a single byte of data is applied.",
   "tags": [
     "misc"
   ]

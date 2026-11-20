@@ -1,20 +1,20 @@
 {
-  "title": "struct 原生布局与标准布局",
-  "summary": "@ 采用本机大小、字节序和对齐；<、>、! 和 = 不插入原生对齐填充。",
-  "applies": "Python 3；标准库或内置整数",
+  "title": "struct native layout and standard layout",
+  "summary": "@ takes native size, endianness, and alignment; <, >, !, and = do not insert native alignment padding.",
+  "applies": "Python 3; standard library or built-in integers",
   "aliases": [
     "struct",
     "calcsize",
     "native alignment",
-    "结构体填充"
+    "Structure filling"
   ],
-  "detail": "在常见 x86-64 上 @BI 的 I 从偏移 4 开始，而 <BI 的 I 紧接首字节，整个记录为 5 字节。",
-  "boundary": "= 使用本机字节序和标准大小；跨端数据仍需明确实际字节序。",
+  "detail": "On common x86-64 the I of @BI starts at offset 4, while the I of <BI follows the first byte, making the entire record 5 bytes.",
+  "boundary": "= Use native endianness and standard sizes; cross-end data still needs to know the actual endianness.",
   "sources": {
     "reference": "https://docs.python.org/3/library/struct.html#byte-order-size-and-alignment",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "同样的字段表在不同解析器中偏移逐渐错位时，检查填充语义。",
+  "relevance": "Check padding semantics when the same field table is gradually misaligned in different parsers.",
   "tags": [
     "reverse",
     "misc"

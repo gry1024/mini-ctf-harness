@@ -1,16 +1,16 @@
 {
-  "title": "字母表上的仿射变换可逆取决于乘数",
-  "summary": "y=ax+b (mod m) 给出置换当且仅当 gcd(a,m)=1；平移 b 不改变是否一一对应。",
-  "applies": "有限循环字母表；整数模 m 的仿射置换",
-  "detail": "由两对字符求参数时，先得到关于 a 的差分同余式。差值不可逆时可能有多个候选，可逆性约束仍须单独检查。",
-  "boundary": "一个可逆变换存在，不等于仅凭任意两组对应就能唯一确定它。",
+  "title": "Affine transformations on the alphabet are reversible depending on the multiplier",
+  "summary": "y=ax+b (mod m) gives a permutation if and only if gcd(a,m)=1; translation b does not change whether there is a one-to-one correspondence.",
+  "applies": "Finite cyclic alphabet; affine permutations of integers modulo m",
+  "detail": "When finding parameters from two pairs of characters, first get the differential congruence about a. There may be multiple candidates when the difference is irreversible, and the reversibility constraints must still be checked individually.",
+  "boundary": "The existence of a reversible transformation does not mean that it can be uniquely determined by just any two sets of correspondences.",
   "aliases": [
     "affine cipher",
-    "仿射",
-    "字母表",
-    "可逆乘数"
+    "Affine",
+    "alphabet",
+    "Reversible multiplier"
   ],
-  "relevance": "判断古典编码题给定的字母变换是否能逐个唯一还原。",
+  "relevance": "Determine whether the letter transformation given in the classical coding problem can be uniquely restored one by one.",
   "sources": {
     "reference": "https://cp-algorithms.com/algebra/linear_congruence_equation.html",
     "context": "https://cryptohack.org/courses/modular/"

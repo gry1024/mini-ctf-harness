@@ -1,20 +1,20 @@
 {
-  "title": "Wasm 的 LEB128 先存最低七位组",
-  "summary": "字节最高位为 1 表示后面还有一组。无符号 e5 8e 26 表示 624485。",
-  "applies": "WebAssembly 核心二进制格式",
+  "title": "Wasm's LEB128 stores the lowest seven bits first",
+  "summary": "The highest bit of the byte is 1, indicating that there is another group behind it. Unsigned e5 8e 26 represents 624485.",
+  "applies": "WebAssembly core binary format",
   "aliases": [
     "LEB128",
     "varuint",
     "varint32",
-    "七位编码"
+    "seven digit code"
   ],
-  "detail": "有符号编码要检查最后有效组的符号位进行扩展。例如 7f 按 sLEB 为 −1，按 uLEB 为 127。",
-  "boundary": "Wasm 对每种位宽限制最大编码长度和最后组的未用位；不能把任意长变体视为合法字段。",
+  "detail": "Signed encodings check the last valid group of sign bits for extension. For example, 7f is −1 in sLEB and 127 in uLEB.",
+  "boundary": "Wasm limits the maximum encoding length and the last group of unused bits for each bitwidth; arbitrarily long variants cannot be considered legal fields.",
   "sources": {
     "reference": "https://webassembly.github.io/spec/core/binary/values.html",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "读取模块中的立即数或区段长度时，避免把有符号常数解成巨大的正数。",
+  "relevance": "When reading immediate values or section lengths from modules, avoid interpreting signed constants as huge positive numbers.",
   "tags": [
     "reverse",
     "misc"

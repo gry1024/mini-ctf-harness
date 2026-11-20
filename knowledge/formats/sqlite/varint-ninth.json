@@ -1,20 +1,20 @@
 {
-  "title": "SQLite 九字节 varint 的最后一个字节贡献 8 位",
-  "summary": "前八个字节各贡献低 7 位，第九个字节若存在则贡献全部 8 位。",
-  "applies": "SQLite 3 主数据库与 WAL 文件",
+  "title": "Last byte of SQLite nine-byte varint contributes 8 bits",
+  "summary": "The first eight bytes each contribute the lower 7 bits, and the ninth byte, if present, contributes the full 8 bits.",
+  "applies": "SQLite 3 master database and WAL files",
   "aliases": [
     "SQLite varint",
     "rowid",
-    "九字节",
+    "nine bytes",
     "LEB128"
   ],
-  "detail": "前面的数据组按高位在先次序组合。最后字节的最高位属于数值。",
-  "boundary": "不同于常见的低位组在先 LEB128；套用后者会在多字节长度或 rowid 上算错。",
+  "detail": "The previous data groups are combined in big-endian order. The highest bit of the last byte belongs to the numerical value.",
+  "boundary": "Different from the common little endian LEB128; applying the latter will cause miscalculation on multi-byte lengths or rowids.",
   "sources": {
     "reference": "https://www.sqlite.org/fileformat.html#varint",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "读取数据库页内记录长度时，多读或少读一位会造成整条记录错位。",
+  "relevance": "When reading the record length in the database page, reading one more or one less bit will cause the entire record to be misaligned.",
   "tags": [
     "misc"
   ]

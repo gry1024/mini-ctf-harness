@@ -1,17 +1,17 @@
 {
-  "title": "分配地址重用不会恢复旧对象的生命周期",
-  "summary": "一次分配释放后，后续分配即使获得相同地址，也建立了新对象。归属旧分配的视图需要独立判断有效性。",
-  "applies": "C11；离线内存诊断与对象表示",
-  "detail": "审阅追踪日志时把分配事件与地址一起记作对象标识；子视图继承父视图的归属。C11 §6.2.4 与 §7.22.3 定义对象和分配存储期。",
-  "boundary": "日志里的代际号是追踪器元数据；普通 C 指针本身并不携带它。",
+  "title": "Allocation address reuse does not restore the old object's lifetime",
+  "summary": "After deallocation, another allocation creates a new object even at the same address. Views of the old allocation need a separate validity check.",
+  "applies": "C11; Offline memory diagnostics and object representation",
+  "detail": "When reviewing the tracking log, record the allocation event together with the address as the object identifier; the subview inherits the ownership of the parent view. C11 §6.2.4 and §7.22.3 define objects and allocate storage periods.",
+  "boundary": "The generation number in the log is tracker metadata; plain C pointers themselves don't carry it.",
   "aliases": [
     "object lifetime",
     "generation",
-    "代际",
-    "地址重用",
-    "悬空视图"
+    "intergenerational",
+    "Address reuse",
+    "suspended view"
   ],
-  "relevance": "区别“数值地址仍在一块活内存里”与“这次访问属于原来的对象”。",
+  "relevance": "Distinguish between \"the numerical address is still in a piece of live memory\" and \"this access belongs to the original object\".",
   "sources": {
     "reference": "https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf",
     "context": "https://primer.picoctf.org/"

@@ -1,20 +1,20 @@
 {
-  "title": "hash 的二进制和十六进制输出",
-  "summary": "hash 的 binary 参数改变返回表示；SHA-256 默认是 64 个十六进制字符，原始摘要为 32 字节。",
-  "applies": "PHP 7.4 和 8.x 的数据处理",
+  "title": "Binary and hexadecimal output of hash",
+  "summary": "The binary parameter of hash changes the return representation; SHA-256 defaults to 64 hex characters and the original digest is 32 bytes.",
+  "applies": "Data handling for PHP 7.4 and 8.x",
   "aliases": [
     "hash",
     "raw_output",
     "binary digest",
-    "摘要长度"
+    "Summary length"
   ],
-  "detail": "对默认输出再做 base64 编码，会编码 ASCII 十六进制文本，得到与编码原始摘要不同的结果。",
-  "boundary": "两种表示在转回相同字节后才能逐字节比较。",
+  "detail": "Base64 encoding the default output will encode the ASCII hexadecimal text, resulting in a different result than the encoded original digest.",
+  "boundary": "The two representations can only be compared byte-by-byte after converting back the same bytes.",
   "sources": {
     "reference": "https://www.php.net/manual/en/function.hash.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "核对校验串时能定位摘要算法相同、序列化方式不同的情况。",
+  "relevance": "When checking the check string, it can locate the situation where the digest algorithm is the same but the serialization method is different.",
   "tags": [
     "web",
     "reverse"

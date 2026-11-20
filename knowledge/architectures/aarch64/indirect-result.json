@@ -1,16 +1,16 @@
 {
-  "title": "AAPCS64 为间接返回值地址保留 X8",
-  "summary": "需要经内存返回的聚合结果可由调用者提供存储，地址通过 X8 传递。",
-  "applies": "AArch64；AAPCS64 的通用调用与寄存器表示",
-  "detail": "入口快照中 X8 可表示结果缓冲区。普通用户参数仍从相应参数寄存器开始分类。",
-  "boundary": "小结构体或同质浮点聚合体可能直接通过寄存器返回，不适用该规则。",
+  "title": "AAPCS64 Reserved for indirect return value addresses X8",
+  "summary": "For aggregate results returned through memory, the caller provides the storage and passes its address in X8.",
+  "applies": "AArch64; general call and register representation of AAPCS64",
+  "detail": "X8 in the entry snapshot can represent the result buffer. Ordinary user parameters are still classified starting from the corresponding parameter register.",
+  "boundary": "Small structures or homogeneous floating-point aggregates may be returned directly through registers, and this rule does not apply.",
   "aliases": [
     "X8",
     "indirect result",
     "sret",
-    "结构体返回"
+    "Structure returns"
   ],
-  "relevance": "恢复函数原型时避免凭空多加一个源代码显式参数。",
+  "relevance": "Avoid adding an explicit source code parameter out of thin air when restoring a function prototype.",
   "sources": {
     "reference": "https://github.com/ARM-software/abi-aa/blob/main/aapcs64/aapcs64.rst",
     "context": "https://primer.picoctf.org/"

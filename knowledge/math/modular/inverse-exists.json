@@ -1,20 +1,20 @@
 {
-  "title": "模逆元存在的判据",
-  "summary": "a 在模 m 下有乘法逆元当且仅当 gcd(a,m)=1。",
-  "applies": "整数模运算；模数大于 1",
+  "title": "Criteria for the existence of modular inverse elements",
+  "summary": "a has a multiplicative inverse modulo m if and only if gcd(a,m)=1.",
+  "applies": "Integer modulo arithmetic; modulus greater than 1",
   "aliases": [
     "mod_inverse",
     "coprime",
-    "逆元不存在",
-    "模除"
+    "The inverse element does not exist",
+    "Module"
   ],
-  "detail": "3 在模 8 下的逆元是 3，因为 3×3 ≡ 1；2 在模 8 下没有逆元。",
-  "boundary": "整数域中的普通除法不能替代模除。某个分母不可逆也不等于整个线性同余式无解。",
+  "detail": "The inverse of 3 modulo 8 is 3 because 3×3 ≡ 1; 2 has no inverse modulo 8.",
+  "boundary": "Ordinary division in the integer domain is not a substitute for modular division. The irreversibility of a certain denominator does not mean that the entire linear congruence equation has no solution.",
   "sources": {
     "reference": "https://docs.sympy.org/latest/modules/core.html#sympy.core.intfunc.mod_inverse",
     "context": "https://cryptohack.org/courses/modular/"
   },
-  "relevance": "判断公式中的分母能否在当前模数下合法消去。",
+  "relevance": "Determine whether the denominator in the formula can be legally eliminated under the current modulus.",
   "tags": [
     "crypto"
   ]

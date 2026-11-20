@@ -1,20 +1,20 @@
 {
-  "title": "ELF 类别和字节序由两个独立标识给出",
-  "summary": "e_ident 中 EI_CLASS 决定 ELF32 或 ELF64，EI_DATA 指定文件数据编码的字节序。",
-  "applies": "ELF 文件；System V 通用 ABI",
+  "title": "ELF category and endianness are given by two independent flags",
+  "summary": "In e_ident, EI_CLASS determines ELF32 or ELF64, and EI_DATA specifies the byte order of file data encoding.",
+  "applies": "ELF file; System V Common ABI",
   "aliases": [
     "EI_CLASS",
     "EI_DATA",
     "ELFDATA2MSB",
-    "字节序标识"
+    "Byte order identifier"
   ],
-  "detail": "读取后续多字节字段前，先用起始标识字节确定两者。64 位并不推出小端。",
-  "boundary": "e_machine 是另一个字段；同一位宽和字节序并不能唯一识别指令集。",
+  "detail": "Before reading subsequent multibyte fields, the starting identification byte is used to identify both. 64-bit does not introduce little endian.",
+  "boundary": "e_machine is another field; the same bit width and endianness do not uniquely identify an instruction set.",
   "sources": {
     "reference": "https://gabi.xinuos.com/elf/02-eheader.html",
     "context": "https://ctf-wiki.org/executable/elf/structure/basic-info/"
   },
-  "relevance": "解释文件头魔数正确但节表偏移读出异常大数的现象。",
+  "relevance": "Explain the phenomenon that the file header magic number is correct but the section table offset reads an abnormally large number.",
   "tags": [
     "reverse",
     "misc"

@@ -1,20 +1,20 @@
 {
-  "title": "CMS 字节填充会补一个完整分组",
-  "summary": "块长 k 时，补 k−(长度 mod k) 个同值字节；长度原本对齐也要补 k 个。",
-  "applies": "密码学题的字节表示和参数解释",
+  "title": "CMS byte padding will fill a complete packet",
+  "summary": "For block size k, append k − (length mod k) bytes, each set to that count. An already aligned length gets a full block of padding.",
+  "applies": "Byte representation and parameter explanation of cryptography questions",
   "aliases": [
     "PKCS7",
     "PKCS#7",
     "CMS padding",
-    "整块填充"
+    "Whole block filling"
   ],
-  "detail": "块长 16、原文长 16 时补 16 个 0x10。去填充时末尾每个填充字节都应等于填充长度。",
-  "boundary": "这是 CMS/PKCS#7 规定的方案；零填充或无填充的记录不能直接依此解释。",
+  "detail": "When the block length is 16 and the original text length is 16, 16 0x10s are added. When depadding, each padding byte at the end should be equal to the padding length.",
+  "boundary": "This is a scheme specified by CMS/PKCS#7; records with zero padding or no padding cannot be directly interpreted accordingly.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc5652.html#section-6.3",
     "context": "https://cryptohack.org/courses/symmetric/"
   },
-  "relevance": "分析解码后末尾多出整块重复值时，区分正常填充和附件内容。",
+  "relevance": "When there is a whole block of repeated values at the end after decoding, distinguish between normal padding and attachment content.",
   "tags": [
     "crypto",
     "misc"

@@ -1,20 +1,20 @@
 {
-  "title": "SQLite 页大小字段中的 1 代表 65536",
-  "summary": "数据库头偏移 16 的两字节按大端解释；其值为 0x0001 时，实际页大小是 65536。",
-  "applies": "SQLite 3 主数据库与 WAL 文件",
+  "title": "A 1 in the SQLite page size field represents 65536",
+  "summary": "The two bytes at offset 16 of the database header are interpreted as big endian; when its value is 0x0001, the actual page size is 65536.",
+  "applies": "SQLite 3 master database and WAL files",
   "aliases": [
     "page size",
-    "数据库页大小",
+    "Database page size",
     "65536",
     "page one"
   ],
-  "detail": "常规值是 512 至 32768 间的二次幂。第 N 页通常从 (N−1) × 页大小开始。",
-  "boundary": "页编号从 1 起，页 1 的前 100 字节被数据库文件头占用。",
+  "detail": "Typical values are powers of two between 512 and 32768. Page N usually starts at (N−1) × page size.",
+  "boundary": "Page numbers start from 1, and the first 100 bytes of page 1 are occupied by the database file header.",
   "sources": {
     "reference": "https://www.sqlite.org/fileformat.html#page_size",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "从文件偏移定位页边界时，特殊编码会让所有后续位置发生偏差。",
+  "relevance": "When locating page boundaries from file offsets, special encoding biases all subsequent positions.",
   "tags": [
     "misc"
   ]

@@ -1,20 +1,20 @@
 {
-  "title": "经典 pcap 的魔数同时编码字节序和时间精度",
-  "summary": "文件起始字节 d4 c3 b2 a1 为小端微秒格式，4d 3c b2 a1 为小端纳秒格式；对应大端序列分别反转。",
-  "applies": "传统 libpcap 格式；单接口捕获",
+  "title": "Classic pcap's magic number encodes both endianness and time precision simultaneously",
+  "summary": "Magic bytes d4 c3 b2 a1 indicate little-endian microseconds and 4d 3c b2 a1 indicate little-endian nanoseconds. Reverse each sequence for big-endian.",
+  "applies": "Legacy libpcap format; single interface capture",
   "aliases": [
     "pcap magic",
     "nanoseconds",
     "microseconds",
-    "时间戳精度"
+    "timestamp precision"
   ],
-  "detail": "后续秒字段和小数部分使用文件端序，小数部分的量纲由魔数决定。",
-  "boundary": "pcapng 使用不同结构，不能套用此四值规则来解释其数据包时间戳。",
+  "detail": "The subsequent seconds field and decimal part use file-endian order, and the dimension of the decimal part is determined by the magic number.",
+  "boundary": "pcapng uses a different structure and cannot apply this four-value rule to interpret its packet timestamps.",
   "sources": {
     "reference": "https://man7.org/linux/man-pages/man5/pcap-savefile.5.html",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "重放离线时间线时，避免相邻包间隔被放大或缩小一千倍。",
+  "relevance": "Prevent the gap between adjacent packets from being enlarged or reduced by a thousand times when replaying the offline timeline.",
   "tags": [
     "misc"
   ]

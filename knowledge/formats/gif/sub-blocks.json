@@ -1,20 +1,20 @@
 {
-  "title": "GIF 图像子块的零长度结束标记",
-  "summary": "子块的首字节是随后的字节数，取值 1 至 255；长度为 0 的块表示子块序列结束。",
-  "applies": "GIF89a 图像数据与图形控制扩展",
+  "title": "Zero-length end tag for GIF image sub-blocks",
+  "summary": "The first byte of a subblock is the number of bytes that follow, ranging from 1 to 255; a block of length 0 indicates the end of the subblock sequence.",
+  "applies": "GIF89a image data and graphics control extension",
   "aliases": [
     "GIF sub-block",
     "block terminator",
     "LZW data",
-    "子块长度"
+    "sub-block length"
   ],
-  "detail": "把图像数据交给 LZW 层前要连接各子块的数据，剔除长度前缀与块终止符。",
-  "boundary": "数据区内出现的 00 可以是普通数据；只有在期待长度字节的位置才是子块终止。",
+  "detail": "Before passing the image data to the LZW layer, the data of each sub-block must be concatenated, and the length prefix and block terminator must be removed.",
+  "boundary": "The 00 appearing in the data area can be ordinary data; the sub-block is terminated only at the position where the length byte is expected.",
   "sources": {
     "reference": "https://www.w3.org/Graphics/GIF/spec-gif89a.txt",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "复原动图数据流时，定位为何解码从某个块边界开始失效。",
+  "relevance": "When restoring the animation data stream, locate why the decoding fails starting from a certain block boundary.",
   "tags": [
     "misc"
   ]

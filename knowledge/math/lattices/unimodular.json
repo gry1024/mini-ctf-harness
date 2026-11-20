@@ -1,16 +1,16 @@
 {
-  "title": "整数格的等价格基变换要求整系数并且行列式为 ±1",
-  "summary": "以行为基时，左乘整可逆矩阵 U 且 det U=±1，可保持生成的整数格。",
-  "applies": "整数格；行向量作为基的约定",
-  "detail": "把一行加上另一行的整数倍得到同一个格。将某一行乘 2 通常只得到原格的子格。",
-  "boundary": "两个基张成相同实向量空间，不能推出生成相同的整数格。",
+  "title": "An equivalent integer lattice basis uses integer coefficients and determinant ±1",
+  "summary": "When using rows as a basis, left multiplication by an integer invertible matrix U with det U=±1 can preserve the generated integer lattice.",
+  "applies": "Integer lattice; convention for row vectors as bases",
+  "detail": "Add one row to an integer multiple of another row to get the same grid. Multiplying a row by 2 usually results in only the cells of the original cell.",
+  "boundary": "The two bases span the same real vector space and cannot be derived to generate the same integer grid.",
   "aliases": [
     "unimodular",
-    "幺模变换",
-    "整数格基",
-    "行列式"
+    "Unitary transformation",
+    "integer lattice basis",
+    "Determinant"
   ],
-  "relevance": "验证格基规约输出是否只是换了一组基，而不是改了候选点集合。",
+  "relevance": "Verify whether the lattice basis reduction output only changes a set of basis, rather than changing the set of candidate points.",
   "sources": {
     "reference": "https://doc.sagemath.org/html/en/reference/matrices/sage/matrix/matrix_integer_dense.html",
     "context": "https://cryptohack.org/challenges/maths/"

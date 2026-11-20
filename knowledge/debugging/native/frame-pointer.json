@@ -1,16 +1,16 @@
 {
-  "title": "省略帧指针后仍可能有可展开的栈帧",
-  "summary": "开启 omit-frame-pointer 时，RBP 等寄存器可作其他用途；展开器可依据调用帧信息恢复逻辑调用链。",
-  "applies": "原生程序的离线栈回溯、符号匹配与调试信息",
-  "detail": "在解释编译后的正常调用时，函数缺少固定帧指针序言并不直接表示回溯已损坏。",
-  "boundary": "省略策略依目标和函数而异；缺少相匹配的展开信息时，回溯也可能不完整。",
+  "title": "It is possible to still have stack frames that can be expanded if the frame pointer is omitted.",
+  "summary": "With frame-pointer omission, registers such as RBP can be repurposed. An unwinder can reconstruct the call chain from call frame information.",
+  "applies": "Offline stack traceback, symbol matching and debugging information for native programs",
+  "detail": "When interpreting normal calls after compilation, the lack of a fixed frame pointer prologue to a function does not directly indicate that the traceback is broken.",
+  "boundary": "Omission strategies vary by target and function; tracebacks may also be incomplete in the absence of matching unwind information.",
   "aliases": [
     "omit-frame-pointer",
     "RBP",
-    "帧链",
-    "栈回溯"
+    "frame chain",
+    "stack traceback"
   ],
-  "relevance": "诊断缺帧时优先区分编译策略和日志采集不足。",
+  "relevance": "When diagnosing missing frames, priority is given to distinguishing between compilation strategies and insufficient log collection.",
   "sources": {
     "reference": "https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#index-fomit-frame-pointer",
     "context": "https://primer.picoctf.org/"

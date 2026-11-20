@@ -1,24 +1,24 @@
 {
-  "title": "Unicode 规范等价不保证原始字节相同",
-  "summary": "预组字符 é 和 e 加组合重音在 NFC 规范化后相等，但原始 UTF-8 字节不同。",
-  "applies": "Unicode 文本与 JSON 字节记录",
+  "title": "Canonically equivalent Unicode text can have different bytes",
+  "summary": "Precomposed é and e followed by a combining acute accent compare equal after NFC normalization, but have different raw UTF-8 bytes.",
+  "applies": "Unicode text and JSON byte records",
   "aliases": [
     "NFC",
     "NFD",
     "combining mark",
-    "组合重音",
-    "规范化",
-    "哈希值",
+    "combined accent",
+    "Standardize",
+    "Hash value",
     "Unicode normalization",
     "é"
   ],
-  "detail": "前一种为 C3 A9，后一种为 65 CC 81。对原始字节做摘要会得到不同结果。",
-  "boundary": "NFKC 还会处理兼容等价；对证据做规范化前要保留原始字节。",
+  "detail": "The former is C3 A9 and the latter is 65 CC 81. Hashing their raw bytes produces different digests.",
+  "boundary": "NFKC also handles compatibility equivalence; the original bytes are preserved before normalizing the evidence.",
   "sources": {
     "reference": "https://www.unicode.org/reports/tr15/",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "定位看起来完全一样的口令提示、文件名或文本为何比较不相等。",
+  "relevance": "Determine why password prompts, file names, or text that appear to be identical do not compare equal.",
   "tags": [
     "misc",
     "web"

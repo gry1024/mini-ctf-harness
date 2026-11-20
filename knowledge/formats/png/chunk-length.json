@@ -1,22 +1,22 @@
 {
-  "title": "PNG 块长度字段的计数范围",
-  "summary": "PNG 的 Length 只统计 Data，一个完整块共占 Length + 12 字节。",
-  "applies": "PNG 数据流；从有效的块起点计算",
+  "title": "Count range for PNG block length field",
+  "summary": "The Length of PNG only counts Data, and a complete block occupies a total of Length + 12 bytes.",
+  "applies": "PNG data stream; calculated from valid chunk starting point",
   "aliases": [
     "IHDR",
     "IEND",
     "chunk length",
     "chunk boundary",
-    "块边界",
-    "数据块长度"
+    "block boundary",
+    "Data block length"
   ],
-  "detail": "四个字段依次为 4 字节长度、4 字节类型、变长数据、4 字节 CRC。长度以大端序存储。IEND 的数据长度为零，整个块仍占 12 字节。",
-  "boundary": "长度字段只能给出声称的下一个块的位置。文件截断或字段损坏时，该位置可能超出实际数据。",
+  "detail": "The four fields are 4-byte length, 4-byte type, variable-length data, and 4-byte CRC. The length is stored in big-endian order. The data length of IEND is zero, and the entire block still occupies 12 bytes.",
+  "boundary": "The length field can only give the position of the claimed next block. This location may exceed the actual data when the file is truncated or the fields are corrupted.",
   "sources": {
     "reference": "https://www.w3.org/TR/png-3/#5Chunk-layout",
     "context": "https://ctf-wiki.org/misc/picture/png/"
   },
-  "relevance": "核对 PNG 附件的块边界时，把类型或 CRC 算进长度会从第二个块起错位。",
+  "relevance": "When checking the block boundaries of PNG attachments, counting the type or CRC into the length will cause misalignment from the second block onwards.",
   "tags": [
     "misc"
   ]

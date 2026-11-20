@@ -1,20 +1,20 @@
 {
-  "title": "BMP 的有符号高度决定未压缩 RGB 的行方向",
-  "summary": "对 BITMAPINFOHEADER 的未压缩 RGB，正高度通常为自底向上，负高度为自顶向下。",
-  "applies": "Windows BMP；BITMAPINFOHEADER 与未压缩 RGB",
+  "title": "The signed height of BMP determines the row direction of uncompressed RGB",
+  "summary": "For uncompressed RGB of BITMAPINFOHEADER, positive heights are typically bottom-up and negative heights are top-down.",
+  "applies": "Windows BMP; BITMAPINFOHEADER vs. uncompressed RGB",
   "aliases": [
     "biHeight",
     "top-down",
     "bottom-up",
-    "上下翻转"
+    "flip up and down"
   ],
-  "detail": "以二维坐标表示图像时，同样数量的行可能要按相反顺序映射。",
-  "boundary": "某些 YUV 和压缩格式对高度另有约定；旧的其他 DIB 头也不一定有相同的有符号字段。",
+  "detail": "When representing an image in two-dimensional coordinates, the same number of rows may be mapped in reverse order.",
+  "boundary": "Some YUV and compression formats have different conventions for height; other older DIB headers do not necessarily have the same signed fields.",
   "sources": {
     "reference": "https://learn.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "图区内容完全正确却垂直颠倒时，能区分行序问题和像素值错误。",
+  "relevance": "Ability to differentiate between row ordering issues and pixel value errors when the image area content is completely correct but vertically reversed.",
   "tags": [
     "misc"
   ]

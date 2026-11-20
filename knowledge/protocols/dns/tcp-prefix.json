@@ -1,23 +1,23 @@
 {
-  "title": "TCP 上传输的 DNS 以两字节长度分帧",
-  "summary": "每条 DNS 消息前的两字节网络序长度给出后续消息字节数，自身不计入。",
-  "applies": "离线 DNS 报文字节解析",
+  "title": "DNS transmitted over TCP is framed with a length of two bytes",
+  "summary": "Each DNS message over TCP begins with a two-byte length in network byte order. The length counts the message bytes, excluding the prefix.",
+  "applies": "Offline DNS message byte parsing",
   "aliases": [
     "DNS over TCP",
     "length prefix",
-    "两字节前缀",
-    "分帧",
+    "two-byte prefix",
+    "Framing",
     "TCP stream framing",
-    "多条消息",
-    "消息分界"
+    "multiple messages",
+    "Message demarcation"
   ],
-  "detail": "一段 TCP 载荷可能只含半条 DNS 消息，也可能含多条，应在有序字节流上按该前缀划分。",
-  "boundary": "UDP DNS 报文本身没有这个 TCP 长度字段。",
+  "detail": "A TCP payload may contain only half a DNS message, or may contain multiple messages, and should be divided by this prefix on the ordered byte stream.",
+  "boundary": "The UDP DNS message itself does not have this TCP length field.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc1035.html#section-4.2.2",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解释直接按抓包行拆分 DNS 记录时出现的截断或连包。",
+  "relevance": "Explain the truncation or concatenation that occurs when DNS records are split directly by capture lines.",
   "tags": [
     "misc"
   ]

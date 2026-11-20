@@ -1,16 +1,16 @@
 {
-  "title": "短 Weierstrass 曲线的点相反数",
-  "summary": "素数域上 P=(x,y) 的负点是 (x,−y mod p)，无穷远点是加法单位元。",
-  "applies": "素数域上的非奇异短 Weierstrass 曲线；特征大于 3",
-  "detail": "例如 p=17、y=1 时负点的纵坐标为 16。P 与 −P 相加得到无穷远点。",
-  "boundary": "y=0 时非无穷远点可等于自身的负点，倍点为无穷远点。不同曲线模型有不同坐标公式。",
+  "title": "Point inverse of short Weierstrass curve",
+  "summary": "The negative point of P=(x,y) on the prime field is (x,−y mod p), and the point at infinity is the additive identity element.",
+  "applies": "Nonsingular short Weierstrass curves over primes; characteristic > 3",
+  "detail": "For example, when p=17 and y=1, the ordinate of the negative point is 16. Adding P and −P gives us the point at infinity.",
+  "boundary": "When y=0, the non-infinity point can be equal to its own negative point, and the doubled point is the infinity point. Different curve models have different coordinate formulas.",
   "aliases": [
     "elliptic curve",
     "point negation",
-    "无穷远点",
-    "点相反数"
+    "point at infinity",
+    "Opposite point"
   ],
-  "relevance": "处理纵坐标有两个候选时，识别它们在点群里的关系。",
+  "relevance": "When there are two candidates for processing the ordinate, identify their relationship in the point group.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc6090.html#section-3",
     "context": "https://cryptohack.org/courses/elliptic/"

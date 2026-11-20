@@ -1,20 +1,20 @@
 {
-  "title": "ZIP 的传统 DOS 时间按两秒记录秒数",
-  "summary": "16 位时间字段最低 5 位为秒除以 2，其上为分钟和小时。",
-  "applies": "常见时间戳字段的单位与纪元",
+  "title": "ZIP's traditional DOS time records seconds in two seconds",
+  "summary": "The low five bits of the 16-bit time field store seconds divided by two, with minutes and hours in higher bits.",
+  "applies": "Units and epochs of common timestamp fields",
   "aliases": [
     "MS-DOS time",
     "ZIP timestamp",
-    "本地时间",
-    "两秒精度"
+    "local time",
+    "Two second accuracy"
   ],
-  "detail": "同一分钟内的两个相邻秒可能被表示成同一个可编码的偶数秒值。传统 DOS 时间字段不单独记录时区。",
-  "boundary": "额外时间戳字段可能另存 UTC 时间和不同精度，不能用传统字段覆盖所有记录来源。",
+  "detail": "Two adjacent seconds within the same minute may be represented by the same codable even seconds value. Traditional DOS time fields do not record time zones separately.",
+  "boundary": "Extra timestamp fields may store UTC times and different precisions, and all record sources cannot be covered with traditional fields.",
   "sources": {
     "reference": "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解释压缩前后修改时间差一秒或跨时区偏移。",
+  "relevance": "Explains why modification times can differ by a second or by a time zone offset after archiving.",
   "tags": [
     "misc"
   ]

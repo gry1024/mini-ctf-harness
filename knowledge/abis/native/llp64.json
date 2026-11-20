@@ -1,16 +1,16 @@
 {
-  "title": "Windows x64 的 long 和指针宽度不同",
-  "summary": "Windows x64 使用 LLP64，long 通常为 32 位而指针为 64 位；常见 64 位 Unix LP64 中两者都为 64 位。",
-  "applies": "64 位原生 ABI；根据构建目标解释类型和调用",
-  "detail": "同一份含 long 的结构体由两端直接写内存镜像，字段偏移可能不同。使用固定宽度的外部字段才能稳定解析。",
-  "boundary": "仅知道机器是 x86-64 无法断定 long 的宽度。",
+  "title": "Windows x64 long and pointer widths are different",
+  "summary": "Windows x64 uses LLP64, longs are usually 32 bits and pointers are 64 bits; both are 64 bits in common 64-bit Unix LP64.",
+  "applies": "64-bit native ABI; interprets types and calls based on build target",
+  "detail": "The same structure containing long writes the memory image directly from both ends, and the field offsets may be different. Use fixed-width external fields for stable parsing.",
+  "boundary": "You can't tell the width of long just by knowing that the machine is x86-64.",
   "aliases": [
     "LLP64",
     "LP64",
     "long width",
-    "指针宽度"
+    "pointer width"
   ],
-  "relevance": "解释两个同为 64 位的构建为什么写出了长度不同的记录。",
+  "relevance": "Explain why two 64-bit builds write records of different lengths.",
   "sources": {
     "reference": "https://learn.microsoft.com/en-us/windows/win32/winprog64/abstract-data-models",
     "context": "https://primer.picoctf.org/"

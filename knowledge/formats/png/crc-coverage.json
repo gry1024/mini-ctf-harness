@@ -1,21 +1,21 @@
 {
-  "title": "PNG 块 CRC 的输入范围",
-  "summary": "PNG 的块 CRC 覆盖四字节类型和数据，即使数据为空也包含类型。",
-  "applies": "PNG 块的 CRC 校验",
+  "title": "Input range for PNG block CRC",
+  "summary": "PNG's block CRC covers the four-byte type and data, including the type even if the data is empty.",
+  "applies": "CRC check of PNG blocks",
   "aliases": [
     "CRC",
     "CRC32",
     "checksum",
-    "循环冗余校验",
-    "校验和"
+    "cyclic redundancy check",
+    "Checksum"
   ],
-  "detail": "计算一个块的 CRC 时，从类型字段起，取四个类型字节和紧随其后的全部数据。存储的 CRC 按大端序读取。",
-  "boundary": "长度字段和存储的 CRC 均不参与计算。IEND 的数据虽然为空，CRC 输入仍为四个类型字节 IEND。",
+  "detail": "When calculating the CRC of a block, starting from the type field, four type bytes are taken followed by all the data. The stored CRC is read in big-endian order.",
+  "boundary": "Neither the length field nor the stored CRC participate in the calculation. Although the data of IEND is empty, the CRC input is still four type bytes IEND.",
   "sources": {
     "reference": "https://www.w3.org/TR/png-3/#5CRC-algorithm",
     "context": "https://ctf-wiki.org/misc/picture/png/"
   },
-  "relevance": "核对图像是否损坏时，取错 CRC 输入范围会把有效块误判为损坏。",
+  "relevance": "When checking whether an image is corrupted, taking the wrong CRC input range can misjudge valid blocks as corrupted.",
   "tags": [
     "misc"
   ]

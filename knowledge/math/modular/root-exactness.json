@@ -1,20 +1,20 @@
 {
-  "title": "整数开方的 floor 根与精确幂",
-  "summary": "integer_nthroot 同时返回向下取整的根和是否恰好为整数幂的标记。",
-  "applies": "整数模运算；模数大于 1",
+  "title": "Floor roots and exact powers of integer square roots",
+  "summary": "integer_nthroot returns the floored integer root and a flag indicating whether the input is an exact power.",
+  "applies": "Integer modulo arithmetic; modulus greater than 1",
   "aliases": [
     "integer_nthroot",
     "perfect power",
-    "整数开方",
-    "精确幂"
+    "Integer square root",
+    "exact power"
   ],
-  "detail": "80 的四次整数根为 2，精确标记为假；81 返回 3 且标记为真。",
-  "boundary": "大整数转浮点再开方可能因舍入选错邻近整数。候选可用整数幂直接回代。",
+  "detail": "80 has a fourth integer root of 2 and is exactly marked as false; 81 returns 3 and is marked as true.",
+  "boundary": "Converting a large integer to a floating point and then taking the square root may result in incorrect selection of adjacent integers due to rounding. Candidates can be directly back-substituted using integer powers.",
   "sources": {
     "reference": "https://docs.sympy.org/latest/modules/core.html#sympy.core.intfunc.integer_nthroot",
     "context": "https://cryptohack.org/courses/modular/"
   },
-  "relevance": "从高次幂数据恢复整数时，区分近似候选与严格满足等式的值。",
+  "relevance": "When recovering integers from higher power data, distinguish between approximate candidates and values that strictly satisfy the equation.",
   "tags": [
     "crypto"
   ]

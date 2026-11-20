@@ -1,17 +1,17 @@
 {
-  "title": "SEC 1 素数域压缩点前缀选择纵坐标奇偶",
-  "summary": "短 Weierstrass 素数曲线的标准压缩点用 02 或 03 加定宽 x，前缀分别选取偶数或奇数的 y 代表。",
-  "applies": "素数域上的非奇异短 Weierstrass 曲线；特征大于 3",
-  "detail": "同一 x 可能对应两条平方根。恢复并选择 y 后仍须满足曲线方程。",
-  "boundary": "前缀 04 表示另一种未压缩编码；Edwards 点格式不采用这一前缀约定。",
+  "title": "SEC 1 Prime field compression point prefix selects vertical coordinate parity",
+  "summary": "On a short Weierstrass curve over a prime field, a compressed point is a 02 or 03 prefix followed by fixed-width x. The prefix encodes even or odd y.",
+  "applies": "Nonsingular short Weierstrass curves over primes; characteristic > 3",
+  "detail": "The same x may correspond to two square roots. After restoring and choosing y, the curve equation must still be satisfied.",
+  "boundary": "The prefix 04 indicates another uncompressed encoding; the Edwards point format does not follow this prefix convention.",
   "aliases": [
     "SEC1",
     "compressed point",
     "02 03",
-    "压缩点",
-    "奇偶位"
+    "compression point",
+    "Parity bit"
   ],
-  "relevance": "解释两个公钥编码只有前缀不同、恢复点却不同的原因。",
+  "relevance": "Explain the reason why the two public key codes only have different prefixes but different recovery points.",
   "sources": {
     "reference": "https://www.secg.org/sec1-v2.pdf",
     "context": "https://cryptohack.org/courses/elliptic/"

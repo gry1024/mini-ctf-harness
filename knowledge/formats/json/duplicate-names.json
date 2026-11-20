@@ -1,19 +1,19 @@
 {
-  "title": "JSON 对象中重复名称不能保证统一结果",
-  "summary": "规范建议对象成员名称唯一；同名键出现两次时，不同解析器可能保留最后值、全部值或报错。",
-  "applies": "RFC 8259；JSON 文本",
+  "title": "Duplicate names in JSON objects do not guarantee uniform results",
+  "summary": "JSON recommends unique object member names. On duplicate keys, parsers may keep only the last value, keep all values, or report an error.",
+  "applies": "RFC 8259; JSON text",
   "aliases": [
     "duplicate keys",
-    "重复键",
-    "成员同名"
+    "Duplicate key",
+    "Members with the same name"
   ],
-  "detail": "若把原文直接读入只容纳唯一键的字典，后续遍历可能看不到原来存在的重复项。",
-  "boundary": "对象名称的转义要在比较前解释；原始拼写不同也可能表示同一名称。",
+  "detail": "If the original text is read directly into a dictionary that only holds unique keys, subsequent traversals may not see the original duplicates.",
+  "boundary": "Escapes of object names are explained before comparison; different original spellings may represent the same name.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc8259.html#section-4",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解释两个解析工具为何给出不同字段内容，或重新序列化后丢掉一项。",
+  "relevance": "Explain why the two parsing tools give different field contents, or an item is lost after reserialization.",
   "tags": [
     "web",
     "misc"

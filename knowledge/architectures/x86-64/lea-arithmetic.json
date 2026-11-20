@@ -1,20 +1,20 @@
 {
-  "title": "LEA 只计算有效地址",
-  "summary": "lea eax,[rdi+rdi*4+3] 取出算术结果的低 32 位，不读取该地址指向的内存。",
-  "applies": "x86-64 的 64 位模式；Intel SDM 卷 1 和卷 2",
+  "title": "LEA only counts valid addresses",
+  "summary": "lea eax,[rdi+rdi*4+3] takes out the lower 32 bits of the arithmetic result without reading the memory pointed to by the address.",
+  "applies": "64-bit mode for x86-64; Intel SDM Volume 1 and Volume 2",
   "aliases": [
     "LEA",
     "effective address",
-    "地址计算",
-    "乘五"
+    "Address calculation",
+    "times five"
   ],
-  "detail": "这条指令可用来实现 5×输入+3 并保留算术标志；反汇编中的方括号不一定代表一次访存。",
-  "boundary": "不能把所有带同样方括号的指令都等同于 LEA；MOV 的内存操作数会读写内存。",
+  "detail": "This instruction can be used to implement 5×input+3 and preserve the arithmetic flag; the square brackets in the disassembly do not necessarily represent a memory access.",
+  "boundary": "Not all instructions with the same square brackets are equivalent to LEA; the memory operand of MOV reads and writes memory.",
   "sources": {
     "reference": "https://cdrdv2-public.intel.com/671110/325383-sdm-vol-2abcd.pdf",
     "context": "https://ctf-wiki.org/executable/elf/structure/basic-info/"
   },
-  "relevance": "静态还原纯数字变换时，判断表达式是否真的依赖外部内存内容。",
+  "relevance": "When statically restoring pure digital transformation, determine whether the expression really depends on the external memory content.",
   "tags": [
     "reverse"
   ]

@@ -1,20 +1,20 @@
 {
-  "title": "pcapng 的时间分辨率由每个接口的 if_tsresol 指定",
-  "summary": "if_tsresol 高位为 0 时单位是 10 的负幂，高位为 1 时单位是 2 的负幂；未提供时默认微秒。",
-  "applies": "pcapng v1；Section Header、Interface Description 与 Enhanced Packet Block",
+  "title": "The time resolution of pcapng is specified by if_tsresol per interface",
+  "summary": "if_tsresol When the high bit is 0, the unit is the negative power of 10, when the high bit is 1, the unit is the negative power of 2; if not provided, the default is microseconds.",
+  "applies": "pcapng v1; Section Header, Interface Description and Enhanced Packet Block",
   "aliases": [
     "if_tsresol",
     "EPB",
     "timestamp resolution",
-    "二进制时间分辨率"
+    "Binary time resolution"
   ],
-  "detail": "0x09 表示 10⁻⁹ 秒，0x8a 表示 2⁻¹⁰ 秒。Enhanced Packet Block 的高低时间字段组合成一个计数值。",
-  "boundary": "高低字段不是秒和微秒两部分；跨接口时还应考虑可选的 if_tsoffset。",
+  "detail": "0x09 means 10⁻⁹ seconds, 0x8a means 2⁻¹⁰ seconds. The high and low time fields of the Enhanced Packet Block are combined into a count value.",
+  "boundary": "The high and low fields are not split into seconds and microseconds; the optional if_tsoffset should also be considered when crossing interfaces.",
   "sources": {
     "reference": "https://www.ietf.org/archive/id/draft-ietf-opsawg-pcapng-04.html",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "把同一文件中两个不同采集接口的时间线对齐。",
+  "relevance": "Align the timelines of two different acquisition interfaces in the same file.",
   "tags": [
     "misc"
   ]

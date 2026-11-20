@@ -1,16 +1,16 @@
 {
-  "title": "分离的调试符号必须匹配相应构建",
-  "summary": "GNU 工具可依 build ID 或 .gnu_debuglink 关联可执行文件与分离调试信息。",
-  "applies": "原生程序的离线栈回溯、符号匹配与调试信息",
-  "detail": "debuglink 包含调试文件名与 CRC。相同源码重新编译后地址布局可能变化，实际样本的构建身份比文件名更可靠。",
-  "boundary": "build ID 与 debuglink 是两种机制；有一个并不强制存在另一个。",
+  "title": "Detached debugging symbols must match the corresponding build",
+  "summary": "GNU tools can associate executable files with separate debugging information based on build ID or .gnu_debuglink.",
+  "applies": "Offline stack traceback, symbol matching and debugging information for native programs",
+  "detail": "debuglink contains debug file name and CRC. The address layout may change after the same source code is recompiled, and the build identity of the actual sample is more reliable than the file name.",
+  "boundary": "build ID and debuglink are two mechanisms; having one does not enforce the presence of the other.",
   "aliases": [
     "build-id",
     ".gnu_debuglink",
     "separate debug",
-    "符号匹配"
+    "Symbol matching"
   ],
-  "relevance": "核对同名二进制给出完全不同源码行的原因。",
+  "relevance": "Checking binaries with the same name gives the reason for completely different source lines.",
   "sources": {
     "reference": "https://sourceware.org/gdb/current/onlinedocs/gdb/Separate-Debug-Files.html",
     "context": "https://primer.picoctf.org/"

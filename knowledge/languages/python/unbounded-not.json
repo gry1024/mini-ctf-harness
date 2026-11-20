@@ -1,20 +1,20 @@
 {
-  "title": "Python 按位取反没有固定字长",
-  "summary": "Python 整数的按位运算按无限符号扩展解释，~0x12 得 -19。",
-  "applies": "Python 3；标准库或内置整数",
+  "title": "Python bitwise negation does not have a fixed word length",
+  "summary": "Bitwise operations on Python integers are interpreted as infinite sign extension, ~0x12 is -19.",
+  "applies": "Python 3; standard library or built-in integers",
   "aliases": [
     "bitwise not",
-    "按位取反",
-    "无限精度",
-    "掩码"
+    "Bitwise negation",
+    "infinite precision",
+    "mask"
   ],
-  "detail": "模拟 8 位结果时把输出限制到低 8 位可得 0xed；直接打印负数看不到这个字节。",
-  "boundary": "选择多少位应来自原附件的字段定义；固定掩码只保留该宽度内的信息。",
+  "detail": "When simulating an 8-bit result, limiting the output to the lower 8 bits results in 0xed; you cannot see this byte when printing negative numbers directly.",
+  "boundary": "Select how many bits should come from the original attachment's field definition; a fixed mask only retains information within that width.",
   "sources": {
     "reference": "https://docs.python.org/3/library/stdtypes.html#bitwise-operations-on-integer-types",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "把机器上的定宽位运算译成 Python 时决定中间值是否需要截断。",
+  "relevance": "Determines whether intermediate values need to be truncated when translating fixed-width bitwise operations on the machine into Python.",
   "tags": [
     "reverse",
     "misc"

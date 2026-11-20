@@ -1,20 +1,20 @@
 {
-  "title": "Base64 的末尾等号揭示最后一组有效字节数",
-  "summary": "四字符末组出现 == 表示最后只含一个原始字节，出现 = 表示含两个。",
-  "applies": "RFC 4648；Base64 族编码",
+  "title": "The trailing equal sign of Base64 reveals the last set of valid bytes",
+  "summary": "The presence of == at the end of the four-character group means that the last group contains only one original byte, and the occurrence of = means that it contains two.",
+  "applies": "RFC 4648; Base64 family encoding",
   "aliases": [
     "pad bits",
     "trailing padding",
-    "末尾等号",
-    "余数"
+    "equal sign at the end",
+    "remainder"
   ],
-  "detail": "规范化编码要求最后一个有效字符中没有承载原文的低位填零；因此宽松解码后相同不代表原文本完全相同。",
-  "boundary": "无填充格式下，字符数模 4 为 1 不能组成合法完整 Base64 数据。",
+  "detail": "Normalized encoding requires that the last valid character does not carry the low-order zeros of the original text; therefore, the same after loose decoding does not mean that the original text is exactly the same.",
+  "boundary": "In the unpadded format, the number of characters modulo 4 is 1, which cannot form legal and complete Base64 data.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc4648.html#section-3.5",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "判断截断或表示差异时，区分缺少外层填充和真正缺失数据。",
+  "relevance": "Distinguish between missing outer padding and truly missing data when judging truncation or representation differences.",
   "tags": [
     "misc",
     "crypto"

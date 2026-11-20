@@ -1,20 +1,20 @@
 {
-  "title": "Number 的无符号右移固定为 32 位",
-  "summary": ">>> 把左操作数作为 32 位无符号整数处理，移位计数仅使用低 5 位。",
-  "applies": "ECMAScript；Number、BigInt 与字符串",
+  "title": "Unsigned right shift of Number is fixed to 32 bits",
+  "summary": ">>> Treat the left operand as a 32-bit unsigned integer, using only the lower 5 bits for the shift count.",
+  "applies": "ECMAScript; Number, BigInt, and Strings",
   "aliases": [
     "unsigned right shift",
     ">>>",
-    "无符号右移",
+    "unsigned right shift",
     "shift count"
   ],
-  "detail": "-1 >>> 0 得 4294967295，1 >>> 32 与 1 >>> 0 相同。",
-  "boundary": "该运算符不支持 BigInt；超过 32 位的 Number 高位在转换时丢失。",
+  "detail": "-1 >>> 0 gets 4294967295, 1 >>> 32 is the same as 1 >>> 0.",
+  "boundary": "This operator does not support BigInt; the high-order bits of Numbers larger than 32 bits are lost on conversion.",
   "sources": {
     "reference": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unsigned_right_shift",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "译写脚本中的位混合变换时，避免在高位或第 32 次移位处算错。",
+  "relevance": "When interpreting bit-mixing transformations in scripts, avoid miscalculations at high bits or at the 32nd shift.",
   "tags": [
     "reverse",
     "web"

@@ -1,16 +1,16 @@
 {
-  "title": "同一源码行可对应多个指令范围与判别号",
-  "summary": "DWARF 行号程序记录地址到源位置的映射；discriminator 用来区分同一源码位置上的多个代码块。",
-  "applies": "原生程序崩溃报告与 DWARF 调试元数据",
-  "detail": "某条源码行内可含分支或内联展开，在多个机器地址重复出现相同文件与行号是允许的。",
-  "boundary": "只有行号不能唯一恢复某条机器指令，也不能把同一行号的所有事件直接算成一次执行。见 DWARF 5 §6.2。",
+  "title": "The same source code line can correspond to multiple instruction ranges and identification numbers.",
+  "summary": "The DWARF line number program records the mapping of addresses to source locations; the discriminator is used to distinguish multiple code blocks at the same source code location.",
+  "applies": "Native program crash reporting and DWARF debugging metadata",
+  "detail": "A certain source code line can contain branches or inline expansions, and the same file and line numbers are allowed to appear repeatedly on multiple machine addresses.",
+  "boundary": "Only the line number cannot uniquely restore a certain machine instruction, nor can all events with the same line number be directly counted as one execution. See DWARF 5 §6.2.",
   "aliases": [
     "discriminator",
     "line table",
-    "行号表",
-    "源码行"
+    "Line number table",
+    "source line"
   ],
-  "relevance": "合并剖析或崩溃记录时避免错把不同基本块当作同一个位置。",
+  "relevance": "Avoid mistaking different basic blocks for the same location when merging profiling or crash records.",
   "sources": {
     "reference": "https://dwarfstd.org/doc/DWARF5.pdf",
     "context": "https://primer.picoctf.org/"

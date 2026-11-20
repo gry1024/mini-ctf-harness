@@ -1,16 +1,16 @@
 {
-  "title": "字符串聚合的输入顺序需要明确指定",
-  "summary": "SQLite 未指定聚合内部排序时，group_concat 的输入顺序没有保证。",
-  "applies": "SQLite 查询结果与跨方言边界",
-  "detail": "在支持聚合内 ORDER BY 的版本中，给聚合输入指定排序可得到确定拼接顺序。外层的 ORDER BY 主要排序结果行。",
-  "boundary": "聚合参数内的 ORDER BY 从 SQLite 3.44.0 起可用，旧版不要假定接受该语法。",
+  "title": "The input order of string aggregations needs to be specified explicitly",
+  "summary": "When SQLite does not specify internal ordering of aggregates, the input order of group_concat is not guaranteed.",
+  "applies": "SQLite query results and crossing dialect boundaries",
+  "detail": "In versions that support ORDER BY within aggregates, specifying a sort on the aggregate inputs determines the splicing order. The outer ORDER BY primarily sorts the result rows.",
+  "boundary": "ORDER BY within aggregate parameters is available since SQLite 3.44.0, older versions do not assume acceptance of this syntax.",
   "aliases": [
     "group_concat",
     "string_agg",
-    "聚合顺序",
-    "拼接顺序"
+    "aggregation order",
+    "Splicing order"
   ],
-  "relevance": "多次复建同一串拼接文本时区分数据变化和未约定顺序。",
+  "relevance": "Distinguish data changes and unspecified order when reconstructing the same string of spliced text multiple times.",
   "sources": {
     "reference": "https://www.sqlite.org/lang_aggfunc.html",
     "context": "https://primer.picoctf.org/"

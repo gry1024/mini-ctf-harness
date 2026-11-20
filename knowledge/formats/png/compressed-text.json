@@ -1,16 +1,16 @@
 {
-  "title": "PNG zTXt 将关键词与压缩文本分开存储",
-  "summary": "zTXt 数据依次为关键词、零分隔、压缩方法字节和压缩文本。方法 0 的文本部分为 zlib 流。",
-  "applies": "PNG 文本附属块",
-  "detail": "关键词没有压缩。先确定零分隔和方法，再解压后续数据；文本按 Latin-1 解释。",
-  "boundary": "iTXt 是另一结构，还包含语言标签、翻译关键词和 UTF-8 文本；不能复用同一套偏移。",
+  "title": "PNG zTXt stores keywords and compressed text separately",
+  "summary": "The zTXt data is keywords, zero-separated, compression method bytes, and compressed text. The text portion of method 0 is a zlib stream.",
+  "applies": "PNG text attachment block",
+  "detail": "Keywords are not compressed. Determine zero separation and method before decompressing subsequent data; text is interpreted as Latin-1.",
+  "boundary": "iTXt is another structure that also contains language tags, translation keywords, and UTF-8 text; the same set of offsets cannot be reused.",
   "aliases": [
     "zTXt",
     "PNG metadata",
-    "压缩文本",
-    "关键词"
+    "Compress text",
+    "keywords"
   ],
-  "relevance": "查看附件元数据时，避免把关键词和方法字节交给解压器。",
+  "relevance": "When viewing attachment metadata, avoid handing keywords and method bytes to the decompressor.",
   "sources": {
     "reference": "https://www.w3.org/TR/png-3/#11zTXt",
     "context": "https://ctf-wiki.org/misc/picture/png/"

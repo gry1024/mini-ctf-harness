@@ -1,20 +1,20 @@
 {
-  "title": "UTF-8 开头的 EF BB BF 是可选签名",
-  "summary": "UTF-8 没有大小端选择，开头的 EF BB BF 表示 U+FEFF，可作为文本签名。",
-  "applies": "Unicode 文本与 JSON 字节记录",
+  "title": "EF BB BF starting with UTF-8 is an optional signature",
+  "summary": "UTF-8 has no endian selection. The starting EF BB BF represents U+FEFF, which can be used as a text signature.",
+  "applies": "Unicode text and JSON byte records",
   "aliases": [
     "UTF-8 BOM",
     "EF BB BF",
-    "首字符",
-    "字节顺序标记"
+    "first character",
+    "byte order mark"
   ],
-  "detail": "有些解码器去掉开头的签名，另一些保留 U+FEFF，因此显示相同的文本可能有不同的首字符或摘要。",
-  "boundary": "文件中部相同字节不应按文件起始签名无条件删除。",
+  "detail": "Some decoders strip off the leading signature, others keep U+FEFF, so displaying the same text may have different first characters or digests.",
+  "boundary": "The same bytes in the middle of the file should not be unconditionally deleted based on the file's starting signature.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc3629.html#section-6",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解释第一列字段名看起来一致、比较却失败的情况。",
+  "relevance": "Explain the situation where the field names in the first column appear to be consistent, but the comparison fails.",
   "tags": [
     "misc",
     "web"

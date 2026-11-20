@@ -1,20 +1,20 @@
 {
-  "title": "RIFF 块的奇数字节数据后有对齐填充",
-  "summary": "常规 RIFF 子块的数据按两个字节对齐，奇数长度需跨过一个填充字节，块的 size 字段不含该填充。",
-  "applies": "RIFF/WAVE 中的 PCM 音频",
+  "title": "RIFF block has alignment padding after odd bytes of data",
+  "summary": "Data for regular RIFF subchunks is two-byte aligned, with odd lengths spanning a padding byte, and the chunk's size field does not contain this padding.",
+  "applies": "PCM audio in RIFF/WAVE",
   "aliases": [
     "RIFF",
     "word padding",
     "WAVE header",
-    "音频块对齐"
+    "audio block alignment"
   ],
-  "detail": "长度为 5 的块有 8 字节头，下一块起点在本块起点加 14 处。",
-  "boundary": "WAVE 中可有可选元数据块；不能用固定的 44 字节头偏移定位所有 PCM 数据。",
+  "detail": "A block of length 5 has an 8-byte header, and the next block starts at the beginning of the current block plus 14.",
+  "boundary": "There can be optional metadata blocks in WAVE; all PCM data cannot be located with a fixed 44-byte header offset.",
   "sources": {
     "reference": "https://learn.microsoft.com/en-us/windows/win32/xaudio2/resource-interchange-file-format--riff-",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "解析带注释的音频附件时，避免把填充误作下一个块名的首字节。",
+  "relevance": "When parsing annotated audio attachments, avoid mistaking padding for the first byte of the next chunk name.",
   "tags": [
     "misc"
   ]

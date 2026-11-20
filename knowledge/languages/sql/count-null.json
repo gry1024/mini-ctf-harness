@@ -1,20 +1,20 @@
 {
-  "title": "COUNT(*) 与 COUNT(x) 对空值的计数不同",
-  "summary": "COUNT(*) 数结果行，COUNT(x) 只数表达式 x 非 NULL 的行。",
-  "applies": "SQLite 查询结果与跨方言边界",
-  "detail": "LEFT JOIN 未匹配时仍会保留左行，此时对右侧非空主键做 COUNT 得 0，而 COUNT(*) 可得 1。",
-  "boundary": "重复值仍计入 COUNT(x)；只有显式 DISTINCT 才按不同非 NULL 值计数。",
+  "title": "COUNT(*) and COUNT(x) count null values differently",
+  "summary": "COUNT(*) counts the result rows, COUNT(x) only counts the rows for which expression x is not NULL.",
+  "applies": "SQLite query results and crossing dialect boundaries",
+  "detail": "If LEFT JOIN does not match, the left row will still be retained. At this time, COUNT on the non-empty primary key on the right side will get 0, and COUNT(*) will get 1.",
+  "boundary": "Duplicate values are still counted in COUNT(x); only explicit DISTINCT counts as distinct non-NULL values.",
   "aliases": [
     "COUNT",
     "LEFT JOIN",
     "NULL count",
-    "空值计数",
-    "左连接",
-    "右表",
-    "计数",
-    "行数"
+    "null count",
+    "left join",
+    "Right table",
+    "count",
+    "Number of lines"
   ],
-  "relevance": "核对 Web 后台返回的汇总数字与明细行数为什么相差一。",
+  "relevance": "Check why the summary number returned by the web backend and the number of detailed rows differ by one.",
   "sources": {
     "reference": "https://www.sqlite.org/lang_aggfunc.html",
     "context": "https://primer.picoctf.org/"

@@ -1,16 +1,16 @@
 {
-  "title": "周期异或逆变换使用相同密钥字节和相同相位",
-  "summary": "若 y[i] = x[i] XOR key[i mod k]，逐字节再次异或同相位的 key 就恢复 x[i]。",
-  "applies": "逐字节的可逆位变换",
-  "detail": "若截取的样本从原序列偏移 j 开始，第一个样本使用 key[j mod k]。仅知道密钥长度不能决定截取点的相位。",
-  "boundary": "此结论针对已给定的字节变换；状态反馈或变长编码会改变索引关系。",
+  "title": "Periodic XOR inverse transform uses the same key bytes and the same phase",
+  "summary": "If y[i] = x[i] XOR key[i mod k], XOR keys with the same phase byte by byte again to restore x[i].",
+  "applies": "Byte-by-byte reversible bit transformation",
+  "detail": "If the intercepted sample starts at offset j from the original sequence, the first sample uses key[j mod k]. Merely knowing the key length cannot determine the phase of the interception point.",
+  "boundary": "This conclusion is for a given byte transformation; status feedback or variable-length encoding will change the index relationship.",
   "aliases": [
     "XOR",
     "periodic key",
-    "循环异或",
-    "相位"
+    "Loop XOR",
+    "Phase"
   ],
-  "relevance": "复核字节校验器的显式变换时，避免取子串后错误地从密钥开头重新计数。",
+  "relevance": "When reviewing explicit transformations of byte validators, avoid erroneously counting from the beginning of the key after taking a substring.",
   "sources": {
     "reference": "https://docs.python.org/3/library/stdtypes.html#bitwise-operations-on-integer-types",
     "context": "https://primer.picoctf.org/"

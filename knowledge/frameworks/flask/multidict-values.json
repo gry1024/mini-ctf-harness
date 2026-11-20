@@ -1,16 +1,16 @@
 {
-  "title": "Werkzeug 的 MultiDict 可以保留同名参数的全部值",
-  "summary": "常规字典式取值通常返回该键的第一个值，getlist 返回同键的所有值。",
-  "applies": "Flask 默认配置；请求与会话数据解释",
-  "detail": "对输入 k=a&k=b，使用 get 和 getlist 记录日志，分别可能看到 a 和含两个元素的列表。",
-  "boundary": "如果请求在更早层已转换成普通字典，重复项可能已经丢失。",
+  "title": "Werkzeug's MultiDict can retain all values of parameters with the same name",
+  "summary": "Regular dictionary values usually return the first value of the key, and getlist returns all values with the same key.",
+  "applies": "Flask default configuration; request and session data explanation",
+  "detail": "For the input k=a&k=b, use get and getlist to log, and you may see a and a list with two elements respectively.",
+  "boundary": "If the request had been converted to a normal dictionary at an earlier layer, duplicates might have been lost.",
   "aliases": [
     "MultiDict",
     "getlist",
     "request.args",
-    "重复参数"
+    "Repeat parameters"
   ],
-  "relevance": "复核表单与查询日志时避免误以为同名字段只提交了一次。",
+  "relevance": "When reviewing the form and query log, avoid mistakenly thinking that the field with the same name has only been submitted once.",
   "sources": {
     "reference": "https://werkzeug.palletsprojects.com/en/stable/datastructures/#werkzeug.datastructures.MultiDict",
     "context": "https://primer.picoctf.org/"

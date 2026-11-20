@@ -1,16 +1,16 @@
 {
-  "title": "AArch64 的 LR 保存链接返回位置",
-  "summary": "标准过程调用使用 X30 作为链接寄存器。叶函数可直接使用 LR 返回，因此不能假定每个函数都将返回位置写入内存。",
-  "applies": "AArch64；AAPCS64 的通用调用与寄存器表示",
-  "detail": "再发起嵌套调用前，需要返回的函数必须以某种方式保存自己的返回位置。",
-  "boundary": "具体序言与平台的展开要求、优化策略相关；有无固定帧记录需核对实际构建。",
+  "title": "LR save link return location for AArch64",
+  "summary": "Standard calls use X30 as the link register. A leaf function can return directly through LR without saving the return address to memory.",
+  "applies": "AArch64; general call and register representation of AAPCS64",
+  "detail": "Before making nested calls, the function that needs to return must save its return position in some way.",
+  "boundary": "The specific preface is related to the deployment requirements and optimization strategies of the platform; whether there is a fixed frame record needs to be checked against the actual construction.",
   "aliases": [
     "X30",
     "LR",
     "link register",
-    "叶函数"
+    "leaf function"
   ],
-  "relevance": "阅读正常 ARM 调用链时理解为何可能看不到保存 LR 的栈槽。",
+  "relevance": "Understand why the stack slot holding the LR may not be visible when reading the normal ARM call chain.",
   "sources": {
     "reference": "https://github.com/ARM-software/abi-aa/blob/main/aapcs64/aapcs64.rst",
     "context": "https://primer.picoctf.org/"

@@ -1,20 +1,20 @@
 {
-  "title": "DNS 压缩指针的偏移原点",
-  "summary": "名称中的两个高位为 11 时，两字节项的低 14 位给出从 DNS 消息首字节算起的偏移。",
-  "applies": "离线 DNS 报文字节解析",
+  "title": "Offset origin of DNS compression pointer",
+  "summary": "When the two high-order bits in the name are 11, the low-order 14 bits of the two-byte entry give the offset from the first byte of the DNS message.",
+  "applies": "Offline DNS message byte parsing",
   "aliases": [
     "DNS compression",
     "name pointer",
-    "压缩指针",
-    "域名偏移"
+    "compressed pointer",
+    "Domain name offset"
   ],
-  "detail": "序列可以由普通标签开头、一个指针结尾。指针替代剩余后缀，在当前位置消耗两字节。",
-  "boundary": "TCP 传输附带的两字节消息长度不属于 DNS 消息本体，不能算入偏移。",
+  "detail": "A sequence can start with a normal label and end with a pointer. The pointer replaces the remaining suffix, consuming two bytes at the current position.",
+  "boundary": "The two-byte message length attached to the TCP transfer does not belong to the DNS message body and cannot be counted in the offset.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc1035.html#section-4.1.4",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "手工复核抓包中的重复域名时，避免从当前记录起算偏移。",
+  "relevance": "When manually reviewing duplicate domain names in captured packets, avoid calculating offsets from the current record.",
   "tags": [
     "misc"
   ]

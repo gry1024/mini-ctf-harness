@@ -1,20 +1,20 @@
 {
-  "title": "SAR 与带符号 IDIV 的负数舍入不同",
-  "summary": "算术右移负数保留符号位，SAR 一位等效于向负无穷取整除以二。IDIV 的整数商向零截断。",
-  "applies": "x86-64 的 64 位模式；Intel SDM 卷 1 和卷 2",
+  "title": "SAR is different from negative number rounding for signed IDIV",
+  "summary": "SAR preserves the sign bit. Shifting one bit right divides by two and rounds down. IDIV truncates the quotient toward zero.",
+  "applies": "64-bit mode for x86-64; Intel SDM Volume 1 and Volume 2",
   "aliases": [
     "SAR",
     "IDIV",
-    "负数右移",
+    "Shift negative numbers right",
     "truncate toward zero"
   ],
-  "detail": "−3 算术右移一位得 −2，而带符号整数 −3 除以 2 的商为 −1。",
-  "boundary": "若反汇编在 SAR 前对负值进行了偏置修正，整个指令序列可能实现向零截断。",
+  "detail": "Arithmetically shifting −3 to the right by one position gives −2, and the quotient of the signed integer −3 divided by 2 is −1.",
+  "boundary": "If the disassembly biases negative values before SAR, the entire instruction sequence may be truncated toward zero.",
   "sources": {
     "reference": "https://cdrdv2-public.intel.com/671110/325383-sdm-vol-2abcd.pdf",
     "context": "https://ctf-wiki.org/executable/elf/structure/basic-info/"
   },
-  "relevance": "将反汇编翻译成高级语言时，负奇数是区别两种舍入方式的最小样例。",
+  "relevance": "When translating the disassembly into a high-level language, negative odd numbers are the smallest example that distinguishes the two types of rounding.",
   "tags": [
     "reverse"
   ]

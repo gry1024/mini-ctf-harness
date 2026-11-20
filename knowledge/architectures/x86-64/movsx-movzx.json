@@ -1,20 +1,20 @@
 {
-  "title": "MOVSX 与 MOVZX 的扩展位不同",
-  "summary": "把字节 0x80 扩成 32 位，MOVSX 得 0xffffff80，MOVZX 得 0x00000080。",
-  "applies": "x86-64 的 64 位模式；Intel SDM 卷 1 和卷 2",
+  "title": "The extension bits of MOVSX and MOVZX are different",
+  "summary": "Expand byte 0x80 to 32 bits, MOVSX gets 0xffffff80, MOVZX gets 0x00000080.",
+  "applies": "64-bit mode for x86-64; Intel SDM Volume 1 and Volume 2",
   "aliases": [
     "MOVSX",
     "MOVZX",
     "sign extension",
-    "零扩展"
+    "zero extension"
   ],
-  "detail": "若目的为 EAX，对整个 RAX 观察时高 32 位仍为零；把字节直接符号扩展到 RAX 则不同。",
-  "boundary": "符号扩展取决于源宽度的最高位；单看反汇编中的十六进制立即数无法替代操作数宽度。",
+  "detail": "If the destination is EAX, the upper 32 bits are still zero when observing the entire RAX; it is different when the byte is directly sign extended to RAX.",
+  "boundary": "Sign extension depends on the highest bit of the source width; looking at the hexadecimal immediate in the disassembly alone does not replace the operand width.",
   "sources": {
     "reference": "https://cdrdv2-public.intel.com/671110/325383-sdm-vol-2abcd.pdf",
     "context": "https://ctf-wiki.org/executable/elf/structure/basic-info/"
   },
-  "relevance": "解释有符号字节参与后续比较或索引时为何得到完全不同的数。",
+  "relevance": "Explain why signed bytes result in completely different numbers when used in subsequent comparisons or indexes.",
   "tags": [
     "reverse"
   ]

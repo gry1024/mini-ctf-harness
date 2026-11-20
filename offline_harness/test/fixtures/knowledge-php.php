@@ -25,5 +25,5 @@ check(array_search("7",[7,"7"]),0);
 check(base64_decode("SGV!sbG8="),"Hello"); check(base64_decode("SGV!sbG8=",true),false);
 check(urldecode("A+B%2BC"),"A B+C"); check(rawurldecode("A+B%2BC"),"A+B+C");
 check(strlen(hash("sha256","a",true)),32); check(strlen(hash("sha256","a")),64);
-check(strlen("A\0B"),3); check(strlen("中"),3);
+check(strlen("A\0B"),3); check(strlen("\u{4E2D}"),3);
 echo PHP_VERSION, " 12 cards passed\n";

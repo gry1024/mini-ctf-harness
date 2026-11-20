@@ -1,19 +1,19 @@
 {
-  "title": "索引色 tRNS 可以短于 PLTE",
-  "summary": "tRNS 中每个字节给出相应调色板索引的透明度，后续没有条目的索引默认为完全不透明。",
-  "applies": "PNG 规范；独立 PNG 图像",
+  "title": "Index color tRNS can be shorter than PLTE",
+  "summary": "Each byte in tRNS gives the transparency of the corresponding palette index, with subsequent indices without entries defaulting to fully opaque.",
+  "applies": "PNG specification; stand-alone PNG image",
   "aliases": [
     "tRNS",
     "palette alpha",
-    "透明索引"
+    "Transparent index"
   ],
-  "detail": "例如表有四种颜色而 tRNS 只有一个零字节时，只有索引 0 完全透明。",
-  "boundary": "灰度和真彩色图的 tRNS 表示指定的透明样本值，解释方式不同。",
+  "detail": "For example, when the table has four colors and tRNS has only one zero byte, only index 0 is fully transparent.",
+  "boundary": "tRNS for grayscale and truecolor images represent specified transparent sample values, which are interpreted differently.",
   "sources": {
     "reference": "https://www.w3.org/TR/png-3/#11tRNS",
     "context": "https://ctf-wiki.org/misc/picture/png/"
   },
-  "relevance": "区分可见图像缺色与原始索引确实不存在。",
+  "relevance": "Distinguishing visible image lack of color from original index does not exist.",
   "tags": [
     "misc"
   ]

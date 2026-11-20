@@ -1,22 +1,22 @@
 {
-  "title": "数字与非数字字符串的宽松比较",
-  "summary": "0 与非数字字符串用 == 比较时，PHP 7.x 可判为相等，PHP 8.x 改为按字符串比较。",
-  "applies": "PHP 7.x 与 PHP 8.x；数字和字符串之间的 ==",
+  "title": "Relaxed comparison of numeric and non-numeric strings",
+  "summary": "With ==, PHP 7.x can consider 0 equal to a non-numeric string. PHP 8.x compares them as strings.",
+  "applies": "PHP 7.x vs. PHP 8.x; == between numbers and strings",
   "aliases": [
     "==",
     "loose comparison",
     "non-numeric string",
-    "宽松比较",
-    "弱类型比较",
-    "数字和字符串相等"
+    "Loose comparison",
+    "weak type comparison",
+    "Numbers and strings are equal"
   ],
-  "detail": "PHP 7.x 的 0 == \"apple\" 为 true。PHP 8.x 对这种比较先把数字转成字符串，结果为 false。",
-  "boundary": "如果字符串本身是合法的数字字符串，仍按数值比较，例如 42 == \"42\" 在这两个版本系列均为 true。",
+  "detail": "0 == \"apple\" is true in PHP 7.x. PHP 8.x first converts the number into a string for this comparison, and the result is false.",
+  "boundary": "If the string itself is a legal numeric string, it is still compared numerically, for example, 42 == \"42\" is true in both version series.",
   "sources": {
     "reference": "https://www.php.net/manual/en/language.operators.comparison.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "判断题目源码里的分支方向，需要同时知道操作数类型和 PHP 版本。",
+  "relevance": "To determine the branch direction in the question source code, you need to know both the operand type and the PHP version.",
   "tags": [
     "web"
   ]

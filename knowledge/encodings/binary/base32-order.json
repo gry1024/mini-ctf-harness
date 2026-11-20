@@ -1,20 +1,20 @@
 {
-  "title": "Base32 使用 5 位分组和特定字母顺序",
-  "summary": "标准 Base32 的值 0 至 25 是 A 至 Z，26 至 31 是 2 至 7。",
-  "applies": "二进制编码；文件与数值转储",
+  "title": "Base32 uses 5-bit grouping and specific alphabetical order",
+  "summary": "Standard Base32 values 0 to 25 are A to Z, and 26 to 31 are 2 to 7.",
+  "applies": "Binary encoding; file and value dumps",
   "aliases": [
     "base32hex",
     "extended hex",
-    "五位分组",
-    "字母表顺序"
+    "five-digit group",
+    "alphabetical order"
   ],
-  "detail": "Base32hex 按 0 至 9、A 至 V 排列，两种字母表中有重叠字符但其数值可能不同。",
-  "boundary": "只因字符都出现在两个字母表中，不能据此判断解码结果一致。",
+  "detail": "Base32hex is arranged from 0 to 9, A to V. There are overlapping characters in the two alphabets but their numerical values may be different.",
+  "boundary": "Just because the characters appear in both alphabets, it cannot be judged that the decoding results are consistent.",
   "sources": {
     "reference": "https://www.rfc-editor.org/rfc/rfc4648.html#section-7",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "字符集看似正常但输出字节错误时，明确使用哪种 Base32 变体。",
+  "relevance": "Clarify which Base32 variant to use when the charset appears to be normal but the output bytes are wrong.",
   "tags": [
     "reverse",
     "misc"

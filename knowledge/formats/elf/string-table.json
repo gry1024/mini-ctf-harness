@@ -1,20 +1,20 @@
 {
-  "title": "ELF 字符串表可以引用已有字符串的后缀",
-  "summary": "字符串表索引是距表头的字节偏移，可以指向另一个字符串内部并共享末尾 NUL。",
-  "applies": "ELF 文件；System V 通用 ABI",
+  "title": "ELF string tables can reference suffixes of existing strings",
+  "summary": "A string table index is a byte offset from the head of the table that can point inside another string and share a trailing NUL.",
+  "applies": "ELF file; System V Common ABI",
   "aliases": [
     "SHT_STRTAB",
     "st_name",
-    "字符串表",
-    "后缀共享"
+    "string table",
+    "Suffix sharing"
   ],
-  "detail": "若表内包含 foobar 加终止字节，指向 b 的偏移可以合法表示 bar。",
-  "boundary": "解释 st_name 等字段前必须先选对关联的字符串表；不同表的同一偏移无关。",
+  "detail": "If the table contains foobar plus the terminating byte, the offset to b can legally represent bar.",
+  "boundary": "Before interpreting st_name and other fields, the associated string table must be selected first; the same offset in different tables does not matter.",
   "sources": {
     "reference": "https://gabi.xinuos.com/elf/04-strtab.html",
     "context": "https://ctf-wiki.org/executable/elf/structure/basic-info/"
   },
-  "relevance": "解释索引未指向字符串首个已列举边界、却仍给出有效名称的情况。",
+  "relevance": "Explains the case where the index does not point to the first enumerated boundary of the string, but still gives a valid name.",
   "tags": [
     "reverse",
     "misc"

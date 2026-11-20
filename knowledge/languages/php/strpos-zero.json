@@ -1,20 +1,20 @@
 {
-  "title": "strpos 的 0 与 false",
-  "summary": "子串出现在开头时 strpos 返回整数 0，未找到时返回布尔 false。",
-  "applies": "PHP 7.4 和 8.x 的数据处理",
+  "title": "0 and false for strpos",
+  "summary": "strpos returns the integer 0 if the substring appears at the beginning, or the Boolean false if not found.",
+  "applies": "Data handling for PHP 7.4 and 8.x",
   "aliases": [
     "strpos",
     "offset zero",
-    "开头",
-    "子串位置"
+    "Beginning",
+    "substring position"
   ],
-  "detail": "strpos(\"abc\",\"a\") 和 strpos(\"abc\",\"z\") 在普通 if 条件中都表现为假；使用严格比较才能区分这两个返回值。",
-  "boundary": "返回位置按字节计数；多字节文本的显示列号可能不同。",
+  "detail": "strpos(\"abc\",\"a\") and strpos(\"abc\",\"z\") both behave as false in ordinary if conditions; use strict comparison to distinguish the two return values.",
+  "boundary": "Return positions are counted in bytes; the displayed column number may differ for multibyte text.",
   "sources": {
     "reference": "https://www.php.net/manual/en/function.strpos.php",
     "context": "https://ctf-wiki.org/web/php/php/"
   },
-  "relevance": "解释相同条件为何把开头命中和完全未命中分到同一分支。",
+  "relevance": "Explain why the same condition puts initial hits and complete misses into the same branch.",
   "tags": [
     "web",
     "reverse"

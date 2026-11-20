@@ -1,20 +1,20 @@
 {
-  "title": "ZIP 的 EOCD 可以带注释",
-  "summary": "经典 EOCD 的固定部分为 22 字节，末尾可接最长 65535 字节注释。",
-  "applies": "单卷 ZIP；PKWARE APPNOTE",
+  "title": "ZIP's EOCD can be annotated",
+  "summary": "The fixed part of a classic EOCD is 22 bytes, and can be followed by up to 65535 bytes of comments at the end.",
+  "applies": "Single volume ZIP; PKWARE APPNOTE",
   "aliases": [
     "EOCD",
     "central directory",
     "zip comment",
-    "尾部注释"
+    "Tail comments"
   ],
-  "detail": "仅在文件末尾恰好 22 字节处查签名，会漏掉带注释的归档；候选记录的注释长度应与实际边界相符。",
-  "boundary": "注释本身可以含签名字节。单个魔数不足以证明找到真正的 EOCD。",
+  "detail": "Checking for signatures only at exactly 22 bytes from the end of the file will miss annotated archives; the length of comments for candidate records should match the actual boundaries.",
+  "boundary": "The annotation itself can contain signature bytes. A single magic number is not sufficient to prove that true EOCD has been found.",
   "sources": {
     "reference": "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT",
     "context": "https://primer.picoctf.org/"
   },
-  "relevance": "从附件尾部判断目录是否完整时，可区分注释和缺失记录。",
+  "relevance": "When judging whether the directory is complete from the end of the attachment, comments and missing records can be distinguished.",
   "tags": [
     "misc"
   ]
